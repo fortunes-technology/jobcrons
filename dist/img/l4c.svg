@@ -1,0 +1,13 @@
+<svg id="estadisticas" xmlns="http://www.w3.org/2000/svg" width="28.626" height="26.336" viewBox="0 0 28.626 26.336">
+  <path id="Trazado_4236" data-name="Trazado 4236" d="M207.945,375.039h-4.228a.857.857,0,0,0-.857.857v3.653a.857.857,0,0,0,.857.857h4.228a.857.857,0,0,0,.857-.857V375.9A.857.857,0,0,0,207.945,375.039Zm0,0" transform="translate(-191.517 -354.07)" fill="#dce1eb"/>
+  <path id="Trazado_4237" data-name="Trazado 4237" d="M257.62,375.039h-2.143v5.367h2.143a.857.857,0,0,0,.857-.857V375.9A.857.857,0,0,0,257.62,375.039Zm0,0" transform="translate(-241.193 -354.07)" fill="#bfbfde"/>
+  <path id="Trazado_4238" data-name="Trazado 4238" d="M180.713,440.379h-7.657a.857.857,0,0,0,0,1.714h7.657a.857.857,0,0,0,0-1.714Zm0,0" transform="translate(-162.571 -415.757)" fill="#f5f5fc"/>
+  <path id="Trazado_4239" data-name="Trazado 4239" d="M259.334,440.379h-3.858v1.714h3.858a.857.857,0,1,0,0-1.714Zm0,0" transform="translate(-241.193 -415.757)" fill="#dce1eb"/>
+  <path id="Trazado_4240" data-name="Trazado 4240" d="M26.23,0H2.4A2.4,2.4,0,0,0,0,2.4V17.312a.857.857,0,0,0,.857.857H27.769a.857.857,0,0,0,.857-.857V2.4A2.4,2.4,0,0,0,26.23,0Zm0,0" fill="#fc5356"/>
+  <path id="Trazado_4241" data-name="Trazado 4241" d="M267.423,0H255.477V18.169h13.485a.857.857,0,0,0,.857-.857V2.4A2.4,2.4,0,0,0,267.423,0Zm0,0" transform="translate(-241.193)" fill="#f70b57"/>
+  <path id="Trazado_4242" data-name="Trazado 4242" d="M0,309.637v2.975a2.4,2.4,0,0,0,2.4,2.4H26.23a2.4,2.4,0,0,0,2.4-2.4v-2.975Zm0,0" transform="translate(0 -292.325)" fill="#f5f5fc"/>
+  <path id="Trazado_4243" data-name="Trazado 4243" d="M155.853,68.268a5.931,5.931,0,1,1,0-11.862.357.357,0,0,1,.357.357V61.98h5.217a.357.357,0,0,1,.357.357,5.931,5.931,0,0,1-5.931,5.931Zm0,0" transform="translate(-141.54 -53.253)" fill="#f5f5fc"/>
+  <path id="Trazado_4244" data-name="Trazado 4244" d="M260.19,66.531a5.892,5.892,0,0,0,1.737-4.194.357.357,0,0,0-.357-.357h-5.217V56.763a.357.357,0,0,0-.357-.357V68.268A5.892,5.892,0,0,0,260.19,66.531Zm0,0" transform="translate(-241.683 -53.253)" fill="#dce1eb"/>
+  <path id="Trazado_4245" data-name="Trazado 4245" d="M261.931,62.337A5.931,5.931,0,0,0,256,56.406v5.931Zm0,0" transform="translate(-241.687 -53.253)" fill="#ffd330"/>
+  <path id="Trazado_4246" data-name="Trazado 4246" d="M255.477,315.008h11.947a2.4,2.4,0,0,0,2.4-2.4v-2.975H255.477Zm0,0" transform="translate(-241.193 -292.325)" fill="#dce1eb"/>
+</svg>

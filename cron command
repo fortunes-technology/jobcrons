@@ -1,0 +1,17 @@
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 1
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 2
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 3
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 4
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 5
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 6
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 7
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 8
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 9
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 10
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 11
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 12
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 13
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 14
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 15
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 681
+0 4,8,12,16,20 * * * php /var/www/html/cf/s3function.php 750

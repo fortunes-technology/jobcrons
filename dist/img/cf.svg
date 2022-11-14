@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.626" height="31.404" viewBox="0 0 31.626 31.404">
+  <g id="programacion" transform="translate(0 -0.425)">
+    <circle id="Elipse_2" data-name="Elipse 2" cx="15.5" cy="15.5" r="15.5" transform="translate(0 0.425)" fill="#00c7ff"/>
+    <path id="Trazado_4299" data-name="Trazado 4299" d="M125.919,143.429s0,0,0-.007l-7.4-7.4L100.5,150.841l8.353,8.353q.62.049,1.253.049A15.813,15.813,0,0,0,125.919,143.429Z" transform="translate(-94.292 -127.414)" fill="#0093c4"/>
+    <path id="Trazado_4300" data-name="Trazado 4300" d="M253,136.018h-8.409l-.751,13.18,9.16-.751Z" transform="translate(-228.78 -127.414)" fill="#9abadb"/>
+    <g id="Grupo_2540" data-name="Grupo 2540" transform="translate(7.405 8.604)">
+      <path id="Trazado_4301" data-name="Trazado 4301" d="M119.873,136.018v12.429l8.409.751v-13.18Z" transform="translate(-119.873 -136.018)" fill="#d1e8ff"/>
+      <path id="Trazado_4302" data-name="Trazado 4302" d="M254.2,337.236h-9.605l-.751,1.2.751,1.2H254.2Z" transform="translate(-236.184 -324.807)" fill="#d1e8ff"/>
+    </g>
+    <rect id="Rectángulo_25" data-name="Rectángulo 25" width="9.605" height="2.393" transform="translate(6.208 21.034)" fill="#f5f5ff"/>
+    <path id="Trazado_4303" data-name="Trazado 4303" d="M251.876,154.24h-7.283l-.751,5.089.751,5.089h7.283Z" transform="translate(-228.78 -144.51)" fill="#294b6e"/>
+    <rect id="Rectángulo_26" data-name="Rectángulo 26" width="7.283" height="10.178" transform="translate(8.53 9.73)" fill="#6283a3"/>
+    <path id="Trazado_4304" data-name="Trazado 4304" d="M163.832,194.317l-2.982-2.982,2.982-2.982.8.8-2.186,2.186,2.186,2.186Z" transform="translate(-150.914 -176.516)" fill="#f5f5ff"/>
+    <g id="Grupo_2541" data-name="Grupo 2541" transform="translate(14.567 11.221)">
+      <path id="Trazado_4305" data-name="Trazado 4305" d="M290.787,194.317l-.8-.8,2.186-2.186-2.186-2.186.8-.8,2.982,2.982Z" transform="translate(-286.645 -187.737)" fill="#d1e8ff"/>
+      <rect id="Rectángulo_27" data-name="Rectángulo 27" width="1.126" height="7.115" transform="matrix(-0.981, -0.195, 0.195, -0.981, 1.104, 7.198)" fill="#d1e8ff"/>
+    </g>
+  </g>
+</svg>

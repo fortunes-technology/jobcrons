@@ -1,0 +1,48 @@
+---- http://feeds.buscojobs.com/feeds/bjus/buscojobs.xml
+--- http://feeds.buscojobs.com/feeds/bjmx/buscojobs.xml
+--- http://feeds.buscojobs.com/feeds/bjpr/buscojobs.xml
+--- http://feeds.buscojobs.com/feeds/bjco/buscojobs.xml
+---- http://feeds.buscojobs.com/feeds/bjes/buscojobs.xml
+
+
++++ https://transport.productsup.io/4e03e77006aabc6667d1/channel/277437/joblift_external.xml
++++ https://transport.productsup.io/f369f42934e26166c32d/channel/277438/joblift_external.xml
++++ http://www.suedtirolerjobs.it/xml/extended.xml
++++ http://www.steirerjobs.at/xml/extended.xml    // check category list one is discarded
++++ http://www.tirolerjobs.at/xml/extended.xml
++++ http://www.salzburgerjobs.at/xml/extended.xml
++++ http://www.wienerjobs.at/xml/extended.xml
++++ http://feed.stepstone.be/partner/files/EAD8D1AA-0940-4003-9A1D-42492C0DFC45/3A93FD14-3697-4E06-AFAF-3F57671F81EA
++++ http://feed.stepstone.fr/partner/files/62993683-1D1A-46AC-BD26-A6650964F46C/87F4E2F8-3AC9-48A6-B2A8-AEB2A26EF334
+--- https://www.theeducator.com/feeds/Jooble.xml
++++ https://anzeigen.mediaintown.de/export/2223/bebee-com
+--- https://www.ictjob.be/en/jobs/xml?key=f6fc9ef7-8e5a-4042-9c9e-792ef636eac9
+--- https://www.ictjob.lu/en/jobs/xml?key=0f52acef-b3a2-41f7-8847-207673b35df4
++++ https://transport.productsup.io/b6f0f435763b2735d202/channel/264572/joblift_external.xml
++++ https://transport.productsup.io/b6a1b190791c8b088ea8/channel/272610/joblift_external.xml   // check if possible
++++ https://transport.productsup.io/876e1de6d84f2e4f57c2/channel/272613/joblift_external.xml
++++ https://www.mapmeo.com/sites/default/files/recruiter_job_feed/trabajo_at.xml
++++ https://www.mapmeo.com/sites/default/files/recruiter_job_feed/trabajo_ch.xml
++++ https://transport.productsup.io/6d4ae5e07561c38bd5d7/channel/277439/joblift_external.xml
++++ https://pure-jobs.com/aggregator_feeds/simplyhiredau_feed.xml   // check the country is included
++++ https://pure-jobs.com/aggregator_feeds/simplyhiredgolf_feed.xml
++++ https://pure-jobs.com/aggregator_feeds/simplyhiredireland_feed.xml
++++ https://transport.productsup.io/6699101a158c829f9c1e/channel/277441/joblift_external.xml
++++ https://www.jobleads.de/Download/JobmarketExport/?un=dd59f811e4b94a7c1cacc22cad6a9a80&pw=dd59f811e4b94a7c1cacc22cad6a9a80&id=1471&et=d531ea03cb23e194ac59b0b11e98d3fa
++++ https://www.jobleads.de/Download/JobmarketExport/?un=53602c6c954d6d983ba54e74ac8792ea&pw=53602c6c954d6d983ba54e74ac8792ea&id=1473&et=d531ea03cb23e194ac59b0b11e98d3fa
++++ https://pure-jobs.com/aggregator_feeds/simplyhireduk_feed.xml
++++ https://www.wienerjobs.at/xml/extended.xml
+--- http://feeds.buscojobs.com/feeds/bjes/buscojobs.xml
++++ https://www.jobintree.com/export/flux_bebee.xml
++++ https://extranet.bluelynx.com/xml/bluei.xml   // check there was lots of tags
++++ https://www.careersinholland.com/jobxml // check there was lots of tags
++++ https://disabledperson.s3.amazonaws.com/feeds/generic.xml
++++ https://feeds.whatjobs.com/bebee/standard-co.xml.gz
++++ https://feeds.adzuna.co.uk/bebeecvl/jobs_4991.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-my.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-cl.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-in.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-za.xml.gz  // check date
++++ https://feeds.whatjobs.com/bebee/standard-ae.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-ca.xml.gz
++++ https://feeds.whatjobs.com/bebee/standard-au.xml.gz

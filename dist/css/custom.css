@@ -1,0 +1,182 @@
+.main-header{
+	box-shadow:1px 1px 15px rgba(0,0,0,.1);
+}
+
+.brand-link .brand-image{
+	margin-top:0px;
+}
+.navbar-light .navbar-nav .nav-link i{
+font-size:14px;
+margin-right:3px;
+}
+.navbar-light .navbar-nav .nav-link.active{
+	color: #3A93C4;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active{
+background-color: rgba(255,255,255,.1);	
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active:after, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active:after{
+	content: "";
+width: 10px;
+height: 10px;
+background: #3A93C4;
+position: absolute;
+right: 10px;
+top: 15px;
+border-radius: 50%;
+}
+.btn-primary{
+	background-color:#3A93C4;
+	border-color:#3A93C4;
+}
+.btn-primary:hover, .btn-primary.focus, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle{
+	background-color:#F70B57;
+	border-color:#F70B57;
+}
+.btn-lg .spinner-grow{
+	width:1.2rem;
+	height: 1.2rem;
+	border-width:2px;
+	position: relative;
+	top:-3px;
+}
+.btn-lg i{
+	font-size:16px;
+}
+.card, .info-box{
+	border-radius:0px;
+	border:none;
+	box-shadow:0 1px 2px rgba(0,0,0,.16);
+}
+.info-box{
+	padding:.75rem 1.25rem;
+}
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: rgba(0,0,0,.02);
+}
+[class*="sidebar-dark-"] .sidebar span.d-block.mb-0{
+    color: #c2c7d0;
+}
+[class*="sidebar-dark-"] .sidebar span.d-block.mb-0 .badge{
+position: absolute;
+top: 0px;
+right: 0px;
+font-size: 9px;
+text-transform: uppercase;
+font-weight: 400;
+}
+.dropdown-filters{
+	min-width:380px;
+	padding:20px 25px 25px;
+}
+.mw-30{
+	max-width:30px;
+}
+.login-box{
+	width:460px;
+}
+@media(min-width:0px) and (max-width:767px) {
+	.login-box{
+	width:360px;
+}
+}
+.dropdown-status-tag{
+	min-width:800px;
+}
+@media(min-width:0px) and (max-width:767px) {
+	.dropdown-status-tag{
+		min-width:300px;
+	}
+}
+.dropdown-status-tag .form-check{
+	margin-bottom:10px;
+}
+.table .text {
+  position: relative;
+  min-width:200px;
+}
+
+.table .text span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 100%;
+  padding-right:15px;
+}
+.table .text span i{
+	font-size: 14px;
+}
+.text:before {
+  content: '';
+  display: inline-block;
+}
+.st-head{
+	position: sticky;
+top: 56px;
+background: #fff;
+z-index: 1;
+}
+.warning {
+	color: red;
+}
+body {
+	font-family: 'Titillium Web', sans-serif !important;
+}
+.padding-body {
+	padding: 15px;
+}
+
+#dropdownMenuButton {
+	margin-bottom: 20px;
+}
+
+.font-red {
+	color: red;
+}
+
+.check-label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 15px;
+}
+
+#willAddCountry {
+	display: none;
+}
+
+#createUtmModal .utm-label {
+	min-width: 150px;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.25, 1.25);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.zoom-in-zoom-out {
+	margin-left: 5px;
+	color: #ff6f00;
+  animation: zoom-in-zoom-out 2s ease-out infinite;
+}
+
+.red-color {
+	color: #ff6f00;
+}
+
+/* .text-red {
+	color: red;
+}
+
+.text-green {
+	color: green;
+} */
