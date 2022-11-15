@@ -95,6 +95,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="user.php" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -359,9 +367,15 @@
                                                                                 </label>
                                                                             </div>
                                                                             <div class="form-check">
-                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_24" value="logoUrl" <?php echo ($updatetag[$key]=='logourl')?'checked':'' ?> >
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_24" value="logoUrl" <?php echo ($updatetag[$key]=='logoUrl')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_24">
                                                                                 &lt;logoUrl&gt;
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_27" value="CPC" <?php echo ($updatetag[$key]=='CPC')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_27">
+                                                                                &lt;CPC&gt;
                                                                                 </label>
                                                                             </div>
                                                                             <div class="form-check">

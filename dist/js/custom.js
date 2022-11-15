@@ -504,6 +504,12 @@ $("#parseXML").click(function(){
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_27" value="CPC">
+                                                    <label class="form-check-label" for="labelRadio_${i}_27">
+                                                    &lt;CPC&gt;
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_25" value="discard">
                                                     <label class="form-check-label" for="labelRadio_${i}_25">
                                                     Discard
@@ -524,4 +530,158 @@ $("#parseXML").click(function(){
             }
         });
     }
+});
+
+/*
+This is user page
+*/
+
+// Select all function configure
+
+$(document).ready(function () {
+    $('#checkAllUser').click(function () {
+        $('.userIdSelect').prop('checked', isChecked('checkAllUser'));
+    });
+});
+
+function isChecked(checkboxId) {
+    var id = '#' + checkboxId;
+    return $(id).is(":checked");
+}
+
+function resetSelectAll() {
+    $("#checkAllUser").removeAttr("checked");
+    if ($(".userIdSelect").length == $(".userIdSelect:checked").length) {
+        $("#checkAllUser").attr("checked", "checked");
+    } else {
+        $("#checkAllUser").prop( "checked", false );
+    }
+}
+
+//User page table configuration
+
+$(document).ready(function() {
+    $('#user_all').DataTable({
+         columnDefs: [
+           { 
+                orderable: false, targets: 0
+           },
+           { 
+                orderable: false, targets: -1
+           }
+        ],
+         "sortable": false,
+         "pageLength": 10,
+         "columns": [
+            null,
+            { "width": "5%" },
+            { "width": "25%" },
+            { "width": "30%" },
+            null,
+            null,
+          ],
+          "bLengthChange": false,
+    });
+} );
+
+$(document).on("click", "#removeUserHref", function() {
+    let userId = $(this).attr("data-id");
+    let userIdArray = '';
+    if(userId) {
+        $("#removeUserId").val(userId);
+        $('#removeUser').modal('show');
+    }
+    else {
+        $('input[name="userIdSelect"]:checked').each(function() {
+           userIdArray += `${this.value},`;
+           $("#removeUserId").val(userIdArray);
+        });
+        if(userIdArray == "") {
+            alert("Please check at least one user");
+        }
+        else {
+            $('#removeUser').modal('show');
+        }
+    }
+});
+
+$(document).on("click", ".removeUser", function() {
+    let userId = $("#removeUserId").val();
+    $.ajax({
+        url: "parsexml.php",
+        type: "post",
+        dataType: "json",
+        data: {"removeUser": "removeOne", "userId": userId},
+        success: function(result) {
+            if(result) {
+                window.location.href = 'user.php';
+            }
+        }
+    })
+});
+
+$(document).on("click", ".createUser", function() {
+    let userName = $("#userName").val();
+    let userEmail = $("#userEmail").val();
+    let userPwd = $("#userPwd").val();
+    let userPwdCon = $("#userPwdCon").val();
+    let userRole = $("#userRole").val();
+    if(userName == '' || userEmail == '' || userPwd == '' ||userPwdCon == '') {
+        alert("Please check required field");
+    }
+    else {
+           if(userPwd != userPwdCon) {
+            alert("Password should be same");
+        }
+
+        else {
+            $.ajax({
+                url: "parsexml.php",
+                type: "post",
+                dataType: "json",
+                data: {"createUser": "createUser", "userName": userName, "userEmail": userEmail, "userPwd": userPwd, "userRole": userRole, "userId": $("#userId").val()},
+                success: function(result) {
+                    console.log(result);
+                    if(result.data == "true") {
+                        window.location.href = 'user.php';
+                    }
+                    else if(result.data == "duplicate") {
+                        alert('Name or URL is already stored');
+                    }
+                    else {
+                        alert('Something went wrong while saving feed details');
+                    }
+                }
+            })
+        } 
+    }
+
+});
+
+$(document).on("click", 'a[data-target="#createUser"]', function() {
+    $("h5#createUserLabel").html("Create User");
+    $("#userId").val('');
+    $("#userName").val('');
+    $("#userEmail").val('');
+    $("#userPwd").val('');
+    $("#userPwdCon").val('');
+    $("#userRole option").each(function(){
+        $(this).removeAttr('selected');
+    });
+});
+
+$(document).on("click", "a#editUser", function() {
+    $("h5#createUserLabel").html("Edit User");
+    var user = $(this).data('user');
+    $("#userId").val(user.id);
+    $("#userName").val(user.username);
+    $("#userEmail").val(user.email);
+    $("#userPwd").val(user.password);
+    $("#userPwdCon").val(user.password);
+    $("#userRole option").each(function(){
+        $(this).removeAttr('selected');
+        if ($(this).val() == user.role)
+            $(this).attr('selected', 'selected');
+    });
+
 });

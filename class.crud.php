@@ -651,5 +651,146 @@ class crud
 			}
 		}
 	}
+	
+	// Get all users
+	public function getAllUser($query) {
+		// $jobDetailArrayUser = [];
+		// $queryWithJob = "SELECT input_urls.userid, COUNT(job_details.id) AS sum FROM job_details LEFT JOIN input_urls ON job_details.inputid = input_urls.id GROUP BY input_urls.userid";
+		// $stmt = $this->db->prepare($queryWithJob);
+		// $stmt->execute();
+		// if($stmt->rowCount() > 0) {
+		// 	while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+		// 	{
+		// 		$jobDetailArrayUser[$row['userid']]	= $row['sum'];
+		// 	}
+		// }		
+
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+		if($stmt->rowCount() > 0)
+		{
+			$input_url_list = "";
+			$i = 0;
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				// if(isset($jobDetailArrayUser[$row['id']])) {
+				// 	$jobCount = $jobDetailArrayUser[$row['id']];
+				// }
+				// else {
+				// 	$jobCount = 0;
+				// }
+				$i ++ ;
+				$input_url_list .= "<tr>".
+										"<td><input type='checkbox' class='userIdSelect' name='userIdSelect' value='".$row['id']."' onclick='resetSelectAll();'></td>".
+										"<td>".$i."</td>".
+										"<td>".$row['username']."</td>".
+										"<td>".$row['email']."</td>".
+										// "<td><i class='fas fa-clipboard text-grey'></i> ".$jobCount." inserted jobs"."</td>".
+										"<td><i class='fas fa-calendar-alt text-grey'></i> ".$row['created_at']."</td>".
+										"<td><a href='#' data-id='".$row['id']."' id='removeUserHref'><i class='fas fa-trash'></i></a>
+											<a href='#' data-user='".json_encode($row)."' id='editUser' data-toggle='modal' data-target='#createUser'><i class='fas fa-edit'></i></a>
+										</td>".
+									"</tr>";
+				
+			}
+			echo $input_url_list;
+		}
+	}
+
+	// check is user
+	public function isUser($email) {
+		$stmt = $this->db->prepare("SELECT * FROM users WHERE email=:email");
+		$stmt->bindparam(":email", $email);
+		$stmt->execute();
+		if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			return $row;
+		}
+		else {
+			return false;
+		}
+	}
+
+	// Remove User
+	public function removeUser($id) {
+		$idReal = $id;
+		if(strpos($id, ",") !== false){
+			$idReal = explode(",",$id);
+			array_pop($idReal);
+			try
+			{
+				$ids = implode("','", $idReal);
+				$stmt = $this->db->prepare("DELETE FROM users WHERE id IN ('".$ids."')");
+				$stmt->bindparam(":id",$id);
+				$stmt->execute();
+				return true;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();
+				return false;
+			}
+		}
+		
+		try
+		{
+			$stmt = $this->db->prepare("DELETE FROM users WHERE id=:id");
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+			return false;
+		}	
+	}
+
+	// Create user
+	public function createUser($name, $email, $pwd, $role) {
+		$now = new DateTime();
+		$createdate = $now->format('Y-m-d H:i:s');
+		try
+		{
+			$stmt = $this->db->prepare(
+				"INSERT INTO users(username, email, password, role, created_at, updated_at) 
+						VALUES(:username, :email, :password, :role, :created_at, :updated_at)");
+			$stmt->bindparam(":username",$name);
+			$stmt->bindparam(":email",$email);
+			$stmt->bindparam(":password",$pwd);
+			$stmt->bindparam(":role", $role);
+			$stmt->bindparam(":created_at",$createdate);
+			$stmt->bindparam(":updated_at",$createdate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	// Update user
+	public function updateUser($name, $email, $pwd, $role, $id) {
+		$now = new DateTime();
+		$createdate = $now->format('Y-m-d H:i:s');
+		try
+		{
+			$stmt = $this->db->prepare("UPDATE users SET username=:username, email=:email, password=:password, role=:role, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":username",$name);
+			$stmt->bindparam(":email",$email);
+			$stmt->bindparam(":password",$pwd);
+			$stmt->bindparam(":role", $role);
+			$stmt->bindparam(":updated_at",$createdate);
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
 }
 ?>
