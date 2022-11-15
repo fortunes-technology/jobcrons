@@ -72,6 +72,7 @@ if(isset($_POST['loginbtn'])) {
 	if ($stmt->rowCount() > 0) {
 		$_SESSION['loginfo'] = $_POST['email'];
 		$_SESSION['username'] = $currentUser['username'];
+		$_SESSION['role'] = $currentUser['role'];
 		header("Location: addurl.php");
 		exit();
 	}

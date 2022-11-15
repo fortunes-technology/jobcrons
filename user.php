@@ -2,6 +2,8 @@
     include_once('dbconfig.php');
     include_once('header.php');
 ?>
+    <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
+        <div class="wrapper">
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -34,18 +36,16 @@
                                 </p>
                             </a>
                         </li>
-                    </ul>
-                </nav>
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="user.php" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Users
-                                </p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['role'] == 1) { ?>
+                            <li class="nav-item">
+                                <a href="user.php" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p>
+                                        Users
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -60,19 +60,15 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card mt-3">
-
-
                                 <div class="card-header st-head" style="top:0px">
                                 </div>
-
-
                                 <div class="card-body p-0">
                                     <div class="d-flex align-items-center mt-2 ml-4 mb-2 mr-4">
                                         <p class="mb-0" id="tagNumber"></p>
                                     </div>
                                     <div class="relative-div position-relative">
                                         <div class="for-check">
-                                            <input type="checkbox" name="checkAllUser" id="checkAllUser">
+                                            <input type="hidden" name="checkAllUser" id="checkAllUser">
                                         </div>
                                         <div class="for-check">
                                             <a href="#" data-toggle='modal' id='removeUserHref'><i class="fas fa-trash"></i></a>

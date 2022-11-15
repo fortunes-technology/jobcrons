@@ -653,17 +653,7 @@ class crud
 	}
 	
 	// Get all users
-	public function getAllUser($query) {
-		// $jobDetailArrayUser = [];
-		// $queryWithJob = "SELECT input_urls.userid, COUNT(job_details.id) AS sum FROM job_details LEFT JOIN input_urls ON job_details.inputid = input_urls.id GROUP BY input_urls.userid";
-		// $stmt = $this->db->prepare($queryWithJob);
-		// $stmt->execute();
-		// if($stmt->rowCount() > 0) {
-		// 	while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-		// 	{
-		// 		$jobDetailArrayUser[$row['userid']]	= $row['sum'];
-		// 	}
-		// }		
+	public function getAllUser($query) {		
 
 		$stmt = $this->db->prepare($query);
 		$stmt->execute();
@@ -673,14 +663,8 @@ class crud
 			$i = 0;
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 			{
-				// if(isset($jobDetailArrayUser[$row['id']])) {
-				// 	$jobCount = $jobDetailArrayUser[$row['id']];
-				// }
-				// else {
-				// 	$jobCount = 0;
-				// }
 				$i ++ ;
-				$input_url_list .= "<tr>".
+				$input_url_list .=  "<tr>".
 										"<td><input type='checkbox' class='userIdSelect' name='userIdSelect' value='".$row['id']."' onclick='resetSelectAll();'></td>".
 										"<td>".$i."</td>".
 										"<td>".$row['username']."</td>".
