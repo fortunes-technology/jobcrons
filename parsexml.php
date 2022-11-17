@@ -315,3 +315,35 @@ if(isset($_POST["removeFile"])) {
 	}
 }
 
+// Remove User
+if(isset($_POST['removeUser']) && $_POST['removeUser'] == "removeOne") {
+	$userId = $_POST['userId'];
+	$crud->removeUser($userId);
+	echo true; exit();
+}
+
+// Create user
+if(isset($_POST['createUser'])) {
+	$userName = $_POST['userName'];
+	$userEmail = $_POST['userEmail'];
+	$userPwd = $_POST['userPwd'];
+	$userRole = $_POST['userRole'];
+	$userId = $_POST['userId'];
+	$crudResult = false;
+	if (empty($userId)) {
+		$is_url = $crud->isUser($userEmail);
+		if($is_url) {
+			echo json_encode(['data' => "duplicate"]); exit;
+		}
+		$crudResult = $crud->createUser($userName, $userEmail, $userPwd, $userRole);
+	}
+	else
+		$crudResult = $crud->updateUser($userName, $userEmail, $userPwd, $userRole, $userId);	
+	if($crudResult == true) {
+		$res = json_encode(['data' => "true"]);
+	}
+	else {
+		$res = json_encode(['data' => "false"]);
+	}
+	echo $res; exit();
+}

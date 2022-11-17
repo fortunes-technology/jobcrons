@@ -180,3 +180,46 @@ body {
 .text-green {
 	color: green;
 } */
+.table-container {
+	width: 98%;
+    margin: auto;
+}
+
+.relative-div {
+	width: 50%;
+	display: flex;
+	top: 22px;
+	z-index: 100;
+}
+
+.relative-div .for-check {
+	margin-left: 20px;
+	color: black !important;
+}
+
+.relative-div a {
+	color: #525252 !important;
+}
+
+.table-responsive .fa-trash {
+	color: #525252 !important;
+}
+
+.table-responsive .fa-edit {
+	color: #525252 !important;
+}
+
+.table-td-wordbreak {
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 550px;
+}
+
+.table-td-wordbreak:hover {
+	white-space: unset;
+}
+
+a#editUser {
+	margin-left: 10px;
+}
