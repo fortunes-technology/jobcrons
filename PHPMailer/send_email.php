@@ -6,7 +6,7 @@ require 'vendor/PHPMailer/src/Exception.php';
 require 'vendor/PHPMailer/src/PHPMailer.php';
 require 'vendor/PHPMailer/src/SMTP.php';
 
-function send_email($email) {   
+function send_email($email, $subject, $message) {   
     //Load composer's autoloader
 
     $mail = new PHPMailer(true);                            

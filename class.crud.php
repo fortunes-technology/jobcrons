@@ -125,6 +125,17 @@ class crud
 		return $count;
 	}
 
+	public function checkCronSatus($status) {
+		$count = false;
+		$is_stmt = $this->db->prepare("SELECT status FROM cron WHERE status=:status");
+		$is_stmt->bindparam(":status",$status);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() > 0) {
+			return $is_stmt->rowCount();
+		}
+		return $count;
+	}
+
 	public function update($id,$name,$updatetag,$xmlurl,$defaultcountry,$joblocationtype, $utmValue)
 	{
 		$now = new DateTime();

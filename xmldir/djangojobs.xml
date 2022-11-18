@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bebee>
+ <item>
+  <title><![CDATA[Senior Python Developer Expert]]></title>
+  <datePosted><![CDATA[2021-12-27]]></datePosted>
+  <id><![CDATA[1093]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1093/senior-python-developer-expert-european-central-bank-ecb/]]></url>
+  <company><![CDATA[European Central Bank (ECB)]]></company>
+  <city><![CDATA[Frankfurt am Main]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[Germany]]></addressCountry>
+  <content><![CDATA[&lt;h1&gt;Your team&lt;/h1&gt;
+&lt;p&gt;You will be part of the Prudential Domain Services Division in the Directorate General Information Systems. We are a team of some 50 IT professionals delivering tailored IT solutions for European banking supervision to support financial stability and collect supervisory statistics.&lt;/p&gt;
+&lt;p&gt;We are currently internalising the end-to-end delivery of two of our bespoke IT systems supporting ECB Banking Supervision: the Stress Tests Accounts Reporting (STAR): https://www.bankingsupervision.europa.eu/banking/tasks/stresstests/html/index.en.html) system and the Credit Quality Reviews (CQR) system.&lt;/p&gt;
+&lt;p&gt;As part of a new agile product team, you will take over the development, maintenance and operations of either STAR or the CQR system from an external service provider. You will further develop unique, user-friendly IT systems that support banking supervision in the EU and devise innovative solutions that are central to the ECBs strategy.&lt;/p&gt;
+&lt;p&gt;Our technology stack currently consists of Java, Python, Oracle, React and Angular, and we are quickly moving our services to the cloud. We are committed to giving our users the best possible user experience and keeping our IT systems secure and protected by building and running our services following Agile and DevOps practices.&lt;/p&gt;
+&lt;p&gt;The ECB is an inclusive employer and we strive to reflect the diversity of the population we serve. We encourage you to apply irrespective of age, disability, ethnicity, gender, gender identity, race, religious beliefs, sexual orientation or other characteristics.&lt;/p&gt;
+&lt;h1&gt;Your role&lt;/h1&gt;
+&lt;p&gt;This vacancy notice covers four separate roles:1. Front-End Developer Expert2. Back-End Developer Expert (Java/C#)3. Python Developer Expert4. DevOps Expert&lt;/p&gt;
+&lt;p&gt;In all roles, you will be the technical lead for your team and will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;program new business and technical functionalities in line with user needs;&lt;/li&gt;
+&lt;li&gt;develop automated tests, builds, deployments and continuous integration pipelines;&lt;/li&gt;
+&lt;li&gt;coach and mentor junior engineers on the existing codebase and development practices;&lt;/li&gt;
+&lt;li&gt;identify strategic technical debt and provide cost/benefit analysis to eliminate and prioritise in line with the product roadmap;&lt;/li&gt;
+&lt;li&gt;improve the existing development practices and technical skills of individuals in the team through code reviews;&lt;/li&gt;
+&lt;li&gt;liaise with stakeholders in other divisions to ensure technical compliance with ECB-wide standards.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are seeking candidates for these roles who demonstrate the potential for growth, and we support the selected candidates in their future development of the required knowledge, skills or competencies.&lt;/p&gt;
+&lt;h2&gt;Qualifications, experience and skills Essential:&lt;/h2&gt;
+&lt;h1&gt;For all Developer roles:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;a masters degree or equivalent in computer science, engineering, mathematics, physics or another relevant field (click here for details on degree equivalences);&lt;/li&gt;
+&lt;li&gt;in addition to the above, a minimum of seven years of hands-on experience as a professional developer or devOps working on complex bespoke applications;&lt;/li&gt;
+&lt;li&gt;a sound knowledge of common data structures;&lt;/li&gt;
+&lt;li&gt;a sound knowledge of common data structures (arrays, linked lists, maps, trees, ), you can pick the right one for the problem you are solving;&lt;/li&gt;
+&lt;li&gt;an understanding of complexity (big O notation) and the most common algorithmic approaches (sorting, divide-and-conquer, dynamic programming, greedy, recursion);&lt;/li&gt;
+&lt;li&gt;practical knowledge of the most common design patterns (gang of four);&lt;/li&gt;
+&lt;li&gt;a working knowledge of relational database systems and ability to write complex queries;&lt;/li&gt;
+&lt;li&gt;a passion for software development;
+curiosity and a willingness to learn, while using software to resolve difficult business problems;&lt;/li&gt;
+&lt;li&gt;strong customer orientation and the ability to manage stress;&lt;/li&gt;
+&lt;li&gt;excellent analytical, drafting and presentation skills, and the ability to present complex functional and/or technical topics clearly to internal and external audiences;&lt;/li&gt;
+&lt;li&gt;an advanced (C1) command of English and an intermediate (B1) command of at least one other official language of the EU, according to the Common European Framework of Reference for Languages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;In addition, for the role of Python Developer Expert:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;considerable experience developing complex bespoke applications in Python;&lt;/li&gt;
+&lt;li&gt;an ability to manage and analyse large datasets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Desired&lt;/h2&gt;
+&lt;h2&gt;For all roles:&lt;/h2&gt;
+&lt;p&gt;experience in agile software development;
+contributions to open-source projects.&lt;/p&gt;
+&lt;h2&gt;For the role of Python Developer Expert:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;working experience with IT projects in a financial risk management environment;&lt;/li&gt;
+&lt;li&gt;an understanding of the main risks facing financial institutions (e.g. credit risk, market risk, operational risk, interest rate risk) and how these affect a banks capital position;&lt;/li&gt;
+&lt;li&gt;knowledge of the EBA stress test methodology;&lt;/li&gt;
+&lt;li&gt;practical experience with financial risk management practices and modelling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You engage collaboratively with others. You pursue team goals and learn willingly from other peoples diverse perspectives. You signal any need for change by explaining it and proposing alternative solutions. You analyse complex information effectively and can evaluate different views to arrive at solutions. You know and anticipate stakeholder needs. You are skilled at encouraging people to develop their abilities and are able to build up high-performing teams.&lt;/p&gt;
+&lt;p&gt;You are motivated to be part of our team and to develop and use your skills and competencies to achieve the objectives of this position.You are aware of your strengths and areas for development and know what motivates you to perform at your highest level.&lt;/p&gt;
+&lt;h1&gt;Working modalities&lt;/h1&gt;
+&lt;p&gt;To enable the Division to maintain its business continuity capability, you will occasionally be expected to perform work during non-standard working hours and work at the ECBs standby sites.&lt;/p&gt;
+&lt;p&gt;We would be happy to discuss part-time arrangements for these roles.&lt;/p&gt;
+&lt;h2&gt;Further information&lt;/h2&gt;
+&lt;p&gt;The formal title for these positions will be Senior IT Application Development Expert.&lt;/p&gt;
+&lt;p&gt;For additional information on this specific vacancy, you can speak to Marco Tizzoni, on +49 (0)69 1344 3357 (email: marco.tizzoni@ecb.europa.eu) or Cristina Musceleanu, on +49 (0)69 1344 21065 (email: cristina.musceleanu@ecb.europa.eu).&lt;/p&gt;
+&lt;h2&gt;Application and selection process&lt;/h2&gt;
+&lt;p&gt;The recruitment process for this position will be conducted remotely. It will include a pre-recorded video interview in the pre-selection phase and  if you are invited to participate in the subsequent selection phase  a written exercise, a presentation and interviews. &lt;/p&gt;
+&lt;p&gt;If you are not selected for this position but are still considered suitable, you will be placed on a reserve list (see step 4 of how we hire), from which you might be considered for similar positions within the ECB.&lt;/p&gt;
+&lt;p&gt;Find out how to apply for a position at the European Central Bank. Read more about joining us.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Frontend Engineer]]></title>
+  <datePosted><![CDATA[2021-11-23]]></datePosted>
+  <id><![CDATA[1091]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1091/senior-frontend-engineer-15five/]]></url>
+  <company><![CDATA[15Five]]></company>
+  <city><![CDATA[San Francisco]]></city>
+  <addressRegion><![CDATA[CA]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;h1&gt;ROLE MISSION&lt;/h1&gt;
+&lt;p&gt;We take pride in our position as an innovator in the Human Resources landscape. This wouldn’t be possible without our outstanding team of engineers that apply next-generation thinking to our software - their abilities allow us to continually elevate the user experience and push leading performance-management technology into the global market.&lt;/p&gt;
+&lt;p&gt;Senior Front-End Software Engineers play a chief role in building our beautiful, clean, and simple applications which embody our Best-Self philosophy. Senior Front-End Software Engineers are daily participants throughout the product life cycle and collaborate with multiple people and teams simultaneously. Senior Front-End Software Engineers have deep technical expertise as well as confidence in guiding balanced decision-making when it comes to the development of various features within the product.&lt;/p&gt;
+&lt;h1&gt;OUTCOMES&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Write code and design software to solve business problems &lt;/li&gt;
+&lt;li&gt;Synthesize multiple solutions to a problem &lt;/li&gt;
+&lt;li&gt;Write efficient, easy-to-understand, and flexible code that results in increased customer value&lt;/li&gt;
+&lt;li&gt;Make logical decisions keeping in mind various tradeoffs and main stakeholders&lt;/li&gt;
+&lt;li&gt;Apply 15Five standards, guidelines, and practices to writing quality code &lt;/li&gt;
+&lt;li&gt;Balance complexity, readability, performance, maintainability, flexibility, and other tradeoffs&lt;/li&gt;
+&lt;li&gt;Lead problem-solving initiatives and escalate problems with a wider scope in a timely manner&lt;/li&gt;
+&lt;li&gt;Work with Design on interactive mock-ups that demonstrate concepts to product owners&lt;/li&gt;
+&lt;li&gt;Assist in team development and actively mentor fellow engineers&lt;/li&gt;
+&lt;li&gt;Participate in code reviews, using each opportunity for training and mentoring the wider Engineering team&lt;/li&gt;
+&lt;li&gt;Build and maintain engineering processes, standards, guidelines, and best practices&lt;/li&gt;
+&lt;li&gt;Adhere to guidelines, making sound decisions on a case-by-case basis and escalating as necessary&lt;/li&gt;
+&lt;li&gt;Develop processes to minimize situations that require decisions outside of established rules&lt;/li&gt;
+&lt;li&gt;Assist and mentor other engineers in their professional development &lt;/li&gt;
+&lt;li&gt;Participate in the hiring process, evaluate and screen candidates, conduct or lead interviews when required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;COMPETENCIES&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Job Level Definition - Seen as a subject matter expert in most role areas. Demonstrates ability to lead and solve difficult problems. Able to improve results by leveraging data and technology &lt;/li&gt;
+&lt;li&gt;Strategic Scope: Primarily tactically focused with some strategic efforts. Exhibits medium-term thinking through issue identification, proposals, and ownership of execution. Recognizes and plans work-arounds for potential obstacles from within the Engineering department.&lt;/li&gt;
+&lt;li&gt;Level of Responsibility - Is able to independently serve a role and work on short and medium-term objectives with minimal supervision. Handles issues that arise through the day-to-day execution of the function. Proactively identifies and delivers new ways to contribute to the company and team. Independently finds ways to be productive. &lt;/li&gt;
+&lt;li&gt;Cognition &amp;amp; Scalability - Has excellent knowledge of subject areas. Resolves medium-scope problems independently and consistently demonstrates understanding of short and long-term impacts. Has the ability to coach others through problem identification, evaluation, recommendation, and implementation. Guides others in balancing short and long-term solutions to help expand the business. Proactive in identifying issues, root causes and mapping out data needed to solve related problems. Prioritize problems to solve and is able to delegate appropriately. Thrives as a self-starter in a fast-paced environment and is excited by change and ambiguity. Is intentionally agile - willing and able to change, develop, and adopt new processes. Continuously learns and acts quickly with flexibility. &lt;/li&gt;
+&lt;li&gt;Leadership &amp;amp; Accountability - Acts as an informed participant in department-level decisions. Provides mentorship and guidance to junior team members. Contributes to a sense of safety in your work relationships by ensuring your words align with your actions. Acts as a strong mentor/advisor by immediate team members. &lt;/li&gt;
+&lt;li&gt;Communication &amp;amp; Influence - Able to negotiate and advocate for a team with cross-functional peers in a productive, professional way. Supports cross-team challenges to determine and effective resolution. Demonstrates knowledge and competencies in 15Five’s culture and employee engagement. Creates an inclusive and effective team environment for collaboration. Encourages a sense of belonging and ensures equitable treatment for all. 
+Customer &amp;amp; External Focus - Understands and articulates 15Five’s position within the competitive landscape. Representation 15Five well. Demonstrates empathy for and considerations the clients and users in execution of work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;DESIRED EXPERIENCE&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;3+ years of experience with front-end development&lt;/li&gt;
+&lt;li&gt;2+ years of experience with CSS preprocessors and expertise with mix-ins, variables, functions&lt;/li&gt;
+&lt;li&gt;Experience working as a designer or very closely with a design team&lt;/li&gt;
+&lt;li&gt;Experience with existing CSS frameworks (e.g., Bootstrap, Foundation, etc.)&lt;/li&gt;
+&lt;li&gt;Experience creating applications that interact with back-end web frameworks (e.g., Django, Ruby on Rails, Spring, Laravel, etc.)&lt;/li&gt;
+&lt;li&gt;Highly proficient in technical areas of front-end software development (e.g., React and/or Vue.js, JavaScript, TypeScript, CSS, HTML, etc.)&lt;/li&gt;
+&lt;li&gt;Skilled with optimizations such as caching, minimal code for fastest loading and rendering&lt;/li&gt;
+&lt;li&gt;Clear communication skills&lt;/li&gt;
+&lt;li&gt;Capable of effectively evaluating data to make decisions&lt;/li&gt;
+&lt;li&gt;Able to collaborate well with a team of designers, product managers, and business stakeholders&lt;/li&gt;
+&lt;li&gt;Strong knowledge of JavaScript OOP, DOM, DOM events, AJAX, JSON&lt;/li&gt;
+&lt;li&gt;Understand the cross-functionality of various technical systems&lt;/li&gt;
+&lt;li&gt;Understand the connections and interdependencies between teams and departments&lt;/li&gt;
+&lt;li&gt;Produce exceptional output and work quality&lt;/li&gt;
+&lt;li&gt;Have a strong reputation for accountability and reliability&lt;/li&gt;
+&lt;li&gt;Comfortable owning projects&lt;/li&gt;
+&lt;li&gt;Willing to express opinions on various designs &lt;/li&gt;
+&lt;li&gt;Enjoy writing clean and maintainable code accompanied by useful tests&lt;/li&gt;
+&lt;li&gt;Enjoy working in a team but can thrive working independently &lt;/li&gt;
+&lt;li&gt;Desire to always be learning and staying on top of the latest trends and technologies&lt;/li&gt;
+&lt;li&gt;Passionate about being extraordinary in both your work life and personal life&lt;/li&gt;
+&lt;li&gt;Value elegant simplicity, beautiful aesthetic, attention to detail, and human-centric design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;SAMPLE WEEK IN THE LIFE&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Monday: Begin the week with the all-hands Boost to hear company updates and meet new hires, join the squad stand-up, then review pull requests and write code for product features/bugs&lt;/li&gt;
+&lt;li&gt;Tuesday: Determine technical details or implementation with the squad before joining the squad huddle to review top-level initiatives, then research and resolve a few bugs and write product code&lt;/li&gt;
+&lt;li&gt;Wednesday: Meet with your manager for a 1:1 followed by the company Boost for an in-depth department update, spend the rest of the day on a project from your engineering working group&lt;/li&gt;
+&lt;li&gt;Thursday: Join the bi-weekly Engineering meeting ahead of global happy hour, review pull requests, write code for product features and/or bugs, and write your 15Five check-in&lt;/li&gt;
+&lt;li&gt;Friday: Participate in the Question Friday Boost call, join a planning session for the upcoming spring, write product code, and then finish your week by submitting your 15Five&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;ABOUT 15FIVE&lt;/h1&gt;
+&lt;p&gt;Founded in 2011, 15Five equips HR leaders to play a strategic role in their company’s growth. HR leaders use 15Five to combine engagement, performance, and OKRs on one platform so they can make insightful decisions and take strategic action. Unlike other ‘command and control’ performance systems, 15Five uses the latest in people science to turn managers and employees into self-driven owners of performance and engagement. To further the impact of talent on company growth, 15Five also provides education, coaching, and community for HR leaders, managers, and employees. HR leaders at over 2,800 companies, including Credit Karma, Spotify, and Pendo, rely on 15Five’s software and services to make their talent a growth driver.&lt;/p&gt;
+&lt;p&gt;At 15Five we focus on building a diverse team that prioritizes inclusivity and celebrates everyone’s unique identity. We are proud of our thriving hybrid culture that supports a remote-first workplace balanced with distributed office hubs, and annual opportunities for all employees to connect in person. We also offer: full Medical, Dental, and Vision, employer paid Term, Short Term and Long Term Disability, paid Sick Time Off, Military Leave, Jury Duty Leave, Unlimited Vacation, flexible work arrangements, up to 16 weeks Paid Parental Leave for birth and non-birth parents, Bereavement Leave, therapy and relationship counselling, weekly Best-Self Time, monthly stipend for wellness, monthly reimbursement for phone and/or internet, Sabbatical Program accessed at 5 or 7 Years and Retirement Account Program with 4% match at 6 months employment. We also provide extensive training and development such as strengths discovery and alignment and Manager specific development opportunities.&lt;/p&gt;
+&lt;p&gt;For more information see:
+Our Mission, Vision &amp;amp; Values
+Our People and Culture
+Diversity, Equity &amp;amp; Inclusion&lt;/p&gt;
+&lt;p&gt;Our Personal &amp;amp; Professional Development Resources&lt;/p&gt;
+&lt;h2&gt;Reading over the role description and feeling like you don’t check every box? That’s okay; if you think you have what it takes but don’t necessarily meet all the criteria, please apply—you could be exactly who we are looking for!&lt;/h2&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Backend Developer]]></title>
+  <datePosted><![CDATA[2021-11-23]]></datePosted>
+  <id><![CDATA[1092]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1092/senior-backend-developer-15five/]]></url>
+  <company><![CDATA[15Five]]></company>
+  <city><![CDATA[San Francisco]]></city>
+  <addressRegion><![CDATA[CA]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;h1&gt;ROLE MISSION&lt;/h1&gt;
+&lt;p&gt;We take pride in our position as an innovator in the Human Resources landscape. This wouldn’t be possible without our outstanding team of engineers that apply next-generation thinking to our software - their abilities allow us to continually elevate the user experience and push leading performance-management technology into the global market.&lt;/p&gt;
+&lt;p&gt;Senior Backend Software Engineers elevate 15Five by evolving our application using the latest software development infrastructure and methods. Senior  Back-End Software Engineers ensure high responsiveness and performance to requests from the frontend. This is a key role that supports our wider R&amp;amp;D Team to build our product based on Best-Self philosophy. Senior  Back-End Software Engineers have deep technical expertise as well as confidence in guiding balanced decision-making when it comes to the development of various features within the product.&lt;/p&gt;
+&lt;h1&gt;OUTCOMES&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Work with your squad to build, test, and deploy new features &lt;/li&gt;
+&lt;li&gt;Create or update internal APIs to support new feature development&lt;/li&gt;
+&lt;li&gt;Write tests to cover new code and maintain our target of 80% test coverage&lt;/li&gt;
+&lt;li&gt;Review pull requests submitted by other backend engineers on the squad&lt;/li&gt;
+&lt;li&gt;Participate in regular squad meetings and share project updates&lt;/li&gt;
+&lt;li&gt;Solve problems by writing high-quality code&lt;/li&gt;
+&lt;li&gt;Write efficient, easy-to-understand, and flexible code that results in increased customer value&lt;/li&gt;
+&lt;li&gt;Apply 15Five standards, guidelines, and practices to writing quality code&lt;/li&gt;
+&lt;li&gt;Make logical decisions keeping in mind various tradeoffs and main stakeholders&lt;/li&gt;
+&lt;li&gt;Balance complexity, readability, performance, maintainability, flexibility, and other tradeoffs&lt;/li&gt;
+&lt;li&gt;Lead problem-solving initiatives and escalate problems with a wider scope in a timely manner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Help maintain high technical standards in our application
+Actively participate in discussions about adopting new standards or new technologies
+Review pull requests for engineers outside your own squad
+Identify technical challenges and suggest solutions through our Review For Comments (RFC) process
+Monitor error reporting and application performance within your squad’s domain
+Have a strong sense of connection to the outcome(s) of our product and the impact it has on our customers
+Work closely with product and design teams and other 15Five teams to understand the needs of our customers and the strategy behind the product vision and mission&lt;/p&gt;
+&lt;p&gt;Help 15Five Engineering grow and develop into a better, more mature organization
+Participate in code reviews, using each opportunity for training and mentoring the wider Engineering team
+Build and maintain engineering processes, standards, guidelines, and best practices
+Adhere to guidelines, making sound decisions on a case-by-case basis and escalating as necessary
+Develop processes to minimize situations that require decisions outside of established rules
+Assist and mentor other engineers in their professional development
+Participate in the hiring process, evaluate and screen candidates, conduct or lead interviews when required&lt;/p&gt;
+&lt;h1&gt;COMPETENCIES&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Seen as a subject matter expert with strong working knowledge in the subject area&lt;/li&gt;
+&lt;li&gt;Able to solve difficult problems and improve results by leveraging data and technology&lt;/li&gt;
+&lt;li&gt;Focus mainly on tactical execution with some attention on strategic efforts&lt;/li&gt;
+&lt;li&gt;Recognize and plan work-arounds for potential obstacles from within the Engineering department and your designated squad&lt;/li&gt;
+&lt;li&gt;Able to work well with minimal supervision and maintain productivity independently&lt;/li&gt;
+&lt;li&gt;Manage day-to-day issues that arise without needing to escalate to the manager&lt;/li&gt;
+&lt;li&gt;Proactively identify and propose new ways to contribute to the company/team&lt;/li&gt;
+&lt;li&gt;Eagerness to mentor other team members to foster learning and growth&lt;/li&gt;
+&lt;li&gt;Accountable for own decisions and act as an informed participant in team-level decisions&lt;/li&gt;
+&lt;li&gt;Proactively propose ideas to improve 15Five’s culture and support others’ ideas, rather than detract&lt;/li&gt;
+&lt;li&gt;Contribute to an inclusive and effective environment for collaboration&lt;/li&gt;
+&lt;li&gt;Ensure teammates and fellow employees feel a sense of belonging&lt;/li&gt;
+&lt;li&gt;Understand and articulate 15Five’s position within the competitive landscape&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;DESIRED EXPERIENCE&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;4+ years of experience with back-end web-based application development&lt;/li&gt;
+&lt;li&gt;2+ years of experience with Python development, preferably with the Django framework&lt;/li&gt;
+&lt;li&gt;Experience writing modular, well-structured code&lt;/li&gt;
+&lt;li&gt;Experience analyzing, improving, and debugging server-side code&lt;/li&gt;
+&lt;li&gt;Experience modeling data and implementing those models in Django&lt;/li&gt;
+&lt;li&gt;Experience working in remote teams&lt;/li&gt;
+&lt;li&gt;Able to work efficiently with relational databases using the Django ORM as well as other means&lt;/li&gt;
+&lt;li&gt;Highly proficient in one or more technical areas of back-end software development: Django development, database optimization, performance optimization, code structure, asynchronous process analysis, automated test development&lt;/li&gt;
+&lt;li&gt;Strong communication skills across multiple office and remote settings, cultures, and time zones&lt;/li&gt;
+&lt;li&gt;Able to collaborate well with a team of designers, product managers, and business stakeholders&lt;/li&gt;
+&lt;li&gt;Understand the need for strong cooperation between back-end, front-end, DevOps, and QA teams&lt;/li&gt;
+&lt;li&gt;Understand the cross-functionality of various technical systems&lt;/li&gt;
+&lt;li&gt;Understand the connections and interdependencies between teams and departments&lt;/li&gt;
+&lt;li&gt;Use a balanced approach to writing clear, maintainable performance code &lt;/li&gt;
+&lt;li&gt;Produce exceptional output and work quality&lt;/li&gt;
+&lt;li&gt;Comfortable owning projects&lt;/li&gt;
+&lt;li&gt;Have a strong reputation for accountability and reliability&lt;/li&gt;
+&lt;li&gt;Enjoy working in a team but can thrive working independently &lt;/li&gt;
+&lt;li&gt;Desire to always be learning and staying on top of the latest trends and technologies&lt;/li&gt;
+&lt;li&gt;Passionate about being extraordinary in both your work life and personal lifeDeeply aligned with the Engineering team’s values and philosophy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;SAMPLE WEEK IN THE LIFE&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Monday: Begin the week with the all-hands Boost to hear company updates and meet new hires, join the squad stand-up, then review pull requests and write code for product features/bugs&lt;/li&gt;
+&lt;li&gt;Tuesday: Determine technical details or implementation with the squad before joining the squad huddle to review top-level initiatives, then research and resolve 2 bugs and write product code&lt;/li&gt;
+&lt;li&gt;Wednesday: Meet with your manager for a 1:1 followed by the company Boost for an in-depth department update, spend the rest of the day on a project from your engineering working group&lt;/li&gt;
+&lt;li&gt;Thursday: Join the bi-weekly Engineering meeting ahead of global happy hour, review pull requests, write code for product features and/or bugs, and write your 15Five check-in&lt;/li&gt;
+&lt;li&gt;Friday: Participate in the Question Friday Boost call, join a planning session for the upcoming spring, write product code, and then finish your week by submitting your 15Five&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;ABOUT 15FIVE&lt;/h1&gt;
+&lt;p&gt;Founded in 2011, 15Five equips HR leaders to play a strategic role in their company’s growth. HR leaders use 15Five to combine engagement, performance, and OKRs on one platform so they can make insightful decisions and take strategic action. Unlike other ‘command and control’ performance systems, 15Five uses the latest in people science to turn managers and employees into self-driven owners of performance and engagement. To further the impact of talent on company growth, 15Five also provides education, coaching, and community for HR leaders, managers, and employees. HR leaders at over 2,800 companies, including Credit Karma, Spotify, and Pendo, rely on 15Five’s software and services to make their talent a growth driver.&lt;/p&gt;
+&lt;p&gt;At 15Five we focus on building a diverse team that prioritizes inclusivity and celebrates everyone’s unique identity. We are proud of our thriving hybrid culture that supports a remote-first workplace balanced with distributed office hubs, and annual opportunities for all employees to connect in person. We also offer: full Medical, Dental, and Vision, employer paid Term, Short Term and Long Term Disability, paid Sick Time Off, Military Leave, Jury Duty Leave, Unlimited Vacation, flexible work arrangements, up to 16 weeks Paid Parental Leave for birth and non-birth parents, Bereavement Leave, therapy and relationship counselling, weekly Best-Self Time, monthly stipend for wellness, monthly reimbursement for phone and/or internet, Sabbatical Program accessed at 5 or 7 Years and Retirement Account Program with 4% match at 6 months employment. We also provide extensive training and development such as strengths discovery and alignment and Manager specific development opportunities.&lt;/p&gt;
+&lt;p&gt;For more information see:
+Our Mission, Vision &amp;amp; Values
+Our People and Culture
+Diversity, Equity &amp;amp; Inclusion
+Our Personal &amp;amp; Professional Development Resources&lt;/p&gt;
+&lt;h2&gt;Reading over the role description and feeling like you don’t check every box? That’s okay; if you think you have what it takes but don’t necessarily meet all the criteria, please apply—you could be exactly who we are looking for!&lt;/h2&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Full Stack Software Engineer]]></title>
+  <datePosted><![CDATA[2021-10-25]]></datePosted>
+  <id><![CDATA[1087]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1087/remote-full-stack-software-engineer-affect-therapeutics/]]></url>
+  <company><![CDATA[Affect Therapeutics]]></company>
+  <city><![CDATA[New York City]]></city>
+  <addressRegion><![CDATA[NY]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;As a Full Stack Software engineer at Affect Therapeutics, you will build and maintain software to help people overcome substance abuse disorder (SUD). You will be joining an early startup and working to develop the foundational features of our operational and customer experiences. You will collaborate with stakeholders, pair with other engineers, and research new technologies in order to help us continually improve patient outcomes.&lt;/p&gt;
+&lt;h3&gt;In this role, you will…&lt;/h3&gt;
+&lt;p&gt;Join a mission-driven startup focused on improving the outcomes in substance use disorder treatment.
+Write code. As an engineer, you will build software as well as our engineering culture.
+Advise on technical decisions on a multi-functional, agile team alongside product management and product design.
+Develop operational software to support care team efforts in order to help our members, including payment delivery and HIPAA compliant messaging.&lt;/p&gt;
+&lt;h3&gt;We’d love to hear from you if…&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You have 3+ years of overall professional experience in a collaborative team setting.&lt;/li&gt;
+&lt;li&gt;You have at least 2 years of experience as a software engineer, designing applications or service-based systems.&lt;/li&gt;
+&lt;li&gt;You enjoy the following python, typescript, react, html, writing tests, building great UI's, working with stakeholders&lt;/li&gt;
+&lt;li&gt;You have strong communication skills and the ability to articulate your thoughts and decisions comfortably.&lt;/li&gt;
+&lt;li&gt;You have experience as a member of an agile team and have collaborated with other developers.&lt;/li&gt;
+&lt;li&gt;You care about building great products, from elegant code, tests, to&lt;/li&gt;
+&lt;li&gt;You have experience building compliant systems. (SOC 2, HIPAA, HITRUST)&lt;/li&gt;
+&lt;li&gt;You can develop software that is well-tested, maintainable, clean, and secure.&lt;/li&gt;
+&lt;li&gt;You desire to be involved in all aspects of the product life-cycle, from discovery through deployment.&lt;/li&gt;
+&lt;li&gt;Bravery and grit! We have many people to help, and therefore a lot of work to do, which will require bold thinking to accomplish our goal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Pay transparency.&lt;/h3&gt;
+&lt;p&gt;We scale pay on seniority. Our budget for this role ranges from 70k - 130k annual salary, and includes health benefits. &lt;/p&gt;
+&lt;h3&gt;Remote Work&lt;/h3&gt;
+&lt;p&gt;This is a 100% remote role, we have no central office, though we commit to gathering by department at least twice a year, so some travel should be expected.  As such we do have a mandatory covid vaccination policy.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Django Full-Stack Developer – Full Time Direct Hire]]></title>
+  <datePosted><![CDATA[2021-10-25]]></datePosted>
+  <id><![CDATA[1086]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1086/senior-django-full-stack-developer-full-time-direct-hire-network-esc/]]></url>
+  <company><![CDATA[Network ESC]]></company>
+  <city><![CDATA[New York City]]></city>
+  <addressRegion><![CDATA[NY]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Senior Django Full-Stack Developer – Full Time Direct Hire
+Salary $140-150K + 17% Bonus + Outstanding Benefits
+(REMOTE POSITION - US ONLY)
+&lt;strong&gt;&lt;em&gt;*FULL SPONSORSHIP IS AVAILABLE FOR THIS POSITION&lt;/em&gt;&lt;/strong&gt;*&lt;/p&gt;
+&lt;p&gt;Apply: Please email resumes in confidence to evp@networkesc.com for consideration&lt;/p&gt;
+&lt;p&gt;OVERVIEW:&lt;/p&gt;
+&lt;p&gt;Work in a highly Agile and fast-paced environment, using cutting edge technology to help us implement our next generation veterinary diagnostic product suite, which is used by customers around the world in an expanding and dynamic marketplace. Full-Time Direct Hire Opportunity (Remote is an option) for a hands-on Django Developer - Django, Redis, Celery, SQL, RDMBS, HTML, CSS, Bootstrap, JavaScript, LinuxUnix&lt;/p&gt;
+&lt;p&gt;QUALIFICATIONS:&lt;/p&gt;
+&lt;p&gt;Required&lt;/p&gt;
+&lt;p&gt;· Bachelor’s Degree in Computer Science or related field or equivalent experience&lt;/p&gt;
+&lt;p&gt;· 4+ years of experience developing applications with Django, Redis, Celery, SQL, RDMBS, HTML, CSS, Bootstrap, JavaScript, LinuxUnix&lt;/p&gt;
+&lt;p&gt;· 5+ years of experience developing commercial software&lt;/p&gt;
+&lt;p&gt;· Familiar with the software development lifecycle&lt;/p&gt;
+&lt;p&gt;· Excellent command of object-oriented programming (OOP) principles and practices&lt;/p&gt;
+&lt;p&gt;· Excellent command of functional programming principles and practices&lt;/p&gt;
+&lt;p&gt;· Knowledge of and enthusiasm for Agile software development&lt;/p&gt;
+&lt;p&gt;· Experience with multi-tier and distributed (microservice) architectures&lt;/p&gt;
+&lt;p&gt;· Understanding of asynchronous (multi-threaded) programming&lt;/p&gt;
+&lt;p&gt;· Proficiency with Python 3.x&lt;/p&gt;
+&lt;p&gt;· Proficiency with front-end development using React and TypeScript&lt;/p&gt;
+&lt;p&gt;· Familiarity with SQL and data persistence using RDBMS&lt;/p&gt;
+&lt;p&gt;· Comfort working in Linux&lt;/p&gt;
+&lt;p&gt;· Experience writing unit and integration tests (understanding of BDD a plus)&lt;/p&gt;
+&lt;p&gt;· Strong interpersonal skills, communication skills and dedication to continuous improvement in a team environment&lt;/p&gt;
+&lt;p&gt;· Proactive and self-motivated&lt;/p&gt;
+&lt;p&gt;· Growth-minded and open-minded approach&lt;/p&gt;
+&lt;p&gt;Desirable&lt;/p&gt;
+&lt;p&gt;· Experience implementing PAAS solutions in Azure, GCP or AWS (Azure a plus)&lt;/p&gt;
+&lt;p&gt;· Experience or interest in DevOps and CI a strong plus&lt;/p&gt;
+&lt;p&gt;· Experience with API design techniques and tooling e.g. REST and Swagger&lt;/p&gt;
+&lt;p&gt;· Experience working as part of a geographically distributed team&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Django / Front-end developer required for ongoing ad hoc work]]></title>
+  <datePosted><![CDATA[2021-10-25]]></datePosted>
+  <id><![CDATA[1085]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1085/remote-django-front-end-developer-required-for-ongoing-ad-hoc-work-ixxy/]]></url>
+  <company><![CDATA[Ixxy]]></company>
+  <city><![CDATA[Brighton]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[United Kingdom]]></addressCountry>
+  <content><![CDATA[&lt;h1&gt;About Ixxy&lt;/h1&gt;
+&lt;p&gt;We're a small web development agency with a couple of founder/employees and a few regular freelance developers - some local and some overseas. We are looking to increase our capacity and would like to find someone to work with us on a semi-regular basis.&lt;/p&gt;
+&lt;p&gt;The work will sometimes be intermittent ranging from weeks where we may need someone to work practically full time to weeks where there may only be the odd bug fix. Hopefully the volume of work will increase over time as it has with our current freelancers. We ensure we plan our project schedules ahead of time wherever possible with our freelancers so they can balance their commitment to us with their other client work.&lt;/p&gt;
+&lt;h1&gt;Job description&lt;/h1&gt;
+&lt;p&gt;We manage a diverse set of projects - from brochure sites to complex web apps - using a range of technologies with Django being the common element.&lt;/p&gt;
+&lt;p&gt;Familiarity with modern HTML and CSS is essential as well as an ability to get up to speed with various front end frameworks as necessary. A good intuition for user experience and usability is of course a huge benefit for any front-end tasks. We don’t need you to be a dedicated designer but you should be able to create pages and elements that look clean and professional.&lt;/p&gt;
+&lt;p&gt;Also helpful is a competency in dev-ops - Ansible or Docker as well as general Unix server and database skills.&lt;/p&gt;
+&lt;p&gt;Front end wise - We are looking for a web designer who help us go from mockup or concept to high-quality, modern responsive HTML5/CSS3. It would be really useful to have sufficient javascript knowledge to manage a modern complex website - i.e you won't be building an app but you'll need to be confident enough to create fluid, modern UI's with a combination of 3rd party and your own code.&lt;/p&gt;
+&lt;p&gt;Please send links to any portfolio, Github, Bitbucket, Stackoverflow profiles or anything else you think will be useful.
+Send us your hourly rate&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[parttime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Product Manager - IT]]></title>
+  <datePosted><![CDATA[2021-10-15]]></datePosted>
+  <id><![CDATA[1083]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1083/product-manager-it-shell/]]></url>
+  <company><![CDATA[Shell]]></company>
+  <city><![CDATA[Krakow]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[Poland]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;The Product Manager is accountable for the value delivery of the product to the business. He or she collaborates with the Product Owner to set the product vision, brings forward the best technology/solutions to solve business problems (e.g. technology and innovation funnels), co-creates the product roadmap and success metrics, fulfills the product lifecycle within Enterprise compliance and controls framework, creates value delivery through product development, performs financial management, and sets the right product environment and mindset for the product team.&lt;/p&gt;
+&lt;h2&gt;Responsibilities:&lt;/h2&gt;
+&lt;p&gt;If this role is not part of a product line, this assumes the key responsibilities of the PLM:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sets the direction for the product line aligned to business vision and agreed KPIs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Manages senior level stakeholders for the product across RDS to ensure tight orchestration, early warning on new requirements and early warning on potential unmet needs and problems.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Provides technology/innovation advisory towards lines of businesses that the product line supports to ensure that right innovative technologies are offered as possible ideas to solve complex business problems&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Builds and leads the product teams under the product line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Promotes design thinking, agile and lean start up to create MVPs within the product line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Focuses on maximizing the adoption of high-impact digitalization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finds the optimal adoption mix of new and emerging propositions vs tried and tested capabilities&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Accelerates maturation and replication of the available digital technology propositions at scale&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Guides product line build or buy decisions and enables the process of investment decision- making across products within the product line&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drives fulfilment of the product lifecycle across the product line through teams of properly skilled product managers and multi-disciplinary teams. Own and drive the delivery plan in line with the product lifecycle aligning with other PLMs within the IT business portfolio to assure lean product development across the full product value stream and fulfilment of the target IT Strategic Plan.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drives rigour in KPI fulfilment through investment discipline across the product lifecycle by product managers within the product line. Aggregate reporting for the product line through available IT business management tools transparency of product line performance against agreed critical success factors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Elevates product manager awareness and compliance to agreed Enterprise technology and data standards, acting as escalation point in instances of divergence for avoidance of technical debt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Works tightly with IT Managers and other Product Line Managers across the IT business portfolio to enable the agreed business face-up model and drive alignment on Business IT approaches towards other IT functional lines and into the business across the product lifecycle. Speak as confidently to technical teams about product development as to commercial stakeholders about complex product line challenges.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Demonstrates deep understanding of and proximity to business owners and consumers of the product line’s outputs (internal and/or external). &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Champions use of product data and aggregated product line insights across respective product roadmaps within the product line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drive ‘scale and replicate’ interventions pursuing technology automation and optimisation initiatives across the product line aligned to target end states for the product line’s corresponding technology stack.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Requirements:&lt;/h2&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;10+ years industry experience, 5-8 yrs recent experience delivering digital products with proven business impact, 5 yrs experience in a leadership position within RDS or other similar complex environment&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Must have out of the box thinking&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Proven ability to master the complexity of interactions, demonstrating strong communication skills, among IT, digital and business stakeholders&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Strong knowledge of the business to understand and prioritise strategic business requirements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Good understanding of digital capabilities and the value they can deliver to Shell. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Practical experience of working in and with techniques such as agile, scrum, lean start-up or design thinking and in creation of Minimum Viable Products/Propositions (MVPs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Proven people development skills and coaching experience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Results-oriented, ability to manage time and schedules to meet aggressive deadlines.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Able to manage and be comfortable dealing with a mixed portfolio of fully formed products.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Demonstrated project management skills&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Balanced commercial, business, and technical skill&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ability to inspire others to action and drive quality and pace in equal measure to enable successful outcomes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Confident with data and use of consumer and commercial insights to inform the Product vision and roadmap&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Experience in developing business cases and managing investment budgets&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Software Engineer (Remote)]]></title>
+  <datePosted><![CDATA[2021-10-07]]></datePosted>
+  <id><![CDATA[1081]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1081/senior-software-engineer-remote-catchafire/]]></url>
+  <company><![CDATA[Catchafire]]></company>
+  <city><![CDATA[New York]]></city>
+  <addressRegion><![CDATA[NY]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;h1&gt;RESPONSIBILITIES OF THE SENIOR SOFTWARE ENGINEER&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Engage in all aspects of software development, including architecture, documentation, testing, deployment, maintenance, and bug-fixing, primarily using Python, Django, and MySQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write Django templates, JavaScript, modern HTML &amp;amp; SASS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Review &amp;amp; shape product specs, suggest changes to optimize for ROI, identify edge cases, and improve UX&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Model engineering excellence &amp;amp; provide technical &amp;amp; project management guidance to other Tech Team members&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply modern DevOps practices across development, QA, and production systems&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Identify and champion opportunities for improvement, judiciously balancing improvements to our infrastructure &amp;amp; code base against feature development&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;EXPERIENCE / BACKGROUND&lt;/h1&gt;
+&lt;p&gt;In order to be successful in this role you must meet most, if not all, of the following needs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;7+ years coding Python-based consumer-facing web applications&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Django web framework&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Writing &amp;amp; optimizing SQL queries&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modern JavaScript framework, HTML, and CSS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working with a remote-first Tech Team in an agile development environment&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Leading complex projects involving cross-functional teams&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Administering &amp;amp; configuring Ubuntu servers&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;It would also be helpful if you have experience with:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;VueJS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working in the social good sector&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modernizing legacy components of larger systems&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Developing with IT automation tools like Jenkins, -Docker, Ansible, etc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;ABOUT ROLE AND THE DEPARTMENT&lt;/h1&gt;
+&lt;p&gt;Catchafire is looking for a Senior Software Engineer to build out our web application for skills-based volunteering. You must have extensive web development experience using Python and Django as well as experience with frontend software development using HTML, CSS, &amp;amp; Javascript. You should be comfortable coding, gathering &amp;amp; shaping requirements, and taking ownership of complex projects involving cross-functional teams.&lt;/p&gt;
+&lt;p&gt;The Catchafire platform team is a global agile team that develops world-class products for an audience of passionate volunteers and inspiring nonprofits.&lt;/p&gt;
+&lt;h1&gt;ATTRIBUTES&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Self starter: You are capable of taking charge on a project. You are always looking for new technologies to explore and new ways to improve processes. You lead by example.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Strategic thinker: You are not satisfied accepting unstated assumptions or taking direction without critical evaluation. You work hard to understand the underlying purpose of each assignment and the rationale behind existing processes. You have opinions and are not shy about expressing them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Communicator: You communicate clearly and concisely. You have strong opinions loosely held and contribute your thoughts to the group. You argue your positions in an environment that encourages opposing viewpoints.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Craftsperson: You are passionate about your code: its readability, quality, documentation and maintainability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pragmatic perfectionist: Though you are driven to improve subpar code and systems, you nevertheless maintain productivity and ship in challenging environments. You prioritize the right improvements at the right time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Humility: You like challenges and are happy to be proven wrong. You welcome every opportunity to teach or learn from others. You are eager to achieve and work at all levels of responsibility.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please Note: &lt;/p&gt;
+&lt;p&gt;Catchafire’s office is based in New York City. While this is a permanently remote position, candidates should be willing to align their workday, for at least a few hours, with U.S. East Coast business hours.&lt;/p&gt;
+&lt;p&gt;Catchafire is committed to creating a diverse environment and is proud to be an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, national origin, genetics, disability, age, or veteran status. We are also welcoming to any reasonable accommodations that can be made for candidates in our hiring process.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote - Senior Django Developer]]></title>
+  <datePosted><![CDATA[2021-10-07]]></datePosted>
+  <id><![CDATA[1079]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1079/remote-senior-django-developer-uplift-agency-ltd/]]></url>
+  <company><![CDATA[Uplift Agency Ltd.]]></company>
+  <city><![CDATA[Boulder]]></city>
+  <addressRegion><![CDATA[CO]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Uplift is a fast paced incubator of products. We’re a group of incredibly smart, passionate, well rounded individuals and we’re looking for other engineers to join our stellar team.&lt;/p&gt;
+&lt;p&gt;We are looking for an experienced Backend Django/Python Engineer for web and mobile app development. In this role, you should be able to work independently with little supervision. You should have excellent communication and organization skills, as well as problem solving skills. Your goal will be to develop high-quality software that is aligned with user needs and business goals.&lt;/p&gt;
+&lt;p&gt;Design your own work schedule. Work on a variety of projects. Utilize our shared resources. If it's a great fit, we would consider an employment relationship.&lt;/p&gt;
+&lt;h1&gt;Why You'll Love Working at Uplift:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;We find the work for you!&lt;/li&gt;
+&lt;li&gt;We offer you a team and shared resources to help you take on bigger client projects if you’re turning down opportunities.&lt;/li&gt;
+&lt;li&gt;Enjoy a healthy work-life balance, like everyone else at the company.&lt;/li&gt;
+&lt;li&gt;Embark on your own self-driven career path with opportunities for positions like tech lead.&lt;/li&gt;
+&lt;li&gt;Work on many different projects and cross-pollinate all the lessons and solutions.&lt;/li&gt;
+&lt;li&gt;Work remotely: avoid a time and energy drain of a commute. Uplift has been remote-first since inception.&lt;/li&gt;
+&lt;li&gt;Get together in person once a year for a company offsite.Indulge in the freedom to design your own work schedule, whether that includes a four day work week, evening hours, or whatever suits you and your lifestyle, so long as it's clearly communicated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;You get access to Paul &amp;amp; Marius, two of the brightest minds in engineering &amp;amp; consulting.&lt;/li&gt;
+&lt;li&gt;Uplift has no investors, other than our team, and thus no one who can dictate the future of our company or our products. We have ultimate freedom in the projects that we choose.&lt;/li&gt;
+&lt;li&gt;Uplift has a 401(k) plan for employees if we end up converting the contract!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;As a member of our team we value your opinion. We also respect the skills you bring to our company.&lt;/h1&gt;
+&lt;h1&gt;Responsibilities:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop high-quality software design and architecture&lt;/li&gt;
+&lt;li&gt;Identify, prioritize and execute tasks in the software development life cycle&lt;/li&gt;
+&lt;li&gt;Develop tools and applications by producing clean, efficient code&lt;/li&gt;
+&lt;li&gt;Automate tasks through appropriate tools and scripting&lt;/li&gt;
+&lt;li&gt;Review and debug code&lt;/li&gt;
+&lt;li&gt;Perform validation and verification testing&lt;/li&gt;
+&lt;li&gt;Collaborate with internal teams and vendors to fix and improve products&lt;/li&gt;
+&lt;li&gt;Document development phases and monitor systems&lt;/li&gt;
+&lt;li&gt;Ensure software is up-to-date with latest technologies&lt;/li&gt;
+&lt;li&gt;Technologies and Skills to Consider&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Most important:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Django (python) or Node.js - 3+ years of experience strongly preferred&lt;/li&gt;
+&lt;li&gt;GraphQL (Django &amp;amp; React+Apollo)&lt;/li&gt;
+&lt;li&gt;Pytest/unit testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Bonus:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Freelance experience: delivered projects, managed budget/estimate, worked with non-technical clients (most important)&lt;/li&gt;
+&lt;li&gt;Python3 types&lt;/li&gt;
+&lt;li&gt;graphene&lt;/li&gt;
+&lt;li&gt;TypeScript&lt;/li&gt;
+&lt;li&gt;Heroku or AWS&lt;/li&gt;
+&lt;li&gt;SQL experience&lt;/li&gt;
+&lt;li&gt;Can think critically, build from rough specs (no designs or detailed specs)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of our core values is continuous learning: within the industry &amp;amp; from each other. We welcome people of different backgrounds, experiences, abilities and perspectives. If you're self-sufficient, passionate &amp;amp; a good communicator, we'd love to hear from you.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Job Types: Full-time, Part-time, Contract. Preference for 25 hours a week or more. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; If you are outside North America or South America, we are considering hiring senior level. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Please read our Careers page and details about the positions on our site: https://www.uplift.ltd/careers &lt;/strong&gt;&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Software Engineer]]></title>
+  <datePosted><![CDATA[2021-09-22]]></datePosted>
+  <id><![CDATA[1076]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1076/software-engineer-canopy/]]></url>
+  <company><![CDATA[Canopy]]></company>
+  <city><![CDATA[Manhattan]]></city>
+  <addressRegion><![CDATA[KS]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;We are seeking an experienced Software Engineer to join our talented engineering team. This is a full-stack web developer position that will work closely with other full-stack and front-end developers. Once oriented, you’ll contribute updates and new features that will support and streamline our clients’ efforts.&lt;/p&gt;
+&lt;p&gt;Our flagship product, the Program Evaluation and Reporting System (PEARS), is used daily by clients across the country. PEARS is an enterprise application built in Python using the Django framework and utilizes Vue.js on the front-end.&lt;/p&gt;
+&lt;p&gt;We follow a healthy rhythm of working in 6-week cycles (sprints), typically followed by 2-week buffer periods. Our engineering, client success, and leadership all work closely together to serve our clients and prioritize innovation and continuous improvement of our systems.&lt;/p&gt;
+&lt;p&gt;Top candidates will be problem solvers and logical thinkers with good communication and collaboration skills. &lt;/p&gt;
+&lt;h3&gt;Responsibilities&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Collaborate with team to plan new features and updates&lt;/li&gt;
+&lt;li&gt;Develop new features according to planned specifications&lt;/li&gt;
+&lt;li&gt;Write unit and integration tests to cover new and existing code&lt;/li&gt;
+&lt;li&gt;Review pull requests from other developers&lt;/li&gt;
+&lt;li&gt;Make changes to code based on feedback from other software engineers and our client success team&lt;/li&gt;
+&lt;li&gt;Fix bugs&lt;/li&gt;
+&lt;li&gt;Work with the software engineering team to continually improve processes and workflows&lt;/li&gt;
+&lt;li&gt;Follow team coding guidelines and best practices&lt;/li&gt;
+&lt;li&gt;Mentor student and junior software engineers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Qualifications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Computer Science or related degree, or equivalent experience&lt;/li&gt;
+&lt;li&gt;3 or more years of experience as a web developer or software engineer&lt;/li&gt;
+&lt;li&gt;Working knowledge of HTML, JavaScript, and CSS with experience building or maintaining complex web-based applications&lt;/li&gt;
+&lt;li&gt;Strong understanding of relational databases with the ability to write complex and efficient SQL queries&lt;/li&gt;
+&lt;li&gt;Experience with version control systems such as Git&lt;/li&gt;
+&lt;li&gt;Strong analytical and problem‐solving skills&lt;/li&gt;
+&lt;li&gt;Ability to quickly learn and adapt to software engineering methodologies through a combination of personal research, hands‐on experience, and formal/informal training&lt;/li&gt;
+&lt;li&gt;Good verbal and written communicator skills and the ability to communicate well with both technical and non‐technical audiences&lt;/li&gt;
+&lt;li&gt;Ability to work effectively in a friendly team‐driven environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While not required, preference will be given to candidates with the following additional skills and experiences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Experience building applications using Python and the Django framework&lt;/li&gt;
+&lt;li&gt;Experience with the jQuery and/or Vue.js frameworks&lt;/li&gt;
+&lt;li&gt;Experience working with Docker and Docker-compose&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Benefits &amp;amp; Perks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Competitive salary with opportunities for performance-based bonuses, raises, and career advancement&lt;/li&gt;
+&lt;li&gt;Premium health and dental insurance provided by Blue Cross Blue Shield&lt;/li&gt;
+&lt;li&gt;401k with 5% matching contribution&lt;/li&gt;
+&lt;li&gt;Generous leave policy&lt;/li&gt;
+&lt;li&gt;Wellness stipend for gym membership or activities to be healthy and stay active&lt;/li&gt;
+&lt;li&gt;Support for personal and professional development&lt;/li&gt;
+&lt;li&gt;Remote and in-person flexibility&lt;/li&gt;
+&lt;li&gt;All the professional tools you need to do your best work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We prefer candidates in Manhattan, KS but will make exceptions for particularly strong candidates across the U.S. Applicants must be authorized to work in the U.S. We are not sponsoring applicants for work visas at this time.&lt;/p&gt;
+&lt;h2&gt;About Us&lt;/h2&gt;
+&lt;p&gt;Canopy is developing innovative software to support nationwide social impact programs. Our clients are rock stars! They are dedicated to community-focused programs, including cooperative extension, 4-H, and SNAP-Ed. We build systems to make their jobs a little easier and to help understand what works, what doesn’t, and what could be improved.&lt;/p&gt;
+&lt;p&gt;We are a team of 12 primarily technology professionals who love working together and believe strongly in our core values of service, humility, honesty, curiosity, grit, and innovation. We recently rolled out of Kansas State University into a new public benefit company based in Manhattan, KS. &lt;/p&gt;
+&lt;p&gt;Our team is growing! We’re seeking to fill several new positions and looking for individuals who love to serve and are excited about our work. We’re still working on a website and marketing material, so if you have any questions, please don’t hesitate to reach out.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Django + Javascript Developer]]></title>
+  <datePosted><![CDATA[2021-09-21]]></datePosted>
+  <id><![CDATA[1077]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1077/remote-django-javascript-developer-factal/]]></url>
+  <company><![CDATA[FACTAL]]></company>
+  <city><![CDATA[Seattle]]></city>
+  <addressRegion><![CDATA[WA]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Factal is looking for a developer experienced in Django and Javascript to join our Seattle-based technology team (remote candidates welcome). &lt;/p&gt;
+&lt;h2&gt;About Us:&lt;/h2&gt;
+&lt;p&gt;Factal is a quickly-growing news and technology startup that provides real-time coverage and data to help protect people from harm and help those in need. We think of breaking news in a fundamentally new way, applying journalists and technologists together to solve new information problems in an increasingly volatile world.&lt;/p&gt;
+&lt;p&gt;The ability to code Javascript and Python / Django at least an intermediate level is pretty important. We have a web application (a blend of features akin to working on Twitter, Facebook, Maps, and News apps), as well as administrative interfaces that need good design thinking and smart execution. Your role would be developing interactive interfaces for our users, as well as internal tools for our team of editors.&lt;/p&gt;
+&lt;h2&gt;The ideal candidate:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Has developed a complex web application/interface using combination of Javascript, Django, Python, and PostgreSQL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Has experience dealing with geographic data such as shapefiles, spatial queries, and mapping SDKs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Doesn't need complex instructions/specs/workflows to get things done&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Has experience working on high-use, large-scale applications&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prefers to work for a small company, one with a mission, and wants to contribute&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Factal pays competitively, and we offer equal employment opportunities to all candidates. Factal does not discriminate in employment on the basis of race, color, religion, sex (including pregnancy and gender identity), national origin, political affiliation, sexual orientation, marital status, disability, genetic information, age, membership in an employee organization, retaliation, parental status, military service or other non-merit factor.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Python Developer]]></title>
+  <datePosted><![CDATA[2021-09-21]]></datePosted>
+  <id><![CDATA[1074]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1074/python-developer-ilionx/]]></url>
+  <company><![CDATA[Ilionx]]></company>
+  <city><![CDATA[Amsterdam]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[Netherlands]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;&lt;b&gt;30 Amsterdamse developers kunnen zich niets mooiers voorstellen dan geweldige applicaties maken voor onze klanten en daar zelf veel van opsteken. Je werkt samen met je collega’s bij de klant of als onderdeel van het team van de klant. Waar je ook bent: een vast punt is de ruimte die je krijgt om jezelf te ontwikkelen. Het beste van twee werelden!&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Wat bieden wij jou?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;• Interessante klanten en boeiende projecten&lt;/p&gt;
+&lt;p&gt;• Werken met de nieuwste technologieën, frameworks en tools&lt;/p&gt;
+&lt;p&gt;• Gave opdrachten en hoofdbrekende puzzels&lt;/p&gt;
+&lt;p&gt;• Als eerste op de hoogte van ontwikkelingen in de markt dankzij onze nauwe contacten met onze technology partners&lt;/p&gt;
+&lt;p&gt;• Veel gelegenheid om met collega’s kennis en ervaringen te delen&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Wat vragen wij van jou?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;• Dat je resultaat wilt zien bij jouw klanten&lt;/p&gt;
+&lt;p&gt;• Dat je een krachtige en enthousiaste gesprekspartner bent&lt;/p&gt;
+&lt;p&gt;• Je wilt graag je kennis delen, met collega’s en klanten&lt;/p&gt;
+&lt;p&gt;• Je bent op de hoogte van de laatste trends en opkomende technologieën&lt;/p&gt;
+&lt;p&gt;• Dat je een leuke, slimme, hardwerkende collega bent&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Jouw functie&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Als Python Developer werk je aan innovatieve projecten bij klanten van ilionx Amsterdam. Je levert een bijdrage aan het technisch realiseren van softwareoplossingen met Python. Van het opzetten van webapplicaties, het automatiseren van bedrijfsprocessen tot het samenbrengen van gestructureerde data van diverse platformen in een datawarehouse.&lt;/p&gt;
+&lt;p&gt;Je doet opdrachten bij zeer uiteenlopende bedrijven en werkt daar met een team van ilionx of als onderdeel van het team van de klant. Verder is er veel ruimte om jezelf te ontwikkelen. Dit kan onder andere door het volgen van (technisch) inhoudelijke trainingen naar keuze en het behalen van de bijbehorende certificaten. Jouw ontwikkelingswensen stem je af in persoonlijke HR-gesprekken.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Je hebt&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;• een afgeronde hbo- of academische opleiding.&lt;/p&gt;
+&lt;p&gt;• minimaal drie jaar ervaring met het programmeren in Python en aanverwante tooling.&lt;/p&gt;
+&lt;p&gt;• ervaring met webframeworks zoals Django.&lt;/p&gt;
+&lt;p&gt;• een uitstekende beheersing van de Nederlandse taal op native niveau.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Het team&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Het enthousiaste team uit Amsterdam bestaat uit ruim 30 developers die dagelijks gave projecten uitvoeren bij de meest uiteenlopende klanten van ilionx. Je manager Mauk Meewis zorgt voor een prettige werkomgeving waarin hij jouw persoonlijke ontwikkeling en samenwerken met andere consultants aanmoedigt.&lt;/p&gt;
+&lt;p&gt;Tevens stimuleert hij zijn team om nieuwsgierig te blijven en steeds voorop te lopen. Daarom ontmoet het team elkaar regelmatig en delen zij kennis met elkaar. Om persoonlijk te groeien, maar ook gewoon omdat het gezellig is. Zoals de jaarlijkse ilionx DevDays georganiseerd door en voor developers.&lt;/p&gt;
+&lt;p&gt;En dit krijg je ervoor terug:&lt;/p&gt;
+&lt;p&gt;• prima arbeidsvoorwaarden, zoals een bij jouw kennis en ervaring passend salaris.&lt;/p&gt;
+&lt;p&gt;• een maandelijkse bonus.&lt;/p&gt;
+&lt;p&gt;• een vast contract.&lt;/p&gt;
+&lt;p&gt;• een leaseauto.&lt;/p&gt;
+&lt;p&gt;• werken in een open, ongedwongen cultuur, waarbij we snappen dat samenwerking tot het beste resultaat leidt.&lt;/p&gt;
+&lt;p&gt;• een omgeving waar goede ideeën en eigen initiatieven worden gefaciliteerd, beloond en gepromoot.&lt;/p&gt;
+&lt;p&gt;• professionele uitwisseling door regelmatige bijeenkomsten met collega’s en vakexperts.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Interesse? Solliciteer dan direct via de 'solliciteer button'.&lt;/b&gt;&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote US Rater]]></title>
+  <datePosted><![CDATA[2021-09-21]]></datePosted>
+  <id><![CDATA[1073]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1073/remote-us-rater-telus-international/]]></url>
+  <company><![CDATA[TELUS International]]></company>
+  <city><![CDATA[Dallas]]></city>
+  <addressRegion><![CDATA[TX]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Employee Sub-Group: Perm PT Hourly &lt;/p&gt;
+&lt;p&gt;Work Schedule: Part Time- Regular up to 20 hours per week&lt;/p&gt;
+&lt;p&gt;Location: USA &lt;/p&gt;
+&lt;p&gt;Position Title: Rater &lt;/p&gt;
+&lt;h2&gt;About TELUS International AI Inc.&lt;/h2&gt;
+&lt;p&gt;We help companies test and improve machine learning models via our global AI Community of 1 million+ annotators and linguists. Our proprietary AI training platform handles all data types (text, images, audio, video and geo) across 500+ languages and dialects. Our AI Data Solutions vastly enhance AI systems across a range of applications from advanced smart products, to better search results, to expanded speech recognition, to more human-like bot interactions and so much more.
+Learn more at http://www.telusinternational.com&lt;/p&gt;
+&lt;p&gt;All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability or protected veteran status.&lt;/p&gt;
+&lt;h2&gt;The Position&lt;/h2&gt;
+&lt;p&gt;We are looking for dynamic and creative people who have strong communication skills and use the Internet daily. The job involves analyzing and providing feedback on text, web pages, images and other types of information for leading search engines, using an online tool. Raters log on to the online tool to select tasks to do on a self-directed schedule. A Rater reviews the results returned in a specific search query and rates them in terms of relevance. The majority of the task types will require both a desktop/laptop and a smartphone.  Please note that there is no code calling involved in this role. You should have a minimum 12 months experience using Gmail as primary email, daily access to and use of a broadband internet connection to perform the work and an Android smartphone 4.2 or higher or iPhone iOS version 10.0 or higher to perform the work on.&lt;/p&gt;
+&lt;h2&gt;Basic Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;High School Diploma or GED Qualification&lt;/li&gt;
+&lt;li&gt;For cultural awareness purposes you should be living in the United States for the last 5 consecutive years. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Preferred Skills&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Active daily user of Gmail, Google+ and other forms of social media including Twitter &amp;amp; Facebook&lt;/li&gt;
+&lt;li&gt;Familiarity with current and historical business, media, sport, news, social media and cultural affairs in the United States&lt;/li&gt;
+&lt;li&gt;Experience in use of web browsers to navigate and interact with a variety of content&lt;/li&gt;
+&lt;/ul&gt;]]></content>
+  <employmentType><![CDATA[parttime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Django Developer]]></title>
+  <datePosted><![CDATA[2021-09-09]]></datePosted>
+  <id><![CDATA[1071]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1071/senior-django-developer-snapeda/]]></url>
+  <company><![CDATA[SnapEDA]]></company>
+  <city><![CDATA[San Francisco]]></city>
+  <addressRegion><![CDATA[CA]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;SnapEDA is looking for a back-end developer to join our growing team as we pursue our mission to help engineers design electronics faster.&lt;/p&gt;
+&lt;p&gt;A bit about who we are:&lt;/p&gt;
+&lt;p&gt;SnapEDA is a search engine for electronics design, used by over 1 million professional engineers. Our community is building everything from medical devices, to automotive electronics, to space technologies. We’re a team of 30 who pride ourselves on our passion, resourcefulness and curiosity. We have a bias towards action and making an impact, both individually, and as a team.&lt;/p&gt;
+&lt;p&gt;What you will be working on:&lt;/p&gt;
+&lt;p&gt;You’ll join our software team as a back-end developer, and will be responsible for implementing our updated product recommendation system, as well as improving our search engine. Additionally you’ll be responsible for our data ingestion architecture, which includes integrating and managing APIs.&lt;/p&gt;
+&lt;p&gt;Most of our code is Python/Django and is running on Heroku. We have a lightweight process: 1-week sprints, weekly planning and standups. We use Slack, Trello, and Zoom to communicate and plan our work.&lt;/p&gt;
+&lt;p&gt;Benefits&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Opportunity to work on a hugely impactful product used by 1MM+ users with a great mission&lt;/li&gt;
+&lt;li&gt;Competitive pay based on location and experience&lt;/li&gt;
+&lt;li&gt;Lots of growth opportunities, including leadership development programs, lunch &amp;amp; learns, technical workshops, and more&lt;/li&gt;
+&lt;li&gt;Insurance, vacation, and other benefits&lt;/li&gt;
+&lt;li&gt;Ability to work remotely from anywhere in the world!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Requirements&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;At least 3 years experience with Python/Django&lt;/li&gt;
+&lt;li&gt;Experience with ElasticSearch&lt;/li&gt;
+&lt;li&gt;High attention to detail needed to deal with large volumes of data&lt;/li&gt;
+&lt;li&gt;Can think at a system (architecture) level as well as an algorithms-level&lt;/li&gt;
+&lt;li&gt;Quick learner&lt;/li&gt;
+&lt;li&gt;Excellent verbal and written communication skills&lt;/li&gt;
+&lt;li&gt;Experience and desire to work with a remote, distributed team&lt;/li&gt;
+&lt;/ul&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Senior Backend Engineer (stealth mode startup)]]></title>
+  <datePosted><![CDATA[2021-09-02]]></datePosted>
+  <id><![CDATA[1069]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1069/remote-senior-backend-engineer-stealth-mode-startup-roches-noires-ventures/]]></url>
+  <company><![CDATA[Roches Noires Ventures]]></company>
+  <city><![CDATA[London]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[United Kingdom]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;--- MINIMUM 1 YEAR contract ---&lt;/p&gt;
+&lt;p&gt;A property management startup is looking for an experienced Python Backend engineer to develop a project from scratch.&lt;/p&gt;
+&lt;p&gt;There will be one technical interview and you will get feedback in the end.
+The second step is a small talk with the founder and an offer.&lt;/p&gt;
+&lt;p&gt;--- About the role ---&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We are hiring our first engineers to the team&lt;/li&gt;
+&lt;li&gt;Remote first team&lt;/li&gt;
+&lt;li&gt;You will be building a platform from scratch&lt;/li&gt;
+&lt;li&gt;You will work closely with the founder&lt;/li&gt;
+&lt;li&gt;We expect T-shaped skills&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;--- Requirements ---&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3+ years with Python&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;Posix*, shell, git&lt;/li&gt;
+&lt;li&gt;Django/Flask/FastAPI should be one of your (multiple) frameworks of choice&lt;/li&gt;
+&lt;li&gt;Any additional language is a huge advantage&lt;/li&gt;
+&lt;li&gt;Ability to communicate in English on daily video calls&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;--- Nice to have ---&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS/Clouds/Serverless&lt;/li&gt;
+&lt;li&gt;Frontend (Typescript/React)&lt;/li&gt;
+&lt;li&gt;Services architecture&lt;/li&gt;
+&lt;li&gt;CI/CD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;--- Compensation &amp;amp; benefits ---&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Contract is a minimum of 1 year, the potential for a permanent position&lt;/li&gt;
+&lt;li&gt;You will be part of the development team and there will be opportunities to grow with the company&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;--- Location ----&lt;/p&gt;
+&lt;p&gt;Remote (UTC timezone) &lt;/p&gt;
+&lt;p&gt;--- About Roches Noires Ventures ---&lt;/p&gt;
+&lt;p&gt;A property company based in the UK, developing a tech platform to connect users.
+The platform will provide a data-driven service, with an attractive UX, providing users with an unparalleled experience.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Backend Developer]]></title>
+  <datePosted><![CDATA[2021-08-31]]></datePosted>
+  <id><![CDATA[1068]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1068/senior-backend-developer-mews/]]></url>
+  <company><![CDATA[MEWS]]></company>
+  <city><![CDATA[Prague]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[Czechia]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Can you help us change the world?&lt;/p&gt;
+&lt;p&gt;Yes, you read that correctly. It sounds grand, but we’ve got big ideas at Mews. We’re transforming the world of hospitality, re-imagining the industry with a best-in-class cloud-based property management solution for hotels, hostels, apartments, and so much more.&lt;/p&gt;
+&lt;p&gt;We’re on the lookout for ambitious, tenacious and passionate people who want to join the next generation of innovators and disrupt the hospitality industry with us. Sound good so far? If you’re a Backend Developer, keep reading and tumble down the Mews rabbit hole... 🐇&lt;/p&gt;
+&lt;h2&gt;About the role&lt;/h2&gt;
+&lt;p&gt;First things first: you want to know what you’re actually applying for. It’s impossible to capture every nuance of a role – especially at a rapidly growing company like Mews – but if we had to distil it down to a job description (which we do, because this is a job description), it would be this: We're looking for a Backend Developer to join our team. The platform includes a suite of applications and a hub for connecting properties, guests, and other vendors from the hospitality industry.&lt;/p&gt;
+&lt;p&gt;The backend of the Mews Platform is built with ASP.NET, MVC, Entity Framework and is deployed on Azure using services such App Service, Azure SQL, Cosmos DB, Redis and many others. We're committed to providing high-availability, high-scalability, and multi-regional support. We continuously deliver and integrate our code using Azure DevOps and GitHub.&lt;/p&gt;
+&lt;p&gt;Your mission, should you choose to accept it:&lt;/p&gt;
+&lt;h2&gt;Responsibilities:&lt;/h2&gt;
+&lt;p&gt;-Work in a cross-functional team together with other Developers, Product Managers, QA etc.
+-Design solutions to problems on daily basis
+-Work on yourself to become independent in dealing with the tasks and gradually take ownership of some part of the product
+-Be involved in day-to-day activities of the team (stand-ups, retro meetings)&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;h2&gt;You’ll be a great fit if you bring a few of the below with you:&lt;/h2&gt;
+&lt;p&gt;-Strong understanding of .NET
+-Demonstrated experience owning projects
+-Active experience with leading development teams is an advantage
+-Effective communication in English&lt;/p&gt;
+&lt;p&gt;Check out our Mews Developers Blog here for more insight: https://developers.mews.com/&lt;/p&gt;
+&lt;p&gt;Benefits&lt;/p&gt;
+&lt;h2&gt;What’s in it for you?&lt;/h2&gt;
+&lt;p&gt;Did you know that Mews was voted the Best Place to Work in Hotel Tech in 2021? You do now. Most of that is down to our inspiring team, but part of it is because of some pretty amazing perks. As well as awesome colleagues and stimulating work, you'll get:&lt;/p&gt;
+&lt;p&gt;-Company shares
+-Unlimited holiday (no, this is not a typo)
+-Health and wellness plans
+-Flexible Benefits via Ben Platform
+-Remote/flexible working
+-Regular team events, socials and a legendary annual company gathering, Mews Con (the only con that’s actually a pro)&lt;/p&gt;
+&lt;h2&gt;Who is Mews?&lt;/h2&gt;
+&lt;p&gt;We want to get to know you, so it’s only fair we tell you a little bit about ourselves first. We were founded in 2012 by a team of former hoteliers, and since then we’ve been transforming hospitality for both hotel staff and guests.&lt;/p&gt;
+&lt;p&gt;Essentially, Mews is a powerful software platform that acts as a central nervous system for hotels, hostels, apartments and more. We use smart tech and automation to make day-to-day operations easier for hoteliers, so they can focus on the thing that really matters: providing remarkable guest experiences.&lt;/p&gt;
+&lt;p&gt;More than 2,000 properties across 60+ countries are powered by Mews, with more joining every week. Bookings, payments, operations, guest management – everything a hotel needs to operate can be done through our solution. We work with some amazing hotels, including Sage Hospitality Group, Machefert Group, The Student Hotel, and Tsogo Sun Hotels.&lt;/p&gt;
+&lt;h2&gt;Life at Mews&lt;/h2&gt;
+&lt;p&gt;That’s what we do, but what about who we are? Mews’ culture is special and difficult to capture in words, which makes writing this tricky. You'll experience the freedom to be yourself and the ability to watch your ideas come to life. You’ll have an open line of communication and an open invitation to after-work drinks, be they virtual or in-person. Sometimes the work can be challenging and there can be a lot of it, but you’ll always be able to rely on those around you.&lt;/p&gt;
+&lt;p&gt;Yes, we’re ambitious and we move fast, but we know the value of fun and taking a breather. Every month we have a Wellness Wednesday, a day off that you can use to boost your health, whether that’s a long lie-in, a trip to the gym, or anything in between. We have slack channels for almost every interest imaginable, and an all-company meeting every Friday gives you the chance to ask any question to our leadership team. Oh, and we love our pets. To get more of an idea what life at Mews is like (and to see dozens of cute cats, dogs, and hamsters), check out our Instagram.&lt;/p&gt;
+&lt;p&gt;We’re guided by our five key values; if you see yourself in them, it’s time to get in touch:&lt;/p&gt;
+&lt;h2&gt;Ambitious&lt;/h2&gt;
+&lt;p&gt;We truly believe that great technology can make the entire human experience better.&lt;/p&gt;
+&lt;h2&gt;Resilient&lt;/h2&gt;
+&lt;p&gt;We’re tough. The workload might be heavy, but with one foot in front of the other, we can handle an intensity workout.&lt;/p&gt;
+&lt;h2&gt;Curious&lt;/h2&gt;
+&lt;p&gt;We’re innately curious. We read, we discover, we ask questions, we challenge assumptions, and we’re obsessed with the word ‘why’.&lt;/p&gt;
+&lt;h2&gt;Open&lt;/h2&gt;
+&lt;p&gt;We’re an open book. We share our work and experiences with one another, as well as our community.&lt;/p&gt;
+&lt;h2&gt;Human&lt;/h2&gt;
+&lt;p&gt;You can’t take risks if you’re afraid to fail. We all make mistakes. The key is to learn, get feedback and improve.&lt;/p&gt;
+&lt;h2&gt;Everyone is welcome at Mews&lt;/h2&gt;
+&lt;p&gt;This part is straightforward. We’re an equal opportunity employer and truly value diversity within our company. We never have and never will discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status, veteran status, disability status – or anything else for that matter.&lt;/p&gt;
+&lt;p&gt;Think this could be the beginning of a beautiful friendship? If you’d like to know more about us and what we do, check out mews.com. Otherwise, spruce up your CV and apply. We can’t wait to hear from you.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Senior Python Developer]]></title>
+  <datePosted><![CDATA[2021-08-23]]></datePosted>
+  <id><![CDATA[1066]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1066/remote-senior-python-developer-nordhealth-oy/]]></url>
+  <company><![CDATA[Nordhealth oy]]></company>
+  <city><![CDATA[Espoo]]></city>
+  <addressRegion><![CDATA[]]></addressRegion>
+  <addressCountry><![CDATA[Finland]]></addressCountry>
+  <content><![CDATA[&lt;h3&gt;About Nordhealth&lt;/h3&gt;
+&lt;p&gt;Nordhealth is a publicly listed and fast growing cloud-based healthcare SaaS company on a mission to redefine digital healthcare. We build software that empower veterinary and therapy professionals to provide the best possible care experiences to their patients. Our products serve more than 30,000 veterinary and therapy professionals across 7,000 clinics and hospitals located in over 25 countries.&lt;/p&gt;
+&lt;p&gt;Headquartered in Helsinki, Finland, Nordhealth has a solid footprint in the Nordic region and a growing presence internationally, with more than 240 employees working either remotely or from offices (collaboration hubs). For more details visit the company’s website at nordhealth.com.&lt;/p&gt;
+&lt;p&gt;We’re looking for a Senior Python Developer to join our payments team. We supply a modern payment platform to serve our Clients in healthcare. We enhance our Clientele performance by bringing secure, reliable and powerful payment options. The Client’s success is our success. &lt;/p&gt;
+&lt;p&gt;Our team works remotely with flexible hours. You’ll have a chance to customize your work schedule to fit your everyday life. We plan ahead and make sure everyone is on the same page before getting to work. We value new ideas to improve our processes and the way we work. We hope you bring your positive attitude and be part of our team. &lt;/p&gt;
+&lt;h3&gt;Role Description:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Work in the back office with our talented team&lt;/li&gt;
+&lt;li&gt;Communicate daily with the team, work together to solve blockers and impediments, be part of the positive work environment&lt;/li&gt;
+&lt;li&gt;Develop new features according to specifications&lt;/li&gt;
+&lt;li&gt;Document as you proceed&lt;/li&gt;
+&lt;li&gt;Work language is English&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What is required:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Years of experience in backend web development using Python frameworks such as Django, DRF, FastAPI or Flask&lt;/li&gt;
+&lt;li&gt;Good overall understanding of modern web technologies&lt;/li&gt;
+&lt;li&gt;Plenty of experience in relational database design (PostgreSQL)&lt;/li&gt;
+&lt;li&gt;Familiarity with AWS service offering (e.g. S3, CloudFront, RDS, SES)&lt;/li&gt;
+&lt;li&gt;Experience or interest in serverless technologies (e.g. Serverless Framework, AWS: Lambda, DynamoDB, SNS, SQS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What’s in it for you?&lt;/p&gt;
+&lt;p&gt;Job Type : Full Time&lt;/p&gt;
+&lt;p&gt;Location : Remote From Anywhere, Europe&lt;/p&gt;
+&lt;p&gt;Salary: Competitive Salary and Benefits&lt;/p&gt;
+&lt;p&gt;Start Date : As Soon As Possible&lt;/p&gt;
+&lt;p&gt;You will be part of a friendly team with plenty of skill and knowledge. We have the most up-to-date tools and technologies in use. &lt;/p&gt;
+&lt;p&gt;Additional information
+Remote status
+Fully remote&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Experienced Django Dev Needed for Web App Project]]></title>
+  <datePosted><![CDATA[2021-08-10]]></datePosted>
+  <id><![CDATA[1064]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1064/experienced-django-dev-needed-for-web-app-project-selectfew/]]></url>
+  <company><![CDATA[SelectFew]]></company>
+  <city><![CDATA[New York City]]></city>
+  <addressRegion><![CDATA[NY]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;h2&gt;About Us:&lt;/h2&gt;
+&lt;p&gt;SelectFew was started by a veteran marketing executive who had worked at the nation's top marketing agencies, built his own companies from scratch into internationally recognized brands, and developed marketing strategy for numerous Fortune 500 corporations. Through all of that, he was continuously disappointed in modern marketing's tendency to take advantage of companies, resulting in wasted time and marketing dollars, uninspiring products, and constant turnover.&lt;/p&gt;
+&lt;p&gt;Eventually he decided enough was enough, and joined forces with an incredible team to create this, SelectFew. The core values of SelectFew aren't simple buzzwords, but necessary principles weaved into the DNA of every aspect of the company. We look forward to working with you and continually proving the advantages of the SelectFew marketing model day after day, year after year. &lt;/p&gt;
+&lt;h2&gt;Requirement:&lt;/h2&gt;
+&lt;p&gt;SelectFew is looking for an experienced Django developer to build a web application similar to what is used by https://projects.breef.com/. &lt;/p&gt;
+&lt;h2&gt;Functionalities:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;login&lt;/li&gt;
+&lt;li&gt;profile-building&lt;/li&gt;
+&lt;li&gt;internal team filtering and messaging&lt;/li&gt;
+&lt;li&gt;billing&lt;/li&gt;
+&lt;/ul&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Remote Experienced Full-stack Django Developer]]></title>
+  <datePosted><![CDATA[2021-08-05]]></datePosted>
+  <id><![CDATA[1063]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1063/remote-experienced-full-stack-django-developer-morphmarket/]]></url>
+  <company><![CDATA[MorphMarket]]></company>
+  <city><![CDATA[Richardson]]></city>
+  <addressRegion><![CDATA[TX]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Want to work on a REALLY Pythonic project?&lt;/p&gt;
+&lt;p&gt;MorphMarket.com is an online marketplace that connects breeders and keepers of pythons, boas, lizards, geckos, frogs, spiders and other captive-bred pets. Launched in 2015, we are the largest reptile-related website in the world with over 5,000 sellers in North America and Europe. Our users passionately love the least loved animals.&lt;/p&gt;
+&lt;p&gt;We are seeking an experienced full-stack Django developer to join our small, agile, and fully remote team. This work includes improving our inventory management system's interface and capabilities but we have countless other projects. Initial engagement is at least several months of full-time contract work possibly extending to a year or more.&lt;/p&gt;
+&lt;p&gt;Our site is implemented in Python, of course. We use Django/Postgres/Redis with a front-end of JQuery/Javascript/Bootstrap. Our team collaborates with Github and Slack.&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+ <item>
+  <title><![CDATA[Senior Software Engineer]]></title>
+  <datePosted><![CDATA[2021-08-04]]></datePosted>
+  <id><![CDATA[1062]]></id>
+  <url><![CDATA[https://djangojobs.net/jobs/1062/senior-software-engineer-catchafire/]]></url>
+  <company><![CDATA[Catchafire]]></company>
+  <city><![CDATA[New York City]]></city>
+  <addressRegion><![CDATA[NY]]></addressRegion>
+  <addressCountry><![CDATA[United States]]></addressCountry>
+  <content><![CDATA[&lt;p&gt;Catchafire is looking for a Senior Software Engineer to build out our web application for skills-based volunteering. You must have extensive web development experience using Python and Django as well as experience with frontend software development using HTML, CSS, &amp;amp; Javascript. You should be comfortable coding, gathering &amp;amp; shaping requirements, and taking ownership of complex projects involving cross-functional teams.&lt;/p&gt;
+&lt;p&gt;The Catchafire platform team is a global agile team that develops world-class products for an audience of passionate volunteers and inspiring nonprofits.  &lt;/p&gt;
+&lt;p&gt;Attributes&lt;/p&gt;
+&lt;p&gt;-Self starter: You are capable of taking charge on a project.  You are always looking for new technologies to explore and new ways to improve processes. You lead by example.&lt;/p&gt;
+&lt;p&gt;-Strategic thinker: You are not satisfied accepting unstated assumptions or taking direction without critical evaluation. You work hard to understand the underlying purpose of each assignment and the rationale behind existing processes.  You have opinions and are not shy about expressing them.&lt;/p&gt;
+&lt;p&gt;-Communicator: You communicate clearly and concisely. You have strong opinions loosely held and contribute your thoughts to the group. You argue your positions in an environment that encourages opposing viewpoints.&lt;/p&gt;
+&lt;p&gt;-Craftsperson: You are passionate about your code: its readability, quality, documentation and maintainability.&lt;/p&gt;
+&lt;p&gt;-Pragmatic perfectionist: Though you are driven to improve subpar code and systems, you nevertheless maintain productivity and ship in challenging environments. You prioritize the right improvements at the right time.&lt;/p&gt;
+&lt;p&gt;-Humility: You like challenges and are happy to be proven wrong. You welcome every opportunity to teach or learn from others. You are eager to achieve and work at all levels of responsibility.&lt;/p&gt;
+&lt;p&gt;Responsibilities of the Senior Software Engineer&lt;/p&gt;
+&lt;p&gt;-Engage in all aspects of software development, including architecture, documentation, testing, deployment, maintenance, and bug-fixing, primarily using Python, Django, and MySQL&lt;/p&gt;
+&lt;p&gt;-Write Django templates, JavaScript, modern HTML &amp;amp; SASS&lt;/p&gt;
+&lt;p&gt;-Review &amp;amp; shape product specs, suggest changes to optimize for ROI, identify edge cases, and improve UX&lt;/p&gt;
+&lt;p&gt;-Model engineering excellence &amp;amp; provide technical &amp;amp; project management guidance to other Tech Team members&lt;/p&gt;
+&lt;p&gt;-Apply modern DevOps practices across development, QA, and production systems&lt;/p&gt;
+&lt;p&gt;-Identify and champion opportunities for improvement, judiciously balancing improvements to our infrastructure &amp;amp; code base against feature development&lt;/p&gt;
+&lt;p&gt;Experience / Background&lt;/p&gt;
+&lt;p&gt;In order to be successful in this role you must meet most, if not all, of the following needs:&lt;/p&gt;
+&lt;p&gt;-7+ years coding Python-based consumer-facing web applications&lt;/p&gt;
+&lt;p&gt;-Django web framework&lt;/p&gt;
+&lt;p&gt;-Writing &amp;amp; optimizing SQL queries &lt;/p&gt;
+&lt;p&gt;-Modern JavaScript framework, HTML, and CSS&lt;/p&gt;
+&lt;p&gt;-Working with a remote-first Tech Team in an agile development environment &lt;/p&gt;
+&lt;p&gt;-Leading complex projects involving cross-functional teams&lt;/p&gt;
+&lt;p&gt;-Administering &amp;amp; configuring Ubuntu servers&lt;/p&gt;
+&lt;p&gt;It would also be helpful if you have experience with:&lt;/p&gt;
+&lt;p&gt;-VueJS&lt;/p&gt;
+&lt;p&gt;-Working in the social good sector&lt;/p&gt;
+&lt;p&gt;-Modernizing legacy components of larger systems&lt;/p&gt;
+&lt;p&gt;-Developing with IT automation tools like Jenkins, Docker, Ansible, etc&lt;/p&gt;]]></content>
+  <employmentType><![CDATA[fulltime]]></employmentType>
+ </item>
+</bebee>
