@@ -126,13 +126,21 @@ class crud
 	}
 
 	public function checkCronSatus() {
-		$status = false;
-		$stmt = $this->db->prepare("SELECT status FROM cron ORDER BY updated_at DESC LIMIT 1");
+		$ret = [];
+		$stmt = $this->db->prepare("SELECT t2.id, t2.updated_at, 'Okay' AS ret FROM cron t1, cron t2 
+										WHERE t1.status='finished' AND t1.id=t2.id+1 AND t2.status='Running' AND DATE(t2.updated_at) LIKE DATE(NOW())
+									UNION
+									SELECT t1.id, t1.updated_at, 'Okay' AS ret FROM cron t1, cron t2 
+										WHERE t1.status='finished' AND t1.id=t2.id+1 AND t2.status='Running' AND DATE(t1.updated_at) LIKE DATE(NOW())
+									UNION
+									SELECT id, updated_at, 'Error' AS ret FROM cron
+										WHERE NOT DATE(updated_at) = DATE(NOW())
+									ORDER BY id");
 		$stmt->execute();
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-			$status = $row['status'];
+			$ret[] = $row; 
 		}
-		return $status;
+		return $ret;
 	}
 
 	public function update($id,$name,$updatetag,$xmlurl,$defaultcountry,$joblocationtype, $utmValue)
