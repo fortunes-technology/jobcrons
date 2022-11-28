@@ -87,14 +87,6 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                             with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="logout.php" class="nav-link">
-                                <i class="nav-icon fas fa-power-off"></i>
-                                <p>
-                                    Disconnect
-                                </p>
-                            </a>
-                        </li>
                         <?php if ($_SESSION['role'] == 1) { ?>
                             <li class="nav-item">
                                 <a href="user.php" class="nav-link">
@@ -105,6 +97,14 @@
                                 </a>
                             </li>
                         <?php } ?>
+                        <li class="nav-item">
+                            <a href="logout.php" class="nav-link">
+                                <i class="nav-icon fas fa-power-off"></i>
+                                <p>
+                                    Disconnect
+                                </p>
+                            </a>
+                        </li>                        
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -259,6 +259,12 @@
                                                                                 &lt;city&gt;
                                                                                 </label>
                                                                             </div>
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_60" value="CPC" <?php echo ($updatetag[$key]=='CPC')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_60">
+                                                                                &lt;CPC&gt;
+                                                                                </label>
+                                                                            </div>
                                                                         </div>
                                                                         <div class="col-md">                                                                        
                                                                             <div class="form-check">
@@ -295,6 +301,12 @@
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_11"  value="content" <?php echo ($updatetag[$key]=='content')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_11">
                                                                                 &lt;content&gt;
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_110" value="salaryMin" <?php echo ($updatetag[$key]=='salaryMin')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_110">
+                                                                                &lt;salaryMin&gt;
                                                                                 </label>
                                                                             </div>
                                                                         </div>
@@ -341,6 +353,12 @@
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_19">
                                                                                 &lt;industry&gt;
                                                                                 </label>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_190" value="salaryMax" <?php echo ($updatetag[$key]=='salaryMax')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_190">
+                                                                                &lt;salaryMax&gt;
+                                                                                </label>
                                                                             </div>                                            
                                                                         </div>
                                                                         <div class="col-md">
@@ -373,13 +391,7 @@
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_24">
                                                                                 &lt;logoUrl&gt;
                                                                                 </label>
-                                                                            </div>
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_27" value="CPC" <?php echo ($updatetag[$key]=='CPC')?'checked':'' ?> >
-                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_27">
-                                                                                &lt;CPC&gt;
-                                                                                </label>
-                                                                            </div>
+                                                                            </div>                                                                            
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_25" value="discard" <?php echo ($updatetag[$key]=='discard')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_25">

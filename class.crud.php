@@ -125,6 +125,16 @@ class crud
 		return $count;
 	}
 
+	public function checkCronSatus() {
+		$ret = [];
+		$stmt = $this->db->prepare("SELECT id, updated_at FROM cron");
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$ret[] = $row; 
+		}
+		return $ret;
+	}
+
 	public function update($id,$name,$updatetag,$xmlurl,$defaultcountry,$joblocationtype, $utmValue)
 	{
 		$now = new DateTime();

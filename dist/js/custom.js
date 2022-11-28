@@ -395,6 +395,12 @@ $("#parseXML").click(function(){
                                                     &lt;city&gt;
                                                     </label>
                                                 </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_60" value="CPC">
+                                                    <label class="form-check-label" for="labelRadio_${i}_60">
+                                                    &lt;CPC&gt;
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div class="col-md">                                            
                                                 <div class="form-check">
@@ -431,6 +437,12 @@ $("#parseXML").click(function(){
                                                     <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_11"  value="content">
                                                     <label class="form-check-label" for="labelRadio_${i}_11">
                                                     &lt;content&gt;
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_110" value="salaryMin">
+                                                    <label class="form-check-label" for="labelRadio_${i}_110">
+                                                    &lt;salaryMin&gt;
                                                     </label>
                                                 </div>
                                             </div>
@@ -470,6 +482,12 @@ $("#parseXML").click(function(){
                                                     <label class="form-check-label" for="labelRadio_${i}_19">
                                                     &lt;industry&gt;
                                                     </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_190" value="salaryMax">
+                                                    <label class="form-check-label" for="labelRadio_${i}_190">
+                                                    &lt;salaryMax&gt;
+                                                    </label>
                                                 </div>                                              
                                             </div>
                                             <div class="col-md">
@@ -502,13 +520,7 @@ $("#parseXML").click(function(){
                                                     <label class="form-check-label" for="labelRadio_${i}_24">
                                                     &lt;logoUrl&gt;
                                                     </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_27" value="CPC">
-                                                    <label class="form-check-label" for="labelRadio_${i}_27">
-                                                    &lt;CPC&gt;
-                                                    </label>
-                                                </div>
+                                                </div>                                                
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_25" value="discard">
                                                     <label class="form-check-label" for="labelRadio_${i}_25">
