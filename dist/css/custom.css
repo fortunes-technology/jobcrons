@@ -76,6 +76,12 @@ font-weight: 400;
 .login-box{
 	width:460px;
 }
+@media screen and (max-width: 460px) {
+	.navbar-expand .navbar-nav {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
 @media(min-width:0px) and (max-width:767px) {
 	.login-box{
 	width:360px;
@@ -180,9 +186,16 @@ body {
 .text-green {
 	color: green;
 } */
+
 .table-container {
 	width: 98%;
     margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+	.table-container {
+		margin-top: 35px;
+	}
 }
 
 .relative-div {
