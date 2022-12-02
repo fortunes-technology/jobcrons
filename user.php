@@ -4,6 +4,25 @@
 ?>
     <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed">
         <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light sticky-top">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="addurl.php" class="nav-link active"><i class="fas fa-plus-circle"></i> Add feeds to map</a>
+                </li>                
+                <li class="nav-item">
+                        <a href="filefeed.php" class="nav-link"><i class="fas fa-plus-circle"></i> Add file feed</a>
+                    </li>
+                <li class="nav-item">
+                    <a href="managefeeds.php" class="nav-link"><i class="fas fa-pen"></i> Manage Feeds</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->

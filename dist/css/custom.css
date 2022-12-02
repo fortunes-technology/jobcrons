@@ -203,11 +203,17 @@ body {
 	display: flex;
 	top: 22px;
 	z-index: 100;
+	padding-left: 1.4rem;
+    width: 98%;
+    margin: auto;
 }
 
-.relative-div .for-check {
+/* .relative-div .for-check {
 	margin-left: 20px;
 	color: black !important;
+} */
+.relative-div [data-target="#createUser"] {
+	margin-left: 20px;
 }
 
 .relative-div a {
@@ -235,4 +241,35 @@ body {
 
 a#editUser {
 	margin-left: 10px;
+}
+
+@media screen and (max-width: 500px)  {
+	.form-group.d-flex {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+	td:nth-of-type(3) {
+		width: 100% !important;
+	}
+
+	td:nth-of-type(3) .dropdown {
+		width: 50%;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 460px)  {
+	.dropdown-filters {
+		min-width: 100%;
+	}
+}
+@media screen and (max-width: 300px)  {
+	.dropdown-filters {
+		width: 100px;
+	}
 }
