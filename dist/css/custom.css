@@ -145,8 +145,16 @@ body {
 .check-label {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding-left: 15px;
+	justify-content: space-between;
+	/* padding-left: 15px; */
+}
+
+.check-label label {
+	margin-left: 0px;
+}
+
+.check-label input {
+	width: 30px;
 }
 
 #willAddCountry {
@@ -204,8 +212,8 @@ body {
 	top: 22px;
 	z-index: 100;
 	padding-left: 1.4rem;
-    width: 98%;
-    margin: auto;
+	width: 98%;
+	margin: auto;
 }
 
 /* .relative-div .for-check {
@@ -214,6 +222,15 @@ body {
 } */
 .relative-div [data-target="#createUser"] {
 	margin-left: 20px;
+}
+
+@media screen and (max-width: 200px) {
+	.relative-div {
+		display: block;
+	}
+	.relative-div [data-target="#createUser"] {
+		margin-left: 0px;
+	}
 }
 
 .relative-div a {
