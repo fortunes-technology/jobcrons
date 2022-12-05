@@ -87,7 +87,7 @@
                                             <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
                                                 <input type="text" class="form-control form-control-lg" id="feedName" placeholder="Feed name">
                                             </div>
-                                            <div class="col-lg-5 px-sm-1 col-sm-9 mt-2 mb-2">
+                                            <div class="col-lg-5 px-sm-1 col-sm-12 mt-2 mb-2">
                                                 <div class="input-group mb-0">
                                                   <input type="text" class="form-control form-control-lg" id="xmlurl" placeholder="Add the url to map" aria-label="Add url to map" aria-describedby="button-addon2">
                                                   <div class="input-group-append">
@@ -118,7 +118,7 @@
                                                 <input type="text" style="display: none;" class="form-control form-control-lg" id="jobLocationType" name="jobLocationType" value="TELECOMMUTE" readonly>
                                             </div>
                                             <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2">
-                                                <a href="#" data-target="#createUtmModal" data-toggle="modal" style="margin-left: 25px;" class="btn btn-primary form-check-label text-left utm-modal-btn">UTM Values</a>
+                                                <a href="#" data-target="#createUtmModal" data-toggle="modal" style="width: 100%;padding: 0.7rem" class="btn btn-primary form-check-label text-left utm-modal-btn">UTM Values</a>
                                                 <input type="hidden" name="utm-final-value-create" id="utm_final_value_create">
                                             </div>
                                         </div>
