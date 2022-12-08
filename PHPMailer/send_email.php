@@ -38,6 +38,15 @@ function send_email($email, $subject, $message) {
         $mail->isHTML(true);                                  
         $mail->Subject = $subject;
         $mail->Body    = $message;
+        
+        $from = 'irvin.nelson22@gmail.com';
+        $headers = "MIME-Version: 1.0" . "\r\n"; 
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+        // Create email headers
+        $headers .= 'From: '.$from."\r\n".
+            'Reply-To: '.$from."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+        $mail->header = $headers;
 
         $mail->send();
 		

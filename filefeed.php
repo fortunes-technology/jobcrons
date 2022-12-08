@@ -47,6 +47,16 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class
                                 with font-awesome or any other icon font library -->
+                            <?php if ($_SESSION['role'] == 1) { ?>
+                                <li class="nav-item">
+                                    <a href="user.php" class="nav-link">
+                                        <i class="nav-icon fas fa-user"></i>
+                                        <p>
+                                            Users
+                                        </p>
+                                    </a>
+                                </li>
+                            <?php } ?>
                             <li class="nav-item">
                                 <a href="logout.php" class="nav-link">
                                     <i class="nav-icon fas fa-power-off"></i>
@@ -76,7 +86,7 @@
                                                 <!-- <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
                                                     <input type="text" class="form-control form-control-lg" id="feedName" placeholder="Feed name">
                                                 </div> -->
-                                                <div class="col-lg-8 px-sm-1 col-sm-9 mt-2 mb-2">
+                                                <div class="col-lg-8 px-sm-1 col-sm-12 mt-2 mb-2">
                                                     <div class="input-group mb-0">
                                                         <input type="text" class="form-control form-control-lg" id="xmlurl" placeholder="Add the url to map" aria-label="Add url to map" aria-describedby="button-addon2">
                                                     </div>                                     

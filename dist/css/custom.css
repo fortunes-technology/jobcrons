@@ -76,6 +76,12 @@ font-weight: 400;
 .login-box{
 	width:460px;
 }
+@media screen and (max-width: 460px) {
+	.navbar-expand .navbar-nav {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
 @media(min-width:0px) and (max-width:767px) {
 	.login-box{
 	width:360px;
@@ -139,8 +145,16 @@ body {
 .check-label {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding-left: 15px;
+	justify-content: space-between;
+	/* padding-left: 15px; */
+}
+
+.check-label label {
+	margin-left: 0px;
+}
+
+.check-label input {
+	width: 30px;
 }
 
 #willAddCountry {
@@ -180,9 +194,16 @@ body {
 .text-green {
 	color: green;
 } */
+
 .table-container {
 	width: 98%;
     margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+	.table-container {
+		margin-top: 35px;
+	}
 }
 
 .relative-div {
@@ -190,11 +211,26 @@ body {
 	display: flex;
 	top: 22px;
 	z-index: 100;
+	padding-left: 1.4rem;
+	width: 98%;
+	margin: auto;
 }
 
-.relative-div .for-check {
+/* .relative-div .for-check {
 	margin-left: 20px;
 	color: black !important;
+} */
+.relative-div [data-target="#createUser"] {
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 200px) {
+	.relative-div {
+		display: block;
+	}
+	.relative-div [data-target="#createUser"] {
+		margin-left: 0px;
+	}
 }
 
 .relative-div a {
@@ -222,4 +258,40 @@ body {
 
 a#editUser {
 	margin-left: 10px;
+}
+
+@media screen and (max-width: 500px)  {
+	.form-group.d-flex {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+
+	td:nth-of-type(3) {
+		width: 100% !important;
+	}
+
+	td:nth-of-type(3) .dropdown {
+		width: 50%;
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 460px)  {
+	.dropdown-filters {
+		min-width: 100%;
+	}
+}
+@media screen and (max-width: 300px)  {
+	.dropdown-filters {
+		width: 100px;
+	}
+}
+
+div.row.mx-sm-n1 div:nth-of-type(2), div.row.mx-sm-n1 div:nth-of-type(3) {
+	padding-right: 0.25rem;
+	padding-left: 0.25rem;
 }

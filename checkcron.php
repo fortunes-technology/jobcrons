@@ -7,9 +7,9 @@ $message = '';
 date_default_timezone_set('UTC');
 foreach($rets as $ret) {
     if (date("Y-m-d") > date("Y-m-d", strtotime($ret['updated_at'])))
-        $message .= "Script ".$ret['id']." is not working properly.<br>";
+        $message .= "<div style='color:black'>Script ".$ret['id']." is not working properly.</div>";
     else
-        $message .= "Script ".$ret['id']." is working properly.<br>";
+        $message .= "<div style='color:red'>Script ".$ret['id']." is working properly.</div>";
 }
 send_email("devcenterclover@gmail.com", "Converter cron status", $message);
 ?>
