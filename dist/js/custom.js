@@ -96,6 +96,11 @@ $("#updateDetail").click(function(){
     {
         willAddCountry = $('#willEditCountry').val();
     }
+    let willAddIndustry = "invalid";
+    if ($('#willIndustryCheck').is(":checked"))
+    {
+        willAddIndustry = $('#willEditIndustry').val();
+    }
     let jobLocationType = "invalid";
     if ($('#willLocationCheck').is(":checked"))
     {
@@ -110,7 +115,7 @@ $("#updateDetail").click(function(){
         updatetag += `${this.value},`;
     });
     let utmValue = $("#utm_final_value_create").val();
-    if(feedName == "" || xmlurl == "" || willAddCountry == "") {
+    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "") {
         alert("Fill form values");
     }
     else {
@@ -125,6 +130,7 @@ $("#updateDetail").click(function(){
                     "xmlurl": xmlurl, 
                     "updatetag": updatetag, 
                     "willAddCountry": willAddCountry, 
+                    "willAddIndustry": willAddIndustry, 
                     "jobLocationType": jobLocationType,
                     "utmValue": utmValue,
                 },
@@ -206,6 +212,11 @@ $("#willCountryCheck").click(function(){
 //update country pre tag
 $("#willCountryCheck").click(function(){
     $("#willEditCountry").toggle(200);
+})
+
+//update industry pre tag
+$("#willIndustryCheck").click(function(){
+    $("#willEditIndustry").toggle(200);
 })
 
 //add jobLocation tag

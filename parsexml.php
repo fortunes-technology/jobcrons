@@ -234,11 +234,13 @@ if(isset($_POST['updateFeed'])) {
 	$updatetag = $_POST['updatetag'];
 	$xmlurl = $_POST['xmlurl'];
 	$willAddCountry = $_POST['willAddCountry'];
+	$willAddIndustry = $_POST['willAddIndustry'];
 	$jobLocationType = $_POST['jobLocationType'];
 	$utmValue = $_POST['utmValue'];
 	$defaultCountry = ($willAddCountry == "invalid") ? null : $willAddCountry;
+	$industry = ($willAddIndustry == "invalid") ? null : $willAddIndustry;
 	$joblocationtype = ($jobLocationType == "invalid") ? null : $jobLocationType;
-	$crudResult = $crud->update($id, $name, $updatetag, $xmlurl, $defaultCountry, $joblocationtype, $utmValue);
+	$crudResult = $crud->update($id, $name, $updatetag, $xmlurl, $defaultCountry, $industry, $joblocationtype, $utmValue);
 	if($crudResult == true) {
 
 		$res = json_encode(['data' => "true"]);
