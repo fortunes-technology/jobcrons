@@ -148,6 +148,7 @@ $("#updateDetail").click(function(){
 })
 
 $("#saveDetail").click(function(){
+    
     let willAddCountry = "invalid";
     if ($('#willCountryCheck').is(":checked"))
     {
