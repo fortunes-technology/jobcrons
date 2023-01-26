@@ -198,6 +198,7 @@ if(count($feedAll) > 0) {
     $basetagpiece = explode(",", $basetag);
     array_pop($basetagpiece);
     $defaultcountry = $value['defaultcountry'];
+    $industry = $value['industry'];
     $joblocationtype = $value['joblocationtype'];
     if($value['cdatatag'] != "") {
       $cdatatag = $value['cdatatag'];
@@ -523,6 +524,9 @@ if(count($feedAll) > 0) {
 
             if(!empty($defaultcountry)) {
               $xmlWriter->writeElement("addressCountry", $defaultcountry);
+            }
+            if(!empty($industry)) {
+              $xmlWriter->writeElement("industry", $industry);
             }
             if(!empty($joblocationtype)) {
               $xmlWriter->writeElement("jobLocationType", $joblocationtype);

@@ -9,7 +9,7 @@ class crud
 		$this->db = $DB_con;
 	}
 	
-	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $joblocationtype, $isChild, $utmValue)
+	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $industry, $joblocationtype, $isChild, $utmValue)
 	{
 		$now = new DateTime();
 		$createdate = $now->format('Y-m-d H:i:s');
@@ -17,8 +17,8 @@ class crud
 		try
 		{
 			$stmt = $this->db->prepare(
-				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,joblocationtype,status,utm) 
-						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :joblocationtype, :status, :utm)");
+				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,industry,joblocationtype,status,utm) 
+						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :industry, :joblocationtype, :status, :utm)");
 			$stmt->bindparam(":cronid",$isChild);
 			$stmt->bindparam(":name",$name);
 			$stmt->bindparam(":url",$url);
@@ -28,6 +28,7 @@ class crud
 			$stmt->bindparam(":createdate",$createdate);
 			$stmt->bindparam(":updatedate",$createdate);
 			$stmt->bindparam(":defaultcountry",$defaultcountry);
+			$stmt->bindparam(":industry",$industry);
 			$stmt->bindparam(":joblocationtype",$joblocationtype);
 			$stmt->bindparam(":status",$status);
 			$stmt->bindparam(":utm",$utmValue);
@@ -135,7 +136,7 @@ class crud
 		return $ret;
 	}
 
-	public function update($id,$name,$updatetag,$xmlurl,$defaultcountry,$joblocationtype, $utmValue)
+	public function update($id,$name,$updatetag,$xmlurl,$defaultcountry,$industry,$joblocationtype, $utmValue)
 	{
 		$now = new DateTime();
 		$updateDate = $now->format('Y-m-d H:i:s');
@@ -143,7 +144,7 @@ class crud
 		{
 			$newtag = "";
 			$isnew = 0;
-			$stmt=$this->db->prepare("UPDATE feedinfo SET name=:fname, updatetag=:updatetag, updatedate=:updatedate, url=:xmlurl, defaultcountry=:defaultcountry, joblocationtype=:joblocationtype, utm=:utm, newtag=:newtag, isnew=:isnew WHERE id=:id ");
+			$stmt=$this->db->prepare("UPDATE feedinfo SET name=:fname, updatetag=:updatetag, updatedate=:updatedate, url=:xmlurl, defaultcountry=:defaultcountry, industry=:industry, joblocationtype=:joblocationtype, utm=:utm, newtag=:newtag, isnew=:isnew WHERE id=:id ");
 			$stmt->bindparam(":fname",$name);
 			$stmt->bindparam(":updatedate",$updateDate);
 			$stmt->bindparam(":updatetag",$updatetag);
@@ -152,6 +153,7 @@ class crud
 			$stmt->bindparam(":isnew",$isnew);
 			$stmt->bindparam(":newtag",$newtag);
 			$stmt->bindparam(":defaultcountry",$defaultcountry);
+			$stmt->bindparam(":industry",$industry);
 			$stmt->bindparam(":joblocationtype",$joblocationtype);
 			$stmt->bindparam(":utm",$utmValue);
 			$stmt->execute();

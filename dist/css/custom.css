@@ -161,6 +161,10 @@ body {
 	display: none;
 }
 
+#willAddIndustry {
+	display: none;
+}
+
 #createUtmModal .utm-label {
 	min-width: 150px;
 }

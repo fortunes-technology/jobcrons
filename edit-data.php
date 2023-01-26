@@ -12,6 +12,7 @@
     array_pop($updatetag);
     $willEditCountry = $edit_infor['defaultcountry'];
     $jobLocationType = $edit_infor['joblocationtype'];
+    $willEditIndustry = $edit_infor['industry'];
     $newtag = explode(",", $edit_infor['newtag']);
     array_pop($newtag);
 
@@ -169,6 +170,31 @@
                                                 }
                                             ?>
 
+                                            <?php
+                                                if(!empty($willEditIndustry)) {
+                                            ?>
+                                                <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add industry tag?</label>
+                                                    <input style="height: 30px;" type="checkbox" checked class="form-control form-control-lg"  id="willIndustryCheck" name="willIndustryCheck"> 
+                                                </div>
+                                                <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                    <input type="text" class="form-control form-control-lg" id="willEditIndustry" name="willEditIndustry" placeholder="Add Industry Value" value="<?php echo $willEditIndustry?>">
+                                                </div>
+                                            <?php
+                                                }
+                                                else {
+                                            ?>
+                                                <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add industry tag?</label>
+                                                    <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willIndustryCheck" name="willIndustryCheck"> 
+                                                </div>
+                                                <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                    <input type="text" class="form-control form-control-lg" style="display: none;" id="willEditIndustry" name="willEditIndustry" placeholder="Add Industry Value" value="">
+                                                </div>
+                                            <?php
+                                                }
+                                            ?>            
+                                                
                                             <?php
                                                 if(!empty($jobLocationType)) {
                                             ?>
