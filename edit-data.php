@@ -174,7 +174,7 @@
                                                 if(!empty($willEditIndustry)) {
                                             ?>
                                                 <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
-                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add Industry tag?</label>
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add industry tag?</label>
                                                     <input style="height: 30px;" type="checkbox" checked class="form-control form-control-lg"  id="willIndustryCheck" name="willIndustryCheck"> 
                                                 </div>
                                                 <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
@@ -185,7 +185,7 @@
                                                 else {
                                             ?>
                                                 <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
-                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add Industry tag?</label>
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willIndustryCheck">Will add industry tag?</label>
                                                     <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willIndustryCheck" name="willIndustryCheck"> 
                                                 </div>
                                                 <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">

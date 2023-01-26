@@ -212,10 +212,12 @@ if(isset($_POST['saveFeed'])) {
 	$updatetag = $_POST['updatetag'];
 	$cdatatag = $_POST['cdatatag'];
 	$willAddCountry = $_POST['willAddCountry'];
+	$willAddIndustry = $_POST['willAddIndustry'];
 	$jobLocationType = $_POST['jobLocationType'];
 	$defaultCountry = ($willAddCountry == "invalid") ? null : $willAddCountry;
+	$industry = ($willAddIndustry == "invalid") ? null : $willAddIndustry;
 	$joblocationtype = ($jobLocationType == "invalid") ? null : $jobLocationType;
-	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $joblocationtype, $isChild, $utmValue);
+	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $industry, $joblocationtype, $isChild, $utmValue);
 	if($crudResult == true) {
 		$res = json_encode(['data' => "true"]);
 	}

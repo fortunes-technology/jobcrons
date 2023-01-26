@@ -153,12 +153,16 @@ $("#saveDetail").click(function(){
     {
         willAddCountry = $('#willAddCountry').val();
     }
+    let willAddIndustry = "invalid";
+    if ($('#willIndustryCheck').is(":checked"))
+    {
+        willAddIndustry = $('#willAddIndustry').val();
+    }
     let jobLocationType = "invalid";
     if ($('#willLocationCheck').is(":checked"))
     {
         jobLocationType = $('#jobLocationType').val();
     }
-    console.log(jobLocationType);
     let feedName = $('#feedName').val();
     let xmlurl = $('#xmlurlHidden').val();
     let basetag = $("#baseTagValue").val();
@@ -169,7 +173,7 @@ $("#saveDetail").click(function(){
     $( "tbody#parsing input[type=radio][name^=tagRadio]:checked" ).each(function( index ) {
         updatetag += `${this.value},`;
     });
-    if(feedName == "" || xmlurl == "" || willAddCountry == "") {
+    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "") {
         alert("Fill form values");
     }
     else {
@@ -184,6 +188,7 @@ $("#saveDetail").click(function(){
                     "updatetag": updatetag, 
                     "cdatatag": cdatatag, 
                     "willAddCountry": willAddCountry, 
+                    "willAddIndustry": willAddIndustry, 
                     "jobLocationType": jobLocationType, 
                     "isChild": isChild,
                     "utmValue": utmValue,
@@ -207,6 +212,11 @@ $("#saveDetail").click(function(){
 //add country pre tag
 $("#willCountryCheck").click(function(){
     $("#willAddCountry").toggle(200);
+})
+
+//add industry pre tag
+$("#willIndustryCheck").click(function(){
+    $("#willAddIndustry").toggle(200);
 })
 
 //update country pre tag
