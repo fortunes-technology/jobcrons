@@ -75,7 +75,7 @@ if(isset($_POST['parse']) && isset($_POST['url'])) {
 		else{
 			$is_download = 0;
 			foreach ($headers as $h_key => $h_value) {
-				if (strpos(str_replace(" ", "", $h_value), 'gzip') !== false) {
+				if (strpos(str_replace(" ", "", $h_value), 'gzip') !== false || strpos(str_replace(" ", "", $h_value), 'gz') !== false) {
 					$is_download = 1;
 				}
 			}
