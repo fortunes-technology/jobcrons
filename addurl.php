@@ -118,6 +118,13 @@
                                                 <input type="text" class="form-control form-control-lg" id="willAddIndustry" name="willAddIndustry" placeholder="Add Industry Value">
                                             </div>
                                             <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                <label style="width: 350px; margin-left: 0px;" class="form-check-label" for="willCompanyCheck">Will add company tag?</label>
+                                                <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willCompanyCheck" name="willCompanyCheck"> 
+                                            </div>
+                                            <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                <input type="text" class="form-control form-control-lg" id="willAddCompany" name="willAddCompany" placeholder="Add Company Value">
+                                            </div>
+                                            <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
                                                 <label style="width: 350px; margin-left: 0px;" class="form-check-label" for="willLocationCheck">Will add jobLocationType tag?</label>
                                                 <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willLocationCheck" name="willLocationCheck"> 
                                             </div>

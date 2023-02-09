@@ -213,11 +213,13 @@ if(isset($_POST['saveFeed'])) {
 	$cdatatag = $_POST['cdatatag'];
 	$willAddCountry = $_POST['willAddCountry'];
 	$willAddIndustry = $_POST['willAddIndustry'];
+	$willAddCompany = $_POST['willAddCompany'];
 	$jobLocationType = $_POST['jobLocationType'];
 	$defaultCountry = ($willAddCountry == "invalid") ? null : $willAddCountry;
 	$industry = ($willAddIndustry == "invalid") ? null : $willAddIndustry;
+	$company = ($willAddCompany == "invalid") ? null : $willAddCompany;
 	$joblocationtype = ($jobLocationType == "invalid") ? null : $jobLocationType;
-	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $industry, $joblocationtype, $isChild, $utmValue);
+	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $industry, $company, $joblocationtype, $isChild, $utmValue);
 	if($crudResult == true) {
 		$res = json_encode(['data' => "true"]);
 	}
@@ -237,12 +239,14 @@ if(isset($_POST['updateFeed'])) {
 	$xmlurl = $_POST['xmlurl'];
 	$willAddCountry = $_POST['willAddCountry'];
 	$willAddIndustry = $_POST['willAddIndustry'];
+	$willAddCompany = $_POST['willAddCompany'];
 	$jobLocationType = $_POST['jobLocationType'];
 	$utmValue = $_POST['utmValue'];
 	$defaultCountry = ($willAddCountry == "invalid") ? null : $willAddCountry;
 	$industry = ($willAddIndustry == "invalid") ? null : $willAddIndustry;
+	$company = ($willAddCompany == "invalid") ? null : $willAddCompany;
 	$joblocationtype = ($jobLocationType == "invalid") ? null : $jobLocationType;
-	$crudResult = $crud->update($id, $name, $updatetag, $xmlurl, $defaultCountry, $industry, $joblocationtype, $utmValue);
+	$crudResult = $crud->update($id, $name, $updatetag, $xmlurl, $defaultCountry, $industry, $company, $joblocationtype, $utmValue);
 	if($crudResult == true) {
 
 		$res = json_encode(['data' => "true"]);
