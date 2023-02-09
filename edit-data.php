@@ -13,6 +13,7 @@
     $willEditCountry = $edit_infor['defaultcountry'];
     $jobLocationType = $edit_infor['joblocationtype'];
     $willEditIndustry = $edit_infor['industry'];
+    $willEditCompany = $edit_infor['company'];
     $newtag = explode(",", $edit_infor['newtag']);
     array_pop($newtag);
 
@@ -194,6 +195,31 @@
                                             <?php
                                                 }
                                             ?>            
+
+                                            <?php
+                                                if(!empty($willEditCompany)) {
+                                            ?>
+                                                <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willCompanyCheck">Will add company tag?</label>
+                                                    <input style="height: 30px;" type="checkbox" checked class="form-control form-control-lg"  id="willCompanyCheck" name="willCompanyCheck"> 
+                                                </div>
+                                                <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                    <input type="text" class="form-control form-control-lg" id="willEditCompany" name="willEditCompany" placeholder="Add Company Value" value="<?php echo $willEditCompany?>">
+                                                </div>
+                                            <?php
+                                                }
+                                                else {
+                                            ?>
+                                                <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willCompanyCheck">Will add company tag?</label>
+                                                    <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willCompanyCheck" name="willCompanyCheck"> 
+                                                </div>
+                                                <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                    <input type="text" class="form-control form-control-lg" style="display: none;" id="willEditCompany" name="willEditCompany" placeholder="Add Company Value" value="">
+                                                </div>
+                                            <?php
+                                                }
+                                            ?>
                                                 
                                             <?php
                                                 if(!empty($jobLocationType)) {

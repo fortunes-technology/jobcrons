@@ -101,6 +101,11 @@ $("#updateDetail").click(function(){
     {
         willAddIndustry = $('#willEditIndustry').val();
     }
+    let willAddCompany = "invalid";
+    if ($('#willCompanyCheck').is(":checked"))
+    {
+        willAddCompany = $('#willEditCompany').val();
+    }
     let jobLocationType = "invalid";
     if ($('#willLocationCheck').is(":checked"))
     {
@@ -131,6 +136,7 @@ $("#updateDetail").click(function(){
                     "updatetag": updatetag, 
                     "willAddCountry": willAddCountry, 
                     "willAddIndustry": willAddIndustry, 
+                    "willAddCompany": willAddCompany, 
                     "jobLocationType": jobLocationType,
                     "utmValue": utmValue,
                 },
@@ -159,6 +165,11 @@ $("#saveDetail").click(function(){
     {
         willAddIndustry = $('#willAddIndustry').val();
     }
+    let willAddCompany = "invalid";
+    if ($('#willCompanyCheck').is(":checked"))
+    {
+        willAddCompany = $('#willAddCompany').val();
+    }
     let jobLocationType = "invalid";
     if ($('#willLocationCheck').is(":checked"))
     {
@@ -174,7 +185,7 @@ $("#saveDetail").click(function(){
     $( "tbody#parsing input[type=radio][name^=tagRadio]:checked" ).each(function( index ) {
         updatetag += `${this.value},`;
     });
-    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "") {
+    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "" || willAddCompany == "" ) {
         alert("Fill form values");
     }
     else {
@@ -190,6 +201,7 @@ $("#saveDetail").click(function(){
                     "cdatatag": cdatatag, 
                     "willAddCountry": willAddCountry, 
                     "willAddIndustry": willAddIndustry, 
+                    "willAddCompany" : willAddCompany,
                     "jobLocationType": jobLocationType, 
                     "isChild": isChild,
                     "utmValue": utmValue,
@@ -220,6 +232,11 @@ $("#willIndustryCheck").click(function(){
     $("#willAddIndustry").toggle(200);
 })
 
+//add company pre tag
+$("#willCompanyCheck").click(function(){
+    $("#willAddCompany").toggle(200);
+})
+
 //update country pre tag
 $("#willCountryCheck").click(function(){
     $("#willEditCountry").toggle(200);
@@ -228,6 +245,11 @@ $("#willCountryCheck").click(function(){
 //update industry pre tag
 $("#willIndustryCheck").click(function(){
     $("#willEditIndustry").toggle(200);
+})
+
+//update company pre tag
+$("#willCompanyCheck").click(function(){
+    $("#willEditCompany").toggle(200);
 })
 
 //add jobLocation tag
