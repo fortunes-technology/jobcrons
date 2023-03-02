@@ -28,18 +28,19 @@
             if (strpos($value, 'utm_source') !== false) {
                 $utm_source = str_replace("utm_source=", "", $value);
             }
-            if (strpos($value, 'utm_medium') !== false) {
+            else if (strpos($value, 'utm_medium') !== false) {
                 $utm_medium = str_replace("utm_medium=", "", $value);
             }
-            if (strpos($value, 'utm_campaign') !== false) {
+            else if (strpos($value, 'utm_campaign') !== false) {
                 $utm_campaign = str_replace("utm_campaign=", "", $value);
             }
-            if (strpos($value, 'utm_content') !== false) {
+            else if (strpos($value, 'utm_content') !== false) {
                 $utm_content = str_replace("utm_content=", "", $value);
             }
-            if (strpos($value, 'custom_field') !== false) {
-                $custom_field = str_replace("custom_field=", "", $value);
+            else {
+                $custom_field = $value;
             }
+
         }
     }
     
