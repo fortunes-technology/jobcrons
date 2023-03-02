@@ -21,7 +21,7 @@
     $utm_medium = "";
     $utm_campaign = "";
     $utm_content = "";
-    $utm_term = "";
+    $custom_field = "";
     if(!empty($edit_infor['utm'])) {
         $edit_infor['utm'] = explode("&", $edit_infor['utm']);
         foreach ($edit_infor['utm'] as $key => $value) {
@@ -37,8 +37,8 @@
             if (strpos($value, 'utm_content') !== false) {
                 $utm_content = str_replace("utm_content=", "", $value);
             }
-            if (strpos($value, 'utm_term') !== false) {
-                $utm_term = str_replace("utm_term=", "", $value);
+            if (strpos($value, 'custom_field') !== false) {
+                $custom_field = str_replace("custom_field=", "", $value);
             }
         }
     }
@@ -506,8 +506,8 @@
                                 <input type="text" class="form-control" id="utm_content" name="utm-content-value" value="<?php echo $utm_content; ?>">
                             </div>
                             <div class="form-group d-flex">
-                                <label for="symbol" class="utm-label">utm_term</label>
-                                <input type="text" class="form-control" id="utm_term" name="utm-term-value" value="<?php echo $utm_term; ?>">
+                                <label for="symbol" class="utm-label">custom field</label>
+                                <input type="text" class="form-control" id="custom_field" name="custom-field-value" value="<?php echo $custom_field; ?>">
                             </div>
                         </div>
                         <div class="modal-footer">
