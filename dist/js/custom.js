@@ -32,7 +32,12 @@ $(document).on('click', '.createUtm', function() {
               
         }
         else {
-            utm_final_value += `${$(this).attr('id')}=${$(this).val()}&`;
+            if($(this).attr('id') == 'custom_field'){
+                utm_final_value += `${$(this).val()}&`;
+            }
+            else {
+                utm_final_value += `${$(this).attr('id')}=${$(this).val()}&`;
+            }
         }
         console.log(utm_final_value);
     });
