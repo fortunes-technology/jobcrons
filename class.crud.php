@@ -628,7 +628,7 @@ class crud
 				$filePath = str_replace(" ", "_", strtolower($row['name'])).".xml";
 				?>
 					<tr>
-						<td><?php echo($row['name']); ?> <?php if(!empty($row['isnew'])) echo '<i class="fas fa-bell zoom-in-zoom-out"></i>'; ?></td>
+						<td><?php echo($row['name']); ?> <?php if(!empty($row['isnew'])) echo '<i class="fas fa-bell zoom-in-zoom-out"></i><p style="display:none">notify</p>';?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo($row['url']); ?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo $outputUrl; ?></td>
 						<td><?php echo($row['createdate']); ?></td>
