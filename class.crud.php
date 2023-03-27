@@ -86,6 +86,33 @@ class crud
 		return $feedAll;
 	}
 
+	public function getAllAI($order) {
+		$order = $order - 1;
+		$feedAll = [];
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt->bindparam(":remain",$order);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$feedAll[] = $row;
+		}
+		return $feedAll;
+	}
+
+	public function getLargeAI($order) {
+		if($order == '681') {
+			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate ='1' AND (id = 681 OR id = 55 OR id = 873)");
+		}
+		if($order == '750') {
+			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate ='1' AND (id = 750 OR id = 377 OR id = 381)");	
+		}
+		$feedAll = [];
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$feedAll[] = $row;
+		}
+		return $feedAll;
+	}
+
 	public function getSpecial() {
 		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id = 948 OR id = 955");
 		$feedAll = [];
@@ -626,11 +653,24 @@ class crud
 			{
 				$outputUrl = $main_url.str_replace(" ", "_", strtolower($row['name'])).".xml";
 				$filePath = str_replace(" ", "_", strtolower($row['name'])).".xml";
+				if($row['aigenerate'] == 1) {
+					$AIGenerateSwitch = "<input type='checkbox' class='ai-check' checked>";
+				}
+				else {
+					$AIGenerateSwitch = "<input type='checkbox' class='ai-check'>";
+				}
 				?>
 					<tr>
 						<td><?php echo($row['name']); ?> <?php if(!empty($row['isnew'])) echo '<i class="fas fa-bell zoom-in-zoom-out"></i><p style="display:none">notify</p>';?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo($row['url']); ?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo $outputUrl; ?></td>
+						<td id='AI-switch-<?php echo($row['id']); ?>' data-sort="<?php echo($row['aigenerate']); ?>">
+							<input class='input-feddinfo-id' type='hidden' value="<?php echo($row['id']); ?>">
+							<label class='switch'>
+								<?php echo($AIGenerateSwitch); ?>
+								<span class='slider round ai-switch'> </span>
+							</label>
+						</td>
 						<td><?php echo($row['createdate']); ?></td>
 						<td><?php echo($row['updatedate']); ?></td>
 						<?php
@@ -782,6 +822,33 @@ class crud
 			$stmt->bindparam(":updated_at",$createdate);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	public function feedInfoAISwitch($id) {
+		try{
+			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id=:id");
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+				$AIGenerate = $row['aigenerate'];
+				if($AIGenerate == 1) {
+					$AIGenerate = 0;
+				}
+				else {
+					$AIGenerate = 1;
+				}
+				$stmt = $this->db->prepare("UPDATE feedinfo SET aigenerate=:aigenerate WHERE id=:id");
+				$stmt->bindparam(":id",$id);
+				$stmt->bindparam(":aigenerate",$AIGenerate);
+				$stmt->execute();
+			}
 			return true;
 		}
 		catch(PDOException $e)

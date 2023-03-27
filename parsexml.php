@@ -355,3 +355,12 @@ if(isset($_POST['createUser'])) {
 	}
 	echo $res; exit();
 }
+
+// active AI generation
+if(isset($_POST["activeAIGenerate"])) {
+	$feedinfoID = $_POST['feedinfo'];
+	$crudResult = $crud->feedInfoAISwitch($feedinfoID);
+	if($crudResult == true) {
+		return true;
+	}
+}
