@@ -86,26 +86,9 @@ class crud
 		return $feedAll;
 	}
 
-	public function getAllAI($order) {
-		$order = $order - 1;
+	public function getAllAI() {
 		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
-		$stmt->bindparam(":remain",$order);
-		$stmt->execute();
-		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$feedAll[] = $row;
-		}
-		return $feedAll;
-	}
-
-	public function getLargeAI($order) {
-		if($order == '681') {
-			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate ='1' AND (id = 681 OR id = 55 OR id = 873)");
-		}
-		if($order == '750') {
-			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate ='1' AND (id = 750 OR id = 377 OR id = 381)");	
-		}
-		$feedAll = [];
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1'");
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$feedAll[] = $row;

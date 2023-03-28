@@ -18,19 +18,8 @@ $client = new S3Client(array(
 
 $client->registerStreamWrapper();
 
-if(isset($argv[1])) {
-  $order = $argv[1];
-}
-else {
-  $order = 1;
-}
-
-if($order > 100) {
-  $feedAll = $crud->getLargeAI($order);
-}
-else {
-  $feedAll = $crud->getAllAI($order);
-}
+$feedAll = $crud->getAllAI();
+$order = 1;
 
 $cronStatus = $crud->getCronStatus($order);
 if($cronStatus != "Finished") {
