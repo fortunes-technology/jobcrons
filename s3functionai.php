@@ -326,10 +326,6 @@ if(count($feedAll) > 0) {
                         $preinsertedTitle = " Rewrite this job title with similar words : ".$insertedTitle." ";
                         $rewrittedTitle = getChatGptContent($preinsertedTitle);
                         $xmlWriter->writeCdata(htmlspecialchars($rewrittedTitle));
-
-                        $preInsertSalary = " Give me just one range per the next job title. Just the number without context or data. Just numbers on the output. Job title: ".$insertedTitle." ";
-                        $rewrittedSalary = getChatGptContent($preInsertSalary);
-                        $xmlWriter->writeCdata(htmlspecialchars($rewrittedSalary));
                       }
                       elseif($updatetagReal == "url") {
                         // UTM adding here
@@ -360,18 +356,22 @@ if(count($feedAll) > 0) {
                         $rewrittedIndustry = getChatGptContent($preinsertedIndustry);
                         $xmlWriter->writeCdata(htmlspecialchars($rewrittedIndustry));
                       }
-                      else {
-                        if($basetagpiece[$i] == 'description' || $updatetagReal == 'content') {
+                      elseif($basetagpiece[$i] == 'description' || $updatetagReal == 'content') {
                           $insertedDescription = $xmlString->__toString();
                           $decordedDescription = htmlspecialchars_decode($insertedDescription);
                           $decordedDescription = strip_tags($decordedDescription);
                           $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: ".$decordedDescription." ";
                           $rewrittedDescription = getChatGptContent($preinsertedDescription);
-                          $xmlWriter->writeCdata(htmlspecialchars($xmlString->asXML()));
-                        }
-                        else{
-                          $xmlWriter->writeCdata(htmlspecialchars($xmlString->__toString()));
-                        }
+                          $xmlWriter->writeCdata(htmlspecialchars($rewrittedDescription));
+                        
+                      }
+                      elseif($updatetagReal == "salary"){
+                        $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
+                        $rewrittedSalary = getChatGptContent($preInsertSalary);
+                        $xmlWriter->writeCdata(htmlspecialchars($rewrittedSalary));
+                      }
+                      else{
+                        $xmlWriter->writeCdata(htmlspecialchars($xmlString->__toString()));
                       }
                       $xmlWriter->endElement();
                     }
@@ -388,7 +388,7 @@ if(count($feedAll) > 0) {
                         $rewrittedTitle = getChatGptContent($preinsertedTitle);
                         $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedTitle));
 
-                        $preInsertSalary = " Give me just one range per the next job title. Just the number without context or data. Just numbers on the output. Job title: ".$insertedTitle." ";
+                        $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
                         $rewrittedSalary = getChatGptContent($preInsertSalary);
                         $xmlWriter->writeElement("salary", htmlspecialchars($rewrittedSalary));
                       }
@@ -421,20 +421,24 @@ if(count($feedAll) > 0) {
                         $rewrittedIndustry = getChatGptContent($preinsertedIndustry);
                         $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedIndustry));
                       }
-                      else {
-                        // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
-                        if($basetagpiece[$i] == 'description' || $updatetagReal == 'content') {
-                          $insertedDescription = $xmlString->__toString();
-                          $decordedDescription = htmlspecialchars_decode($insertedDescription);
-                          $decordedDescription = strip_tags($decordedDescription);
-                          $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: ".$decordedDescription." ";
-                          $rewrittedDescription = getChatGptContent($preinsertedDescription);
-                          $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedDescription));
-                        }
-                        else {
-                          $xmlWriter->writeElement($updatetagReal, htmlspecialchars($xmlString->__toString()));
-                        }
+                      elseif($basetagpiece[$i] == 'description' || $updatetagReal == 'content') {
+                        $insertedDescription = $xmlString->__toString();
+                        $decordedDescription = htmlspecialchars_decode($insertedDescription);
+                        $decordedDescription = strip_tags($decordedDescription);
+                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: ".$decordedDescription." ";
+                        $rewrittedDescription = getChatGptContent($preinsertedDescription);
+                        $xmlWriter->writeCdata(htmlspecialchars($rewrittedDescription));
+                      
                       }
+                      elseif($updatetagReal == "salary"){
+                        $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
+                        $rewrittedSalary = getChatGptContent($preInsertSalary);
+                        $xmlWriter->writeCdata(htmlspecialchars($rewrittedSalary));
+                      }
+                      else{
+                        $xmlWriter->writeCdata(htmlspecialchars($xmlString->__toString()));
+                      }
+                      $xmlWriter->endElement();
 
                     }
                   }                 
@@ -502,6 +506,28 @@ if(count($feedAll) > 0) {
                         }
                       }
                     }
+                    elseif($updatetagReal == "title") {
+                        $insertedDate = $xmlString->__toString();
+                        $insertedTitle = $insertedDate;
+                        $preinsertedTitle = " Rewrite this job title with similar words : ".$insertedDate." ";
+                        $insertedDate = getChatGptContent($preinsertedTitle);
+                    }
+                    elseif($updatetagReal == "industry") {
+                      $insertedDate = $xmlString->__toString();
+                      $preinsertedIndustry = " According to linkedin's categorisation of jobs, tell me to which category this job belongs. Just the name of the category itself, without more text that the category name. Output has to be just the name of the category. Just put the text that is into the '', but without the '' :  ".$insertedDate." ";
+                      $insertedDate = getChatGptContent($preinsertedIndustry);
+                    }
+                    elseif($updatetagReal == 'description' || $updatetagReal == 'content') {
+                      $insertedDate = $xmlString->__toString();
+                      $decordedDescription = htmlspecialchars_decode($insertedDate);
+                      $decordedDescription = strip_tags($decordedDescription);
+                      $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: ".$decordedDescription." ";
+                      $insertedDate = getChatGptContent($preinsertedDescription);
+                    }
+                    elseif($updatetagReal == "estimatedSalary"){
+                      $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
+                      $insertedDate = getChatGptContent($preInsertSalary);
+                    }
                     else {
                       $insertedDate = $xmlString->__toString();
                     }
@@ -552,14 +578,31 @@ if(count($feedAll) > 0) {
                           }
                         }
                       }
+                      elseif($updatetagReal == "title") {
+                        $insertedDate = $xmlString->__toString();
+                        $insertedTitle = $insertedDate;
+                        $preinsertedTitle = " Rewrite this job title with similar words : ".$insertedDate." ";
+                        $insertedDate = getChatGptContent($preinsertedTitle);
+                      }
+                      elseif($updatetagReal == "industry") {
+                        $insertedDate = $xmlString->__toString();
+                        $preinsertedIndustry = " According to linkedin's categorisation of jobs, tell me to which category this job belongs. Just the name of the category itself, without more text that the category name. Output has to be just the name of the category. Just put the text that is into the '', but without the '' :  ".$insertedDate." ";
+                        $insertedDate = getChatGptContent($preinsertedIndustry);
+                      }
+                      elseif($updatetagReal == 'description' || $updatetagReal == 'content') {
+                        $insertedDate = $xmlString->__toString();
+                        $decordedDescription = htmlspecialchars_decode($insertedDate);
+                        $decordedDescription = strip_tags($decordedDescription);
+                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: ".$decordedDescription." ";
+                        $insertedDate = getChatGptContent($preinsertedDescription);
+                      }
+                      elseif($updatetagReal == "estimatedSalary"){
+                        $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
+                        $insertedDate = getChatGptContent($preInsertSalary);
+                      }
                       else {
                         // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
-                        if($basetagpiece[$i] == 'description') {
-                          $insertedDate = $xmlString->asXML();
-                        }
-                        else {
-                          $insertedDate = $xmlString->__toString();
-                        }
+                        $insertedDate = $xmlString->__toString();
                       }
 
                       if(in_array($basetagpiece[$i], $cdatatagpiece)) {
