@@ -19,16 +19,6 @@ $client = new S3Client(array(
 $client->registerStreamWrapper();
 
 $feedAll = $crud->getAllAI();
-$order = 1;
-
-$cronStatus = $crud->getCronStatus($order);
-if($cronStatus != "Finished") {
-  echo "Cron is Running";
-  exit();
-}
-echo "Cron status is changed and it is running";
-
-$cronStart = $crud->cronStatus($order, "Running");
 
 // Remove specific value from url
 function strip_param_from_url( $url, $params ) {
@@ -208,8 +198,6 @@ if(count($feedAll) > 0) {
   // $_SESSION['bigCron'] == "Valid";
     
   foreach ($feedAll as $value) {
-
-    $changeStatus = $crud->changeStatus($value['id'], "Progressing");
 
     $preCount = $value['totalcount'];
     $preRepeat = $value['repeats'];
@@ -655,28 +643,6 @@ if(count($feedAll) > 0) {
         $deleted = unlink($saveName);
       }
 
-      // Setting repeat configuration
-      if($key != $preCount) {
-        $preRepeat = $preRepeat - 1;
-      }
-      else {
-        $preRepeat = $preRepeat + 1;
-      }
-
-      if($key == 0) {
-        $preRepeat = 3;
-      }
-
-      if($preRepeat > 3) {
-        $preRepeat = 3;
-      }
-      elseif($preRepeat < 1) {
-        $preRepeat = 1;
-      }
-      else {
-        $preRepeat = $preRepeat;
-      }
-
       $tagChanged = false;
       array_pop($updatetagpiece);
       
@@ -712,18 +678,6 @@ if(count($feedAll) > 0) {
           }
         }
       }
-      
-      if($tagChanged) {
-        $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew);      
-      }
-      else {
-        $changeStatus = $crud->changeStatusFinal($value['id'], "Ready", $key, $preRepeat);      
-      }
-    }
-
-    else {
-      $preRepeat = 3;
-      $changeStatus = $crud->changeStatusFinal($value['id'], "Error", 0, $preRepeat);
     }
 
     echo $value['url'];
@@ -732,5 +686,5 @@ if(count($feedAll) > 0) {
   }
   echo "success";
   // unset($_SESSION['bigCron']);
-$cronStart = $crud->cronStatus($order, "Finished");
+
 }
