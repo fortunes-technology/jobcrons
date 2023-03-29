@@ -387,10 +387,6 @@ if(count($feedAll) > 0) {
                         $preinsertedTitle = " Rewrite this job title with similar words : ".$insertedTitle." ";
                         $rewrittedTitle = getChatGptContent($preinsertedTitle);
                         $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedTitle));
-
-                        $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: ".$insertedTitle." ";
-                        $rewrittedSalary = getChatGptContent($preInsertSalary);
-                        $xmlWriter->writeElement("salary", htmlspecialchars($rewrittedSalary));
                       }
                       elseif($updatetagReal == "url") {
                         // UTM adding here
