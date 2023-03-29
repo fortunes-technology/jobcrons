@@ -187,8 +187,8 @@ function getChatGptContent( $input ){
   curl_close($curl);
   
   $result = json_decode($response, true);
-  $midresult = $result['choices'];
-  $output = $midresult['0']['text'];
+  $midresult = $result['choices'] ?? '';
+  $output = $midresult['0']['text'] ?? '';
   
   return $output;
 
