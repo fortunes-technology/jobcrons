@@ -5,8 +5,6 @@ use Aws\S3\MultipartUploader;
 use Aws\S3\Exception\S3MultipartUploadException;
 use Aws\S3\S3Client;
 
-
-
 $client = new S3Client(array(
     'credentials' => [
         'key' => 'AKIAQLRVICZQM2MQJHZM',
@@ -179,7 +177,7 @@ function getChatGptContent( $input ){
     CURLOPT_POSTFIELDS => json_encode($params),
     CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json',
-        'Authorization: Bearer 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'
+        'Authorization: Bearer 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'
     ),
   ));
   
@@ -239,7 +237,7 @@ if(count($feedAll) > 0) {
     if(strpos($updatetag, 'estimatedSalary') !== false) {
       $estimatedSalaryFlag = 1;
     } 
-    $reader = new XMLReader();
+    $reader1 = new XMLReader();
 
     $realHandleUrl = $value['url'];
     if($value['url'] == "https://gateway.harri.com/dispatcher/api/v2/brands/914618/jobs/feed") {
@@ -261,22 +259,22 @@ if(count($feedAll) > 0) {
       }
     }
 
-    if($reader->open($realHandleUrl)) {
+    if($reader1->open($realHandleUrl)) {
 
       $key = 0;
 
-      $saveName = str_replace(" ", "_", strtolower($value['name']))."_rewritten.xml";
+      $saveName1 = str_replace(" ", "_", strtolower($value['name'])).".xml";
       // $saveNameOld = str_replace(" ", "_", strtolower($value['name'])).".xml";
       // $saveNameAlt = str_replace(" ", "_", strtolower($value['name']))."_2.xml";
-      $s3xml = S3XML.$saveName;
+      $s3xml = S3XML.$saveName1;
       // $s3xmlOld = S3XML.$saveNameOld;
       // $s3xmlAlt = S3XML.$saveNameAlt;
-      $s3key = $saveName;
-      $saveName = XMLDIR.$saveName;
+      // $s3key = $saveName1;
+      $saveName1 = XMLDIR.$saveName1;
 
       //remove if the file is exist in server
-      if (file_exists($saveName)) {
-        $deleted = unlink($saveName);
+      if (file_exists($saveName1)) {
+        $deleted1 = unlink($saveName1);
       }
 
       //remove if the file is exist in s3
@@ -288,17 +286,340 @@ if(count($feedAll) > 0) {
       $xmlWriter->setIndent(TRUE);
       $xmlWriter->startElement('bebee');
 
-      while($reader->read()) {
+      while($reader1->read()) {
 
-        if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
+        if($reader1->nodeType == XMLReader::ELEMENT) $nodeName = $reader1->name;
   
         if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product") {
   
           libxml_use_internal_errors(true);
-          $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader->readOuterXML());
+          $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader1->readOuterXML());
           
           try{
-              $readerForNode = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $reader->readOuterXML()); 
+              $readerForNode = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $reader1->readOuterXML()); 
+              $node = new SimpleXMLElement($readerForNode);
+              $nodeForTag = new SimpleXMLElement($readerForNodeForTag);
+          } catch (Exception $e){
+            continue;
+          }
+  
+          if(!empty($node)) {
+
+            $processCurrent = get_key_from_node($nodeForTag, $baseTagCurrent, $cdataTagCurrent);
+            $baseTagCurrent = $processCurrent['baseTagCurrent'];
+            $cdataTagCurrent = $processCurrent['cdataTagCurrent'];
+            
+            $xmlWriter->startElement('item');
+            
+            // this is for normal xml handling
+            if($value['cronid'] != "4") {
+              for($i = 0; $i < count($updatetagpiece) - 1; $i++) {
+
+                if($updatetagpiece[$i] != "discard") {
+                  if($updatetagpiece[$i] != "Default") {
+                    $updatetagReal = $updatetagpiece[$i];
+                  }
+                  else {
+                    $updatetagReal = $basetagpiece[$i];
+                  }
+
+                  if(isset($node->{$basetagpiece[$i]})) {
+                    $xmlString = $node->{$basetagpiece[$i]};
+
+                    // This is for CDATA case
+                    if(in_array($basetagpiece[$i], $cdatatagpiece)) {
+                      $xmlWriter->startElement($updatetagReal);
+                      if($updatetagReal == "datePosted") {
+                        $insertedDate = dateHandle(htmlspecialchars($xmlString->__toString()));
+                        $xmlWriter->writeCdata(htmlspecialchars($insertedDate));
+                      }
+                      elseif($updatetagReal == "url") {
+                        // UTM adding here
+                        if(!empty($value['utm'])) {
+                          if (strpos($xmlString->__toString(), '?') !== false) {
+                            $xmlWriter->writeCdata(strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                          }
+                          else {
+                            $xmlWriter->writeCdata($xmlString->__toString()."?".$value['utm']);
+                          }
+                        }
+                        else {
+                          // This is for indeed aws case, just for replace replaceme to 6544253382309580
+                          if (strpos($xmlString->__toString(), 'pubnum=REPLACEME') !== false) {
+                            $xmlWriter->writeCdata(str_replace("pubnum=REPLACEME", "pubnum=6544253382309580", $xmlString->__toString()));  
+                          }
+                          elseif (strpos($xmlString->__toString(), '/REPLACEME') !== false) {
+                            $xmlWriter->writeCdata(str_replace("/REPLACEME", "/6544253382309580", $xmlString->__toString()));  
+                          }
+                          else {
+                            $xmlWriter->writeCdata($xmlString->__toString());
+                          }
+                        }
+                      }
+                      else {
+                        $xmlWriter->writeCdata(htmlspecialchars($xmlString->__toString()));
+                      }
+                      $xmlWriter->endElement();
+                    }
+
+                    // This is not for CDATA case
+                    else {
+                      if($updatetagReal == "datePosted") {
+                        $insertedDate = dateHandle(htmlspecialchars($xmlString->__toString()));
+                        $xmlWriter->writeElement($updatetagReal, htmlspecialchars($insertedDate));
+                      }
+                      elseif($updatetagReal == "url") {
+                        // UTM adding here
+                        if(!empty($value['utm'])) {
+                          if (strpos($xmlString->__toString(), '?') !== false) {
+                            $xmlWriter->writeElement($updatetagReal, strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                          }
+                          else {
+                            $xmlWriter->writeElement($updatetagReal, $xmlString->__toString()."?".$value['utm']);
+                          }
+                        }                        
+                        else {
+                          // This is for indeed aws case, just for replace replaceme to 6544253382309580
+                          if (strpos($xmlString->__toString(), 'pubnum=REPLACEME') !== false) {
+                            $xmlWriter->writeElement($updatetagReal, str_replace("pubnum=REPLACEME", "pubnum=6544253382309580", $xmlString->__toString()));
+                          }
+                          elseif(strpos($xmlString->__toString(), '/REPLACEME') !== false) {
+                            $xmlWriter->writeElement($updatetagReal, str_replace("/REPLACEME", "/6544253382309580", $xmlString->__toString()));
+                          }
+                          else {
+                            $xmlWriter->writeElement($updatetagReal, $xmlString->__toString());
+                          }
+                        }
+                      }
+                      else {
+                        // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
+                        if($basetagpiece[$i] == 'description') {
+                          $xmlWriter->writeElement($updatetagReal, htmlspecialchars($xmlString->asXML()));
+                        }
+                        else {
+                          $xmlWriter->writeElement($updatetagReal, htmlspecialchars($xmlString->__toString()));
+                        }
+                      }
+
+                    }
+                  }                 
+
+                }
+              }
+            }
+
+
+            if($value['cronid'] == "4") {
+              for($i = 0; $i < count($updatetagpiece) - 1; $i++) {
+
+                if($updatetagpiece[$i] != "discard") {
+                  // If update tag
+                  if($updatetagpiece[$i] != "Default") {
+                    $updatetagReal = $updatetagpiece[$i];
+                  }
+                  else {
+                    if (strpos($basetagpiece[$i], ':') !== false) {
+                      $updatetagRealKey = explode(":", $basetagpiece[$i]);
+                      $updatetagReal = end($updatetagRealKey);
+                    }
+                    else {
+                      $updatetagReal = $basetagpiece[$i];
+                    }
+                  }
+
+                  // if contains child tag
+                  if (strpos($basetagpiece[$i], ':') !== false) {
+                    $minitag = explode(":", $basetagpiece[$i]);
+                    $xmlString = $node;
+                    foreach($minitag as $rkey) {
+                      if(isset($xmlString -> {$rkey})) {
+                        $xmlString = $xmlString -> {$rkey};
+                      }
+                    }
+                    // if value is not exist then empty value
+                    if(!empty($xmlString)) {
+                      $insertedDate = "";
+                    }
+                    // handle of dateposted tag
+                    if($updatetagReal == "datePosted") {
+                      $insertedDate = dateHandle(htmlspecialchars($xmlString->__toString()));
+                    }
+                    //utm handle
+                    elseif($updatetagReal == "url")  {
+                      if(!empty($value['utm'])) {
+                        if (strpos($xmlString->__toString(), '?') !== false) {
+                          $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                        }
+                        else {
+                          $insertedDate = $xmlString->__toString()."?".$value['utm'];
+                        }
+                      }
+                      else {
+                        // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
+                        if (strpos($xmlString->__toString(), 'pubnum=REPLACEME') !== false) {
+                          $insertedDate = str_replace("pubnum=REPLACEME", "pubnum=6544253382309580", $xmlString->__toString());
+                        }
+                        elseif (strpos($xmlString->__toString(), '/REPLACEME') !== false) {
+                          $insertedDate = str_replace("/REPLACEME", "/6544253382309580", $xmlString->__toString());
+                        }
+                        else {
+                          $insertedDate = $xmlString->__toString();
+                        }
+                      }
+                    }
+                    else {
+                      $insertedDate = $xmlString->__toString();
+                    }
+
+                    if(in_array($basetagpiece[$i], $cdatatagpiece)) {
+                      if($updatetagReal != "url") {
+                        $insertedDate = htmlspecialchars($insertedDate);
+                      }
+                      $xmlWriter->startElement($updatetagReal);
+                      $xmlWriter->writeCdata($insertedDate);
+                      $xmlWriter->endElement();
+                    }
+                    else {
+                      if($updatetagReal != "url") {
+                        $insertedDate = htmlspecialchars($insertedDate);
+                      }
+                      $xmlWriter->writeElement($updatetagReal, $insertedDate);
+                    }
+                  }
+                  // if not contain child tag
+                  else {
+                    if(isset($node->{$basetagpiece[$i]})) {
+                      $xmlString = $node->{$basetagpiece[$i]};
+                      // handle of dateposted tag
+                      if($updatetagReal == "datePosted") {
+                        $insertedDate = dateHandle(htmlspecialchars($xmlString->__toString()));
+                      }
+                      //utm handle
+                      elseif($updatetagReal == "url")  {
+                        if(!empty($value['utm'])) {
+                          if (strpos($xmlString->__toString(), '?') !== false) {
+                            $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                          }
+                          else {
+                            $insertedDate = $xmlString->__toString()."?".$value['utm'];
+                          }
+                        }                        
+                        else {
+                          // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
+                          if (strpos($xmlString->__toString(), 'pubnum=REPLACEME') !== false) {
+                            $insertedDate = str_replace("pubnum=REPLACEME", "pubnum=6544253382309580", $xmlString->__toString());
+                          }
+                          elseif (strpos($xmlString->__toString(), '/REPLACEME') !== false) {
+                            $insertedDate = str_replace("/REPLACEME", "/6544253382309580", $xmlString->__toString());
+                          }
+                          else {
+                            $insertedDate = $xmlString->__toString();
+                          }
+                        }
+                      }
+                      else {
+                        // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
+                        if($basetagpiece[$i] == 'description') {
+                          $insertedDate = $xmlString->asXML();
+                        }
+                        else {
+                          $insertedDate = $xmlString->__toString();
+                        }
+                      }
+
+                      if(in_array($basetagpiece[$i], $cdatatagpiece)) {
+                        if($updatetagReal != "url") {
+                          $insertedDate = htmlspecialchars($insertedDate);
+                        }
+                        $xmlWriter->startElement($updatetagReal);
+                        $xmlWriter->writeCdata($insertedDate);
+                        $xmlWriter->endElement();
+                      }
+                      else {
+                        if($updatetagReal != "url") {
+                          $insertedDate = htmlspecialchars($insertedDate);
+                        }
+                        $xmlWriter->writeElement($updatetagReal, $insertedDate);
+                      }
+                    }
+                    
+                  }
+
+                }
+              }
+            }
+
+
+            if(!empty($defaultcountry)) {
+              $xmlWriter->writeElement("addressCountry", $defaultcountry);
+            }
+            if(!empty($industry)) {
+              $xmlWriter->writeElement("industry", $industry);
+            }
+            if(!empty($company)) {
+              $xmlWriter->writeElement("company", $company);
+            }
+            if(!empty($joblocationtype)) {
+              $xmlWriter->writeElement("jobLocationType", $joblocationtype);
+            }
+            $xmlWriter->endElement();
+          }
+
+          $key ++ ;
+        }
+
+        if (0 == $key%1000) {
+            file_put_contents($saveName1, $xmlWriter->flush(true), FILE_APPEND);
+        }
+        
+        // if( $key == 4 ) break;
+        // echo '@';
+
+      }
+      $xmlWriter->endElement();
+      file_put_contents($saveName1, $xmlWriter->flush(true), FILE_APPEND);
+      
+    }
+
+    $reader2 = new XMLReader();
+    if($reader2->open($saveName1)) {
+
+      $key = 0;
+
+      $saveName2 = str_replace(" ", "_", strtolower($value['name']))."_rewritten.xml";
+      // $saveNameOld = str_replace(" ", "_", strtolower($value['name'])).".xml";
+      // $saveNameAlt = str_replace(" ", "_", strtolower($value['name']))."_2.xml";
+      $s3xml = S3XML.$saveName2;
+      // $s3xmlOld = S3XML.$saveNameOld;
+      // $s3xmlAlt = S3XML.$saveNameAlt;
+      $s3key = $saveName2;
+      $saveName2 = XMLDIR.$saveName2;
+
+      //remove if the file is exist in server
+      if (file_exists($saveName2)) {
+        $deleted2 = unlink($saveName2);
+      }
+
+      //remove if the file is exist in s3
+      // unlink($s3xml);
+
+      $xmlWriter = new XMLWriter();
+      $xmlWriter->openMemory();
+      $xmlWriter->startDocument('1.0', 'UTF-8');
+      $xmlWriter->setIndent(TRUE);
+      $xmlWriter->startElement('bebee');
+
+      while($reader2->read()) {
+
+        if($reader2->nodeType == XMLReader::ELEMENT) $nodeName = $reader2->name;
+  
+        if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product") {
+  
+          libxml_use_internal_errors(true);
+          $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader2->readOuterXML());
+          
+          try{
+              $readerForNode = preg_replace("/(<\/?)(\w+):([^>]*>)/", "$1$2$3", $reader2->readOuterXML()); 
               $node = new SimpleXMLElement($readerForNode);
               $nodeForTag = new SimpleXMLElement($readerForNodeForTag);
           } catch (Exception $e){
@@ -670,17 +991,18 @@ if(count($feedAll) > 0) {
         }
 
         if (0 == $key%1000) {
-            file_put_contents($saveName, $xmlWriter->flush(true), FILE_APPEND);
+            file_put_contents($saveName2, $xmlWriter->flush(true), FILE_APPEND);
         }
 
         // if( $key == 8 ) break;
+        // echo '#';
 
       }
       $xmlWriter->endElement();
-      file_put_contents($saveName, $xmlWriter->flush(true), FILE_APPEND);
+      file_put_contents($saveName2, $xmlWriter->flush(true), FILE_APPEND);
 
       // file upload to s3 and update file name
-      $uploader = new MultipartUploader($s3, $saveName, [
+      $uploader = new MultipartUploader($s3, $saveName2, [
           'bucket' => "converted.bebee.com",
           'key'    => $s3key,
           'ACL'    => 'public-read'
@@ -707,8 +1029,8 @@ if(count($feedAll) > 0) {
 
       // Unlink the file in the server
 
-      if (file_exists($saveName)) {
-        $deleted = unlink($saveName);
+      if (file_exists($saveName2)) {
+        $deleted1 = unlink($saveName2);
       }
 
       $tagChanged = false;
@@ -747,10 +1069,14 @@ if(count($feedAll) > 0) {
         }
       }
     }
+    
+    $reader2->close();
+    if (file_exists($saveName1)) {
+      $deleted2 = unlink($saveName1);
+    }
 
     echo $value['url'];
     echo "<br>";
-
   }
   echo "success";
   // unset($_SESSION['bigCron']);
