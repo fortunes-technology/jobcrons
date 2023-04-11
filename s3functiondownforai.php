@@ -177,7 +177,7 @@ function getChatGptContent( $input ){
     CURLOPT_POSTFIELDS => json_encode($params),
     CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json',
-        'Authorization: Bearer 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'
+        'Authorization: Bearer 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'
     ),
   ));
   
