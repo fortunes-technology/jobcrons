@@ -156,7 +156,7 @@ function getChatGptContent($input)
     'model' => 'text-curie-001',
     'prompt' => $input,
     'temperature' => 0,
-    'max_tokens' => 800,
+    'max_tokens' => 300,
   );
 
   curl_setopt_array($curl, array(
@@ -251,8 +251,10 @@ if (count($feedAll) > 0) {
     }
 
     $saveName1 = str_replace(" ", "___", strtolower($value['name'])) . ".xml";
+    $saveName1 = XMLDIR . $saveName1;
     $xml = file_get_contents($realHandleUrl);
     file_put_contents($saveName1, $xml);
+    echo "file is saved";
 
     $reader2 = new XMLReader();
     if ($reader2->open($saveName1)) {
