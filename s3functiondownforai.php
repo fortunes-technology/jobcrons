@@ -364,7 +364,6 @@ if (count($feedAll) > 0) {
                         $decordedDescription = strip_tags($decordedDescription);
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: " . $decordedDescription . " ";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
-                        $rewrittedDescription = $rewrittedDescription."\n";
                         $xmlWriter->writeCdata(htmlspecialchars($rewrittedDescription));
                       } elseif ($updatetagReal == "estimatedSalary") {
                         $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
@@ -417,7 +416,6 @@ if (count($feedAll) > 0) {
                         $decordedDescription = strip_tags($decordedDescription);
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: " . $decordedDescription . " ";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
-                        $rewrittedDescription = $rewrittedDescription."\n";
                         $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedDescription));
                       } elseif ($updatetagReal == "estimatedSalary") {
                         $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
@@ -499,7 +497,6 @@ if (count($feedAll) > 0) {
                       $decordedDescription = strip_tags($decordedDescription);
                       $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: " . $decordedDescription . " ";
                       $insertedDate = getChatGptContent($preinsertedDescription);
-                      $insertedDate = $insertedDate."\n";
                     } elseif ($updatetagReal == "estimatedSalary") {
                       $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
                       $insertedDate = getChatGptContent($preInsertSalary);
@@ -562,7 +559,6 @@ if (count($feedAll) > 0) {
                         $decordedDescription = strip_tags($decordedDescription);
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: " . $decordedDescription . " ";
                         $insertedDate = getChatGptContent($preinsertedDescription);
-                        $insertedDate = $insertedDate."\n";
                       } elseif ($updatetagReal == "estimatedSalary") {
                         $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
                         $insertedDate = getChatGptContent($preInsertSalary);
