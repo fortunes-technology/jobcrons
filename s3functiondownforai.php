@@ -363,7 +363,7 @@ if (count($feedAll) > 0) {
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
                         echo $decordedDescription;
-                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: \n" . $decordedDescription . "\n";
+                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
                         echo $rewrittedDescription;
                         $xmlWriter->writeCdata(htmlspecialchars($rewrittedDescription));
@@ -417,7 +417,7 @@ if (count($feedAll) > 0) {
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
                         echo $decordedDescription;
-                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: \n" . $decordedDescription . "\n";
+                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
                         echo $rewrittedDescription;
                         $xmlWriter->writeElement($updatetagReal, htmlspecialchars($rewrittedDescription));
@@ -499,7 +499,7 @@ if (count($feedAll) > 0) {
                       $insertedDate = $xmlString->__toString();
                       $decordedDescription = htmlspecialchars_decode($insertedDate);
                       $decordedDescription = strip_tags($decordedDescription);
-                      $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: \n" . $decordedDescription . "\n";
+                      $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                       $insertedDate = getChatGptContent($preinsertedDescription);
                     } elseif ($updatetagReal == "estimatedSalary") {
                       $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
@@ -561,7 +561,7 @@ if (count($feedAll) > 0) {
                         $insertedDate = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDate);
                         $decordedDescription = strip_tags($decordedDescription);
-                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position: \n" . $decordedDescription . "\n";
+                        $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $insertedDate = getChatGptContent($preinsertedDescription);
                       } elseif ($updatetagReal == "estimatedSalary") {
                         $preInsertSalary = " Give me just one range per the next job title. But only print price. Job title: " . $insertedTitle . " ";
