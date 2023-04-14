@@ -183,6 +183,7 @@ if(count($feedAll) > 0) {
   foreach ($feedAll as $value) {
 
     $changeStatus = $crud->changeStatus($value['id'], "Progressing");
+    $specialCaseFlag = 0;
 
     $preCount = $value['totalcount'];
     $preRepeat = $value['repeats'];
@@ -218,6 +219,9 @@ if(count($feedAll) > 0) {
     }
     if($value['url'] == "https://files.channable.com/ZKWkKXye0GkHX8R0rM_xYw==.xml") {
       $realHandleUrl = "/var/www/html/cf/xmldir/file_channable.xml";
+    }
+    if($value['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml") {
+      $specialCaseFlag = 1;
     }
     if (strpos($realHandleUrl, '.zip') !== false || strpos($realHandleUrl, '.gz') !== false) {
       $isReady = $crud->getIsReady($realHandleUrl);
@@ -263,7 +267,7 @@ if(count($feedAll) > 0) {
 
         if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
   
-        if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product") {
+        if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
   
           libxml_use_internal_errors(true);
           $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader->readOuterXML());
