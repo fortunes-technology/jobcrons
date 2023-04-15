@@ -679,6 +679,7 @@ if(count($feedAll) > 0) {
         }
 
         // if( $key == 8 ) break;
+        if( $key > 30000 ) break;
 
       }
       $xmlWriter->endElement();
