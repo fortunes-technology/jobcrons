@@ -330,6 +330,7 @@ $(document).ready(function() {
             null,
             null,
             null,
+            null,
             { "bSortable": false }
          ],
          "pageLength": 50,
@@ -746,3 +747,27 @@ $(document).on("click", "a#editUser", function() {
     });
 
 });
+
+$(document).on("click", ".ai-switch", function() {
+    var table = $('#feedinfo').DataTable();
+    let feedinfo = $(this).closest('tr').find('input').val();
+    let activeTdId = "td#AI-switch-"+feedinfo ; 
+    let invalTdId = "#AI-switch-"+feedinfo ;
+    let active = $(activeTdId).attr('data-sort');
+    if(active == 1){
+        $(activeTdId).attr('data-sort', "0");
+    }
+    else if(active == 0){
+        $(activeTdId).attr('data-sort', "1");
+    }
+    table.cells(invalTdId).invalidate();
+    $.ajax({
+        url: "parsexml.php",
+        type: "post",
+        dataType: "json",
+        data: {"activeAIGenerate": "activeAIGenerate", "feedinfo": feedinfo},
+        success: function(result) {
+            console.log(result);
+        }
+    })
+})

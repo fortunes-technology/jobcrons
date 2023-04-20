@@ -132,6 +132,7 @@
                                                         <th>Name</th>
                                                         <th>Input Url</th>
                                                         <th>Output Url</th>
+                                                        <th>AI Generate</th>
                                                         <th>CreateDate</th>
                                                         <th>UpdateDate</th>
                                                         <th>Status</th>

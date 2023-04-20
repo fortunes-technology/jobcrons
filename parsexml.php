@@ -21,12 +21,16 @@ $s3->registerStreamWrapper();
 
 // Parse XML file
 if(isset($_POST['parse']) && isset($_POST['url'])) {
+	$specialCaseFlag = 0;
 	$url_real = $_POST['url'];
 	if($_POST['url'] == "https://gateway.harri.com/dispatcher/api/v2/brands/914618/jobs/feed") {
 		$url_real = "https://converter.bebee.com/cf/xmldir/file.xml";
 	}
 	if($_POST['url'] == "https://gateway.harri.com/dispatcher/api/v2/brands/914618/jobs/feed") {
 		$url_real = "https://converter.bebee.com/cf/xmldir/file_channable.xml";
+	}
+	if($_POST['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml") {
+		$specialCaseFlag = 1;
 	}
 	$is_child = "2";
 
@@ -96,7 +100,7 @@ if(isset($_POST['parse']) && isset($_POST['url'])) {
 		$i = 0;
 		while($reader->read()) {
 			if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
-			if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product") {
+			if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
 				$baseTag = [];
 				$baseValue = [];
 				$cdataTag = [];
@@ -354,4 +358,13 @@ if(isset($_POST['createUser'])) {
 		$res = json_encode(['data' => "false"]);
 	}
 	echo $res; exit();
+}
+
+// active AI generation
+if(isset($_POST["activeAIGenerate"])) {
+	$feedinfoID = $_POST['feedinfo'];
+	$crudResult = $crud->feedInfoAISwitch($feedinfoID);
+	if($crudResult == true) {
+		return true;
+	}
 }
