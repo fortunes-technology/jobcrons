@@ -18,6 +18,11 @@ $s3 = new S3Client([
 ]);
 $s3->registerStreamWrapper();
 
+$debug = new \bdk\Debug(array(
+	'collect' => true,
+	'output' => true,
+));
+
 if(session_status() == PHP_SESSION_NONE){
     //session has not started
     session_start();
