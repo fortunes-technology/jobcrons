@@ -23,15 +23,15 @@ if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
 
-// $DB_host = "localhost";
-// $DB_user = "root";
-// $DB_pass = "";
-// $DB_name = "dbpdo";
-
 $DB_host = "localhost";
 $DB_user = "root";
-$DB_pass = "Innerpeace628!";
+$DB_pass = "";
 $DB_name = "dbpdo";
+
+// $DB_host = "localhost";
+// $DB_user = "root";
+// $DB_pass = "Innerpeace628!";
+// $DB_name = "dbpdo";
 
 try
 {
