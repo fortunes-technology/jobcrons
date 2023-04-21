@@ -16,8 +16,25 @@ $client = new S3Client(array(
 
 $client->registerStreamWrapper();
 
-$getRunning = $crud->getRunningAIChecking();
-$feedAll = $crud->getRunningAIItem($getRunning);
+if(isset($argv[1])) {
+  $order = $argv[1]; //for feedid=$argv[1] and status = 'Checking' or status = 'Ready'
+}
+else {
+  $order = 0 ; 
+}
+
+if($order != 0) {
+  $can = $crud->getRunningAICheckingReady($order);
+  if($can) {
+    $feedAll = $crud->getAllAI($order);
+  }
+  else {
+    $feedAll = [];
+  }
+}
+else {
+  $feedAll = [];
+}
 
 // Remove specific value from url
 function strip_param_from_url($url, $params)

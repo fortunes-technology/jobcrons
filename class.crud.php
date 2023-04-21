@@ -71,9 +71,10 @@ class crud
 		return $feedAll;
 	}
 
-	public function getAllAI() {
+	public function getAllAI($id) {
 		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1'");
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id = :id ");
+		$stmt->bindparam(":id", $id);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$feedAll[] = $row;
@@ -81,6 +82,34 @@ class crud
 		return $feedAll;
 	}
 	
+	public function getRunningAICheckingReady($feedid) {
+		$now = new DateTime();
+		$updateddate = '';
+		$status = '';
+		$stmt = $this->db->prepare("SELECT * FROM runningai WHERE feedid = :feedid ");
+		$stmt->bindparam(":feedid", $feedid);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$status = $row['status'];
+			$updateddate = new DateTime($row['updated_at']);
+		}
+		if($status == 'Checking') {
+			return true;
+		}
+		else if($status == 'Ready') {
+			$interval = $updateddate->diff($now);
+			if($interval->d > 3) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+
 	public function getLarge($order) {
 		if($order == '681') {
 			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id = 681 OR id = 55 OR id = 873");
@@ -94,17 +123,6 @@ class crud
 			$feedAll[] = $row;
 		}
 		return $feedAll;
-	}
-
-	public function getRunningAIItem($list) {
-		$runningList = [];
-		$in  = str_repeat('?,', count($list) - 1) . '?';
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id IN ($in)");
-		$stmt->execute($list);
-		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$runningList[] = $row;
-		}
-		return $runningList;
 	}
 
 	public function getSpecial() {
@@ -329,18 +347,6 @@ class crud
 				return false;
 			}
 		}
-	}
-
-	public function getRunningAIChecking() {
-		$runningList = [];
-		$status = "Checking";
-		$stmt = $this->db->prepare("SELECT * FROM runningai WHERE status=:status");
-		$stmt->bindparam(":status", $status);
-		$stmt->execute();
-		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$runningList[] = $row['feedid'];
-		}
-		return $runningList;
 	}
 
 	//Generate random string
