@@ -71,6 +71,16 @@ class crud
 		return $feedAll;
 	}
 
+	public function getAllAI() {
+		$feedAll = [];
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1'");
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$feedAll[] = $row;
+		}
+		return $feedAll;
+	}
+	
 	public function getLarge($order) {
 		if($order == '681') {
 			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id = 681 OR id = 55 OR id = 873");
