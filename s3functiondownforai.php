@@ -16,7 +16,8 @@ $client = new S3Client(array(
 
 $client->registerStreamWrapper();
 
-$feedAll = $crud->getAllAI();
+$getRunning = $crud->getRunningAIChecking();
+$feedAll = $crud->getRunningAIItem($getRunning);
 
 // Remove specific value from url
 function strip_param_from_url($url, $params)
@@ -196,6 +197,7 @@ if (count($feedAll) > 0) {
 
   foreach ($feedAll as $value) {
 
+    $changeStatus = $crud->changeRunningAIStatus($value['id'], "Progressing");
     $industryFlag = 0;
     $estimatedSalaryFlag = 0;
     $specialCaseFlag = 0;
@@ -711,6 +713,7 @@ if (count($feedAll) > 0) {
       $deleted2 = unlink($saveName1);
     }
 
+    $changeStatus = $crud->changeRunningAIStatus($value['id'], "Ready");
     echo $value['url'];
     echo "<br>";
   }

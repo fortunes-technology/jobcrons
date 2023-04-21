@@ -86,14 +86,15 @@ class crud
 		return $feedAll;
 	}
 
-	public function getAllAI() {
-		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE aigenerate = '1'");
-		$stmt->execute();
+	public function getRunningAIItem($list) {
+		$runningList = [];
+		$in  = str_repeat('?,', count($list) - 1) . '?';
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id IN ($in)");
+		$stmt->execute($list);
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-			$feedAll[] = $row;
+			$runningList[] = $row;
 		}
-		return $feedAll;
+		return $runningList;
 	}
 
 	public function getSpecial() {
@@ -205,11 +206,11 @@ class crud
 				$stmt->bindparam(":status",$status);
 				$stmt->execute();
 
-				$stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
-																	WHERE id=:id");
-				$stmt->bindparam(":status",$status);
-				$stmt->bindparam(":id",$id);
-				$stmt->execute();
+				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
+				// 													WHERE id=:id");
+				// $stmt->bindparam(":status",$status);
+				// $stmt->bindparam(":id",$id);
+				// $stmt->execute();
 				return true;
 			}
 			catch(PDOException $e)
@@ -218,6 +219,118 @@ class crud
 				return false;
 			}
 		}
+	}
+
+	public function createRunningAI($id) {
+		$now = new DateTime();
+		$createdate = $now->format('Y-m-d H:i:s');
+		$is_stmt = $this->db->prepare("SELECT * FROM runningai WHERE feedid=:feedid");
+		$is_stmt->bindparam(":feedid",$id);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() > 0) {
+			return "warning";
+		}
+		else {
+			try
+			{
+				$status = "Checking";
+				$stmt = $this->db->prepare(
+					"INSERT INTO runningai(feedid, status, updated_at)
+							VALUES(:feedid, :status, :updated_at)");
+				$stmt->bindparam(":feedid",$id);
+				$stmt->bindparam(":status",$status);
+				$stmt->bindparam(":updated_at",$createdate);
+				$stmt->execute();
+
+				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
+				// 													WHERE id=:id");
+				// $stmt->bindparam(":status",$status);
+				// $stmt->bindparam(":id",$id);
+				// $stmt->execute();
+				return true;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();	
+				return false;
+			}
+		}
+	}
+
+	public function setRunningAI($feedid, $status) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
+		$is_stmt = $this->db->prepare("SELECT * FROM runningai WHERE feedid=:feedid");
+		$is_stmt->bindparam(":feedid",$feedid);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() == 0) {
+			return "warning";
+		}
+		else {
+			try
+			{
+				$stmt = $this->db->prepare("UPDATE runningai SET status=:status, updated_at=:updated_at
+																	WHERE feedid=:feedid");
+				$stmt->bindparam(":status",$status);
+				$stmt->bindparam(":updated_at",$updatedate);
+				$stmt->bindparam(":feedid",$feedid);
+				$stmt->execute();
+
+				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
+				// 													WHERE id=:feedid");
+				// $stmt->bindparam(":status",$status);
+				// $stmt->bindparam(":feedid",$feedid);
+				// $stmt->execute();
+				return true;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();	
+				return false;
+			}
+		}
+	}
+
+	public function deleteRunningAI($feedid)
+	{
+		$is_stmt = $this->db->prepare("SELECT * FROM runningai WHERE feedid=:feedid");
+		$is_stmt->bindparam(":feedid",$feedid);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() == 0) {
+			return "warning";
+		}
+		else {
+			try
+			{
+				$stmt = $this->db->prepare("DELETE FROM runningai WHERE feedid=:feedid");
+				$stmt->bindparam(":feedid",$feedid);
+				$stmt->execute();
+
+				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
+				// 													WHERE id=:feedid");
+				// $stmt->bindparam(":status", ' ');
+				// $stmt->bindparam(":feedid",$feedid);
+				// $stmt->execute();
+				return true;
+			}
+			catch(PDOException $e)
+			{
+				echo $e->getMessage();	
+				return false;
+			}
+		}
+	}
+
+	public function getRunningAIChecking() {
+		$runningList = [];
+		$status = "Checking";
+		$stmt = $this->db->prepare("SELECT * FROM runningai WHERE status=:status");
+		$stmt->bindparam(":status", $status);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$runningList[] = $row['feedid'];
+		}
+		return $runningList;
 	}
 
 	//Generate random string
@@ -477,6 +590,24 @@ class crud
 																	WHERE id=:id");
 			$stmt->bindparam(":status",$status);
 			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	// Change status in runningai table
+	public function changeRunningAIStatus($feedid, $status) {
+		try{
+			$status = $status;
+			$stmt = $this->db->prepare("UPDATE runningai SET status=:status
+																	WHERE feedid=:feedid");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":feedid",$feedid);
 			$stmt->execute();
 			return true;
 		}
@@ -821,11 +952,14 @@ class crud
 			$stmt->execute();
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 				$AIGenerate = $row['aigenerate'];
+				$feedid = $row['id'];
 				if($AIGenerate == 1) {
 					$AIGenerate = 0;
+					$this->deleteRunningAI($feedid);
 				}
 				else {
 					$AIGenerate = 1;
+					$this->createRunningAI($feedid);
 				}
 				$stmt = $this->db->prepare("UPDATE feedinfo SET aigenerate=:aigenerate WHERE id=:id");
 				$stmt->bindparam(":id",$id);
@@ -840,5 +974,6 @@ class crud
 			return false;
 		}
 	}
+
 }
 ?>
