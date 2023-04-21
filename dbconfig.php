@@ -1,7 +1,7 @@
 <?php
 
-define("XMLDIR", "/var/www/html/cf/xmldir/");
-define("TEMPZIP", "/var/www/html/cf/tempzip/");
+define("XMLDIR", "xmldir/");
+define("TEMPZIP", "tempzip/");
 define("S3XML", "s3://converted.bebee.com/");
 define("S3ZIP", "s3://convertedfeed/zipgz/");
 
