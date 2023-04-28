@@ -386,6 +386,9 @@ if (count($feedAll) > 0) {
                         $insertedDescription = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
+                        if(strlen($decordedDescription) > 200){
+                          $decordedDescription = substr($decordedDescription, 0, 200);
+                        }
                         echo $decordedDescription;
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
@@ -440,6 +443,9 @@ if (count($feedAll) > 0) {
                         $insertedDescription = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
+                        if(strlen($decordedDescription) > 200){
+                          $decordedDescription = substr($decordedDescription, 0, 200);
+                        }
                         echo $decordedDescription;
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $rewrittedDescription = getChatGptContent($preinsertedDescription);
@@ -523,6 +529,9 @@ if (count($feedAll) > 0) {
                       $insertedDate = $xmlString->__toString();
                       $decordedDescription = htmlspecialchars_decode($insertedDate);
                       $decordedDescription = strip_tags($decordedDescription);
+                      if(strlen($decordedDescription) > 200){
+                        $decordedDescription = substr($decordedDescription, 0, 200);
+                      }
                       $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                       $insertedDate = getChatGptContent($preinsertedDescription);
                     } elseif ($updatetagReal == "estimatedSalary") {
@@ -585,6 +594,9 @@ if (count($feedAll) > 0) {
                         $insertedDate = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDate);
                         $decordedDescription = strip_tags($decordedDescription);
+                        if(strlen($decordedDescription) > 200){
+                          $decordedDescription = substr($decordedDescription, 0, 200);
+                        }
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $insertedDate = getChatGptContent($preinsertedDescription);
                       } elseif ($updatetagReal == "estimatedSalary") {
