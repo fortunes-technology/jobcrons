@@ -549,8 +549,6 @@ if(count($feedAll) > 0) {
             file_put_contents($saveName, $xmlWriter->flush(true), FILE_APPEND);
         }
 
-        // if( $key > 30000 ) break;
-
       }
       $xmlWriter->endElement();
       file_put_contents($saveName, $xmlWriter->flush(true), FILE_APPEND);
