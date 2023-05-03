@@ -619,10 +619,13 @@ class crud
 	// Change status in runningai table
 	public function changeRunningAIStatus($feedid, $status) {
 		try{
+			$now = new DateTime();
+			$updatedDate = $now->format('Y-m-d H:i:s');
 			$status = $status;
-			$stmt = $this->db->prepare("UPDATE runningai SET status=:status
+			$stmt = $this->db->prepare("UPDATE runningai SET status=:status , updated_at=:updated_at
 																	WHERE feedid=:feedid");
 			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":updated_at",$updatedDate);
 			$stmt->bindparam(":feedid",$feedid);
 			$stmt->execute();
 			return true;
