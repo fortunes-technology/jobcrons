@@ -319,7 +319,13 @@
                                                                                 </label>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-md">                                                                        
+                                                                        <div class="col-md">      
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_61" value="CPA" <?php echo ($updatetag[$key]=='CPA')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_61">
+                                                                                &lt;CPA&gt;
+                                                                                </label>
+                                                                            </div>                                                                  
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_26" value="addressRegion" <?php echo ($updatetag[$key]=='addressRegion')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_26">
@@ -356,14 +362,14 @@
                                                                                 &lt;content&gt;
                                                                                 </label>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="col-md">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_110" value="salaryMin" <?php echo ($updatetag[$key]=='salaryMin')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_110">
                                                                                 &lt;salaryMin&gt;
                                                                                 </label>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-md">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_14" value="url" <?php echo ($updatetag[$key]=='url')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_14">
@@ -406,15 +412,15 @@
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_19">
                                                                                 &lt;industry&gt;
                                                                                 </label>
-                                                                            </div>
+                                                                            </div>                                         
+                                                                        </div>
+                                                                        <div class="col-md">
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_190" value="salaryMax" <?php echo ($updatetag[$key]=='salaryMax')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_190">
                                                                                 &lt;salaryMax&gt;
                                                                                 </label>
-                                                                            </div>                                            
-                                                                        </div>
-                                                                        <div class="col-md">
+                                                                            </div>   
                                                                             <div class="form-check">
                                                                                 <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_20" value="estimatedSalary" <?php echo ($updatetag[$key]=='estimatedSalary')?'checked':'' ?> >
                                                                                 <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_20">
