@@ -259,7 +259,11 @@ if (count($feedAll) > 0) {
     if ($value['url'] == "https://files.channable.com/ZKWkKXye0GkHX8R0rM_xYw==.xml") {
       $realHandleUrl = "/var/www/html/cf/xmldir/file_channable.xml";
     }
-    if($value['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml") {
+    if (
+      $_POST['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml"
+      || $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml" 
+      || $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-US/xmlfeed.xml"
+    ) {
       $specialCaseFlag = 1;
     }
     if (strpos($realHandleUrl, '.zip') !== false || strpos($realHandleUrl, '.gz') !== false) {
