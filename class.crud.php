@@ -303,12 +303,6 @@ class crud
 				$stmt->bindparam(":updated_at",$updatedate);
 				$stmt->bindparam(":feedid",$feedid);
 				$stmt->execute();
-
-				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
-				// 													WHERE id=:feedid");
-				// $stmt->bindparam(":status",$status);
-				// $stmt->bindparam(":feedid",$feedid);
-				// $stmt->execute();
 				return true;
 			}
 			catch(PDOException $e)
@@ -333,12 +327,6 @@ class crud
 				$stmt = $this->db->prepare("DELETE FROM runningai WHERE feedid=:feedid");
 				$stmt->bindparam(":feedid",$feedid);
 				$stmt->execute();
-
-				// $stmt = $this->db->prepare("UPDATE feedinfo SET status=:status
-				// 													WHERE id=:feedid");
-				// $stmt->bindparam(":status", ' ');
-				// $stmt->bindparam(":feedid",$feedid);
-				// $stmt->execute();
 				return true;
 			}
 			catch(PDOException $e)
