@@ -221,9 +221,9 @@ if(count($feedAll) > 0) {
       $realHandleUrl = "/var/www/html/cf/xmldir/file_channable.xml";
     }
     if (
-      $_POST['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml"
-      || $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml" 
-      || $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-US/xmlfeed.xml"
+      $value['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml"
+      || $value['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml" 
+      || $value['url'] == "http://xml.jobswipe.net/CLICKTH-US/xmlfeed.xml"
     ) {
       $specialCaseFlag = 1;
     }
