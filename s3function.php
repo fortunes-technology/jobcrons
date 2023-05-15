@@ -621,7 +621,7 @@ if(count($feedAll) > 0) {
           $updatetag = "";
           $tagChanged = true;
           foreach ($baseArrayNone as $tagValue) {
-            $cdatatag .= str_replace($tagValue.",", "", $cdatatag);
+            $cdatatag = str_replace($tagValue.",", "", $cdatatag);
             $basetag = str_replace($tagValue.",", "", $basetag);
             $basekey = array_search($tagValue, $basetagpiece);
             if(isset($updatetagpiece[$basekey])) {
