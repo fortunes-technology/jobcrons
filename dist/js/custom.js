@@ -378,6 +378,9 @@ $("#parseXML").click(function(){
                 if(result.data == "false") {
                     alert("This is Zip and gz file url, Please go 'Add file feed' and download file first.");
                 }
+                if(result.data == "empty") {
+                    alert("No job found");
+                }
                 else {
                     let isChild = result.is_child;
                     let mainString = '';

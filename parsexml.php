@@ -203,6 +203,11 @@ if (isset($_POST['parse']) && isset($_POST['url'])) {
 				exit;
 			}
 		}
+		if ($i > 1) {
+			$res = json_encode(['data' => "empty"]);
+			echo $res;
+			exit();
+		}
 	}
 }
 
