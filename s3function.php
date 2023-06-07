@@ -271,7 +271,7 @@ if(count($feedAll) > 0) {
 
         if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
   
-        if($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
+        if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
   
           libxml_use_internal_errors(true);
           $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader->readOuterXML());
@@ -651,7 +651,12 @@ if(count($feedAll) > 0) {
         $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew);      
       }
       else {
-        $changeStatus = $crud->changeStatusFinal($value['id'], "Ready", $key, $preRepeat);      
+        if($key == 0) {
+          $changeStatus = $crud->changeStatusFinal($value['id'], "Empty XML", $key, $preRepeat);      
+        }
+        else {
+          $changeStatus = $crud->changeStatusFinal($value['id'], "Ready", $key, $preRepeat);   
+        }    
       }
     }
 

@@ -584,6 +584,14 @@ $("#parseXML").click(function(){
                                                     </label>
                                                 </div>
                                             </div>
+                                            <div class="col-md">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tagRadio_${i}" id="labelRadio_${i}_62" value="currency">
+                                                    <label class="form-check-label" for="labelRadio_${i}_62">
+                                                    &lt;currency&gt;
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 <div>

@@ -458,6 +458,14 @@
                                                                                 </label>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="col-md">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="tagRadio_<?php echo $key; ?>" id="labelRadio_<?php echo $key; ?>_62" value="currency" <?php echo ($updatetag[$key]=='currency')?'checked':'' ?> >
+                                                                                <label class="form-check-label" for="labelRadio_<?php echo $key; ?>_62">
+                                                                                &lt;currency&gt;
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>    
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -88,7 +88,7 @@ font-weight: 400;
 }
 }
 .dropdown-status-tag{
-	min-width:800px;
+	min-width:950px;
 }
 @media(min-width:0px) and (max-width:767px) {
 	.dropdown-status-tag{
