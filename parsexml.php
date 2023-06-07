@@ -32,7 +32,7 @@ if (isset($_POST['parse']) && isset($_POST['url'])) {
 	}
 	if (
 		$_POST['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml"
-		|| $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml" 
+		|| $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml"
 		|| $_POST['url'] == "http://xml.jobswipe.net/CLICKTH-US/xmlfeed.xml"
 	) {
 		$specialCaseFlag = 1;
@@ -106,7 +106,7 @@ if (isset($_POST['parse']) && isset($_POST['url'])) {
 		$i = 0;
 		while ($reader->read()) {
 			if ($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
-			if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
+			if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
 				$baseTag = [];
 				$baseValue = [];
 				$cdataTag = [];
