@@ -787,4 +787,81 @@ $(document).on("click", ".ai-switch", function() {
             console.log(result);
         }
     })
-})
+});
+
+$(document).ready(function() {
+
+    // Export button click handler
+    $('#downEmptyFeeds').click(function() {
+        downFeedsToCsv('Empty');
+    });
+
+    // Export button click handler
+    $('#downReadyFeeds').click(function() {
+        downFeedsToCsv('Ready');
+    });
+
+    // Export button click handler
+    $('#downErrorFeeds').click(function() {
+        downFeedsToCsv('Error');
+    });
+
+});
+  
+function downFeedsToCsv(status) {
+
+    // Initialize DataTable
+    const table = $('#feedinfo').DataTable();
+
+    // Get selected column names
+    const selectedColumnNames = ['Name','Input Url', 'Output Url', 'CreateDate', 'UpdateDate', 'Status'];
+
+    // Get selected rows based on cell values
+    const selectedRows = table.rows(function(index, data, node) {
+      return data[6] === status ;
+    }).data().toArray();
+
+  //   // Get selected column indices
+  //   const selectedColumnIndices = selectedColumnNames.map(function(name) {
+  //     return table.column(`:contains(${name})`).index();
+  //   });
+
+    // Get the indices of the selected columns
+    const selectedColumnIndices = table.columns().header().toArray().map(function(th, index) {
+      if (selectedColumnNames.includes($(th).text())) {
+        return index;
+      } else {
+        return null;
+      }
+    }).filter(function(index) {
+      return index !== null;
+    });
+
+    // Extract data for selected columns and rows
+    const selectedData = selectedRows.map(function(row) {
+      // return row.filter(function(cell, index) {
+      //   return selectedColumnIndices.includes(index);
+      // });
+      return Object.values(row).filter(function(cell, index) {
+          return selectedColumnIndices.includes(index);
+      });
+    });
+
+    // Create CSV content
+    let csvContent = selectedColumnNames.join(',') + '\n';
+    selectedData.forEach(function(row) {
+      csvContent += row.join(',').replace(/<[^>]+>/g, "").replace('notify', "") + '\n';
+    });
+
+    // Download CSV file
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    let csvFileName = "Feeds-"+status+".csv";
+    link.setAttribute("download", csvFileName);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}

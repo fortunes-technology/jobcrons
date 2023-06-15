@@ -70,6 +70,10 @@ font-weight: 400;
 	min-width:380px;
 	padding:20px 25px 25px;
 }
+.dropdown-csv{
+	min-width:200px;
+	padding:20px 25px 25px;
+}
 .mw-30{
 	max-width:30px;
 }
@@ -295,6 +299,17 @@ a#editUser {
 }
 @media screen and (max-width: 300px)  {
 	.dropdown-filters {
+		width: 100px;
+	}
+}
+
+@media screen and (max-width: 460px)  {
+	.dropdown-csv {
+		min-width: 100%;
+	}
+}
+@media screen and (max-width: 300px)  {
+	.dropdown-csv {
 		width: 100px;
 	}
 }
