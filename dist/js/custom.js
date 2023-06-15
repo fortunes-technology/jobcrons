@@ -793,7 +793,7 @@ $(document).ready(function() {
 
     // Export button click handler
     $('#downEmptyFeeds').click(function() {
-        downFeedsToCsv('Empty');
+        downFeedsToCsv('Empty XML');
     });
 
     // Export button click handler
