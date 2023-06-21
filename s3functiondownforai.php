@@ -259,7 +259,11 @@ if (count($feedAll) > 0) {
     if ($value['url'] == "https://files.channable.com/ZKWkKXye0GkHX8R0rM_xYw==.xml") {
       $realHandleUrl = "/var/www/html/cf/xmldir/file_channable.xml";
     }
-    if($value['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml") {
+    if (
+      $value['url'] == "https://xml.jobswipe.net/CLICKTH-DE/xmlfeed.xml"
+      || $value['url'] == "http://xml.jobswipe.net/CLICKTH-GB-PRE/xmlfeed.xml" 
+      || $value['url'] == "http://xml.jobswipe.net/CLICKTH-US/xmlfeed.xml"
+    ) {
       $specialCaseFlag = 1;
     }
     if (strpos($realHandleUrl, '.zip') !== false || strpos($realHandleUrl, '.gz') !== false) {
@@ -386,8 +390,8 @@ if (count($feedAll) > 0) {
                         $insertedDescription = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
-                        if(str_word_count($decordedDescription) > 200){
-                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 200));
+                        if(str_word_count($decordedDescription) > 50){
+                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 50));
                         }
                         echo $decordedDescription;
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
@@ -443,8 +447,8 @@ if (count($feedAll) > 0) {
                         $insertedDescription = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDescription);
                         $decordedDescription = strip_tags($decordedDescription);
-                        if(str_word_count($decordedDescription) > 200){
-                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 200));
+                        if(str_word_count($decordedDescription) > 50){
+                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 50));
                         }
                         echo $decordedDescription;
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
@@ -529,8 +533,8 @@ if (count($feedAll) > 0) {
                       $insertedDate = $xmlString->__toString();
                       $decordedDescription = htmlspecialchars_decode($insertedDate);
                       $decordedDescription = strip_tags($decordedDescription);
-                      if(str_word_count($decordedDescription) > 200){
-                        $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 200));
+                      if(str_word_count($decordedDescription) > 50){
+                        $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 50));
                       }
                       $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                       $insertedDate = getChatGptContent($preinsertedDescription);
@@ -594,8 +598,8 @@ if (count($feedAll) > 0) {
                         $insertedDate = $xmlString->__toString();
                         $decordedDescription = htmlspecialchars_decode($insertedDate);
                         $decordedDescription = strip_tags($decordedDescription);
-                        if(str_word_count($decordedDescription) > 200){
-                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 200));
+                        if(str_word_count($decordedDescription) > 50){
+                          $decordedDescription = implode(' ', array_slice(explode(' ', $decordedDescription), 0, 50));
                         }
                         $preinsertedDescription = " Summarise the following job description in a much shorter job description but with a more commerical tone to make it more attractive to the candidate and adding the skills needed to apply for the position in the original language: \n" . $decordedDescription . "\n";
                         $insertedDate = getChatGptContent($preinsertedDescription);

@@ -123,6 +123,42 @@
                                                 </div> -->
                                                 <!-- /.btn-group -->
                                             </div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-default btn-sm mr-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-file-csv"></i> CSV
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-csv" aria-labelledby="dropdownMenuButton">
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="padding-bottom: 5px"> 
+                                                            <div class="input-group mb-0">
+                                                                <span class="form-control text-blue">EMPTY</span>
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-default" type="button"  id="downEmptyFeeds" type="button"> <i class="fas fa-download mr-1"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="col-md-12" style="padding-bottom: 5px"> 
+                                                            <div class="input-group mb-0">
+                                                                <span class="form-control text-green">READY</span>
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-default" type="button"  id="downReadyFeeds" type="button"> <i class="fas fa-download mr-1"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="col-md-12" style="padding-bottom: 5px"> 
+                                                            <div class="input-group mb-0">
+                                                                <span class="form-control text-red">ERROR</span>
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-default" type="button"  id="downErrorFeeds" type="button"> <i class="fas fa-download mr-1"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <!-- /.float-right -->
                                         </div>
                                         <div class="table-responsive">
@@ -132,6 +168,7 @@
                                                         <th>Name</th>
                                                         <th>Input Url</th>
                                                         <th>Output Url</th>
+                                                        <th>Frequent Generate</th>
                                                         <th>AI Generate</th>
                                                         <th>CreateDate</th>
                                                         <th>UpdateDate</th>
