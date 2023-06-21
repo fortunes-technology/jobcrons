@@ -331,6 +331,7 @@ $(document).ready(function() {
             null,
             null,
             null,
+            null,
             { "bSortable": false }
          ],
          "pageLength": 50,
@@ -783,6 +784,30 @@ $(document).on("click", ".ai-switch", function() {
         type: "post",
         dataType: "json",
         data: {"activeAIGenerate": "activeAIGenerate", "feedinfo": feedinfo},
+        success: function(result) {
+            console.log(result);
+        }
+    })
+});
+
+$(document).on("click", ".freq-switch", function() {
+    var table = $('#feedinfo').DataTable();
+    let feedinfo = $(this).closest('tr').find('input').val();
+    let activeTdId = "td#FREQ-switch-"+feedinfo ; 
+    let invalTdId = "#FREQ-switch-"+feedinfo ;
+    let active = $(activeTdId).attr('data-sort');
+    if(active == 1){
+        $(activeTdId).attr('data-sort', "0");
+    }
+    else if(active == 0){
+        $(activeTdId).attr('data-sort', "1");
+    }
+    table.cells(invalTdId).invalidate();
+    $.ajax({
+        url: "parsexml.php",
+        type: "post",
+        dataType: "json",
+        data: {"activeFrequentGenerate": "activeFrequentGenerate", "feedinfo": feedinfo},
         success: function(result) {
             console.log(result);
         }

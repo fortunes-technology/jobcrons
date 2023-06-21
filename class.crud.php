@@ -62,7 +62,19 @@ class crud
 	public function getAll($order) {
 		$order = $order - 1;
 		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate != '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt->bindparam(":remain",$order);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$feedAll[] = $row;
+		}
+		return $feedAll;
+	}
+
+	public function getFrequentAll($order) {
+		$order = $order - 1;
+		$feedAll = [];
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate = '1' AND id MOD 5 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
 		$stmt->bindparam(":remain",$order);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -154,10 +166,41 @@ class crud
 		}
 	}
 
+	public function frequentCronStatus($order, $status) {
+		$status = $status;
+		$now = new DateTime();
+		$updateDate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE cron_frequent SET status=:status, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":id",$order);
+			$stmt->bindparam(":updated_at",$updateDate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
 	//get cronstatus
 	public function getCronStatus($order) {
 		$count = false;
 		$stmt = $this->db->prepare("SELECT status FROM cron WHERE id=:id");
+		$stmt->bindparam(":id",$order);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$count = $row['status'];
+		}
+		return $count;
+	}
+
+	//get frequentcronstatus
+	public function getFrequentCronStatus($order) {
+		$count = false;
+		$stmt = $this->db->prepare("SELECT status FROM cron_frequent WHERE id=:id");
 		$stmt->bindparam(":id",$order);
 		$stmt->execute();
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -774,6 +817,12 @@ class crud
 			{
 				$outputUrl = $main_url.str_replace(" ", "_", strtolower($row['name'])).".xml";
 				$filePath = str_replace(" ", "_", strtolower($row['name'])).".xml";
+				if($row['frequentgenerate'] == 1) {
+					$FrequentGenerateSwitch = "<input type='checkbox' class='freq-check' checked>";
+				}
+				else {
+					$FrequentGenerateSwitch = "<input type='checkbox' class='freq-check'>";
+				}
 				if($row['aigenerate'] == 1) {
 					$AIGenerateSwitch = "<input type='checkbox' class='ai-check' checked>";
 				}
@@ -785,6 +834,13 @@ class crud
 						<td><?php echo($row['name']); ?> <?php if(!empty($row['isnew'])) echo '<i class="fas fa-bell zoom-in-zoom-out"></i><p style="display:none">notify</p>';?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo($row['url']); ?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo $outputUrl; ?></td>
+						<td id='FREQ-switch-<?php echo($row['id']); ?>' data-sort="<?php echo($row['frequentgenerate']); ?>">
+							<input class='input-feddinfo-id' type='hidden' value="<?php echo($row['id']); ?>">
+							<label class='switch'>
+								<?php echo($FrequentGenerateSwitch); ?>
+								<span class='slider round freq-switch'> </span>
+							</label>
+						</td>
 						<td id='AI-switch-<?php echo($row['id']); ?>' data-sort="<?php echo($row['aigenerate']); ?>">
 							<input class='input-feddinfo-id' type='hidden' value="<?php echo($row['id']); ?>">
 							<label class='switch'>
@@ -971,6 +1027,36 @@ class crud
 				$stmt = $this->db->prepare("UPDATE feedinfo SET aigenerate=:aigenerate WHERE id=:id");
 				$stmt->bindparam(":id",$id);
 				$stmt->bindparam(":aigenerate",$AIGenerate);
+				$stmt->execute();
+			}
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	public function feedInfoFreqSwitch($id) {
+		try{
+			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id=:id");
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+				$FrequentGenerate = $row['frequentgenerate'];
+				$feedid = $row['id'];
+				if($FrequentGenerate == 1) {
+					$FrequentGenerate = 0;
+					// $this->deleteRunningAI($feedid);
+				}
+				else {
+					$FrequentGenerate = 1;
+					// $this->createRunningAI($feedid);
+				}
+				$stmt = $this->db->prepare("UPDATE feedinfo SET frequentgenerate=:frequentgenerate WHERE id=:id");
+				$stmt->bindparam(":id",$id);
+				$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
 				$stmt->execute();
 			}
 			return true;

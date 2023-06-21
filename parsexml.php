@@ -378,3 +378,12 @@ if (isset($_POST["activeAIGenerate"])) {
 		return true;
 	}
 }
+
+// active Frequent generation
+if (isset($_POST["activeFrequentGenerate"])) {
+	$feedinfoID = $_POST['feedinfo'];
+	$crudResult = $crud->feedInfoFreqSwitch($feedinfoID);
+	if ($crudResult == true) {
+		return true;
+	}
+}
