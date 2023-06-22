@@ -500,12 +500,12 @@ if(count($feedAll) > 0) {
                       }
                       else {
                         // this is for special case. https://account.jobsinnetwork.com/feeds/c81476f7-8fd8-434a-958a-675388d67516.xml
-                        if($basetagpiece[$i] == 'description') {
-                          $insertedDate = $xmlString->asXML();
-                        }
-                        else {
-                          $insertedDate = $xmlString->__toString();
-                        }
+                        // if($basetagpiece[$i] == 'description') {
+                        //   $insertedDate = $xmlString->asXML();
+                        // }
+                        // else {
+                        $insertedDate = $xmlString->__toString();
+                        // }
                       }
 
                       if(in_array($basetagpiece[$i], $cdatatagpiece)) {
