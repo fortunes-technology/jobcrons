@@ -170,6 +170,7 @@
                                                         <th>Output Url</th>
                                                         <th>Frequent Generate</th>
                                                         <th>AI Generate</th>
+                                                        <th>Count</th>
                                                         <th>CreateDate</th>
                                                         <th>UpdateDate</th>
                                                         <th>Status</th>

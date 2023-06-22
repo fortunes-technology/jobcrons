@@ -332,6 +332,7 @@ $(document).ready(function() {
             null,
             null,
             null,
+            null,
             { "bSortable": false }
          ],
          "pageLength": 50,
