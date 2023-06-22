@@ -594,6 +594,32 @@ class crud
 		}
 	}
 
+	// Change count in feedinfo table
+	public function changeCount($id, $action, $i=false) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
+		try{
+			if($action == "Add"){
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = count + :i  WHERE id=:id");
+				$stmt->bindparam(":i", $i);
+				$stmt->bindparam(":id", $id);
+				$stmt->execute();
+				return true;
+			}
+			else if($action == "Reset"){
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0  WHERE id=:id");
+				$stmt->bindparam(":id", $id);
+				$stmt->execute();
+				return true;
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
 	// Change status in feedinfo table with key changed
 	public function changeStatusFinalChangeTag($id, $status, $count, $repeats, $basetag, $updatetag, $cdatatag, $baseArrayNew) {
 		$newtag = "";
@@ -848,6 +874,7 @@ class crud
 								<span class='slider round ai-switch'> </span>
 							</label>
 						</td>
+						<td><?php echo($row['count']); ?></td>
 						<td><?php echo($row['createdate']); ?></td>
 						<td><?php echo($row['updatedate']); ?></td>
 						<?php
@@ -1046,14 +1073,7 @@ class crud
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 				$FrequentGenerate = $row['frequentgenerate'];
 				$feedid = $row['id'];
-				if($FrequentGenerate == 1) {
-					$FrequentGenerate = 0;
-					// $this->deleteRunningAI($feedid);
-				}
-				else {
-					$FrequentGenerate = 1;
-					// $this->createRunningAI($feedid);
-				}
+				$FrequentGenerate = !$FrequentGenerate;
 				$stmt = $this->db->prepare("UPDATE feedinfo SET frequentgenerate=:frequentgenerate WHERE id=:id");
 				$stmt->bindparam(":id",$id);
 				$stmt->bindparam(":frequentgenerate",$FrequentGenerate);

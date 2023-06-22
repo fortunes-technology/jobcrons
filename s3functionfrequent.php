@@ -648,7 +648,8 @@ if(count($feedAll) > 0) {
       }
       
       if($tagChanged) {
-        $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew);      
+        $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew);
+        $changeCount =  $crud->changeCount($value['id'], "Add", 1);         
       }
       else {
         if($key == 0) {
@@ -656,6 +657,7 @@ if(count($feedAll) > 0) {
         }
         else {
           $changeStatus = $crud->changeStatusFinal($value['id'], "Ready", $key, $preRepeat);   
+          $changeCount =  $crud->changeCount($value['id'], "Add", 1);   
         }    
       }
     }
