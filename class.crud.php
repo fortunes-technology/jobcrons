@@ -600,18 +600,34 @@ class crud
 		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			if($action == "Add"){
-				$stmt = $this->db->prepare("UPDATE feedinfo SET count = count + :i  WHERE id=:id");
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = count + :i WHERE id=:id");
 				$stmt->bindparam(":i", $i);
 				$stmt->bindparam(":id", $id);
 				$stmt->execute();
 				return true;
 			}
 			else if($action == "Reset"){
-				$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0  WHERE id=:id");
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0 WHERE id=:id");
 				$stmt->bindparam(":id", $id);
 				$stmt->execute();
 				return true;
 			}
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	// Change all count as 0 in feedinfo table
+	public function resetAllCount() {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0");
+			$stmt->execute();
+			return true;
 		}
 		catch(PDOException $e)
 		{
@@ -874,7 +890,7 @@ class crud
 								<span class='slider round ai-switch'> </span>
 							</label>
 						</td>
-						<td><?php echo($row['count']); ?></td>
+						<td class="feedinfo-count"><?php echo($row['count']); ?></td>
 						<td><?php echo($row['createdate']); ?></td>
 						<td><?php echo($row['updatedate']); ?></td>
 						<?php

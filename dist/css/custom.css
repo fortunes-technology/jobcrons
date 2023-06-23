@@ -378,3 +378,9 @@ a#editUser {
   .slider.round:before {
 	border-radius: 50%;
   }  
+
+  .feedinfo-count {
+	font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
