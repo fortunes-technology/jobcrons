@@ -622,8 +622,6 @@ class crud
 
 	// Change all count as 0 in feedinfo table
 	public function resetAllCount() {
-		$now = new DateTime();
-		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0");
 			$stmt->execute();
