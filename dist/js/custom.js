@@ -844,7 +844,7 @@ function downFeedsToCsv(status) {
 
     // Get selected rows based on cell values
     const selectedRows = table.rows(function(index, data, node) {
-      return data[6] === status ;
+      return data[8] === status ;
     }).data().toArray();
 
   //   // Get selected column indices

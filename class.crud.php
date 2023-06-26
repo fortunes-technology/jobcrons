@@ -252,9 +252,27 @@ class crud
 	
 	public function delete($id)
 	{
+		$url = false;
+		$stmt = $this->db->prepare("SELECT url FROM feedinfo WHERE id=:id");
+		$stmt->bindparam(":id",$id);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$url = $row['url'];
+		}
+
 		$stmt = $this->db->prepare("DELETE FROM feedinfo WHERE id=:id");
 		$stmt->bindparam(":id",$id);
 		$stmt->execute();
+
+		$is_stmt = $this->db->prepare("SELECT * FROM filexml WHERE inputurl=:inputurl");
+		$is_stmt->bindparam(":inputurl",$url);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() > 0) {
+			$stmt = $this->db->prepare("DELETE FROM filexml WHERE inputurl=:inputurl");
+			$stmt->bindparam(":inputurl",$url);
+			$stmt->execute();
+		}
+
 		return true;
 	}
 
@@ -1081,17 +1099,29 @@ class crud
 
 	public function feedInfoFreqSwitch($id) {
 		try{
+			$url = false;
 			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id=:id");
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 				$FrequentGenerate = $row['frequentgenerate'];
+				$url = $row['url'];
 				$feedid = $row['id'];
 				$FrequentGenerate = !$FrequentGenerate;
 				$stmt = $this->db->prepare("UPDATE feedinfo SET frequentgenerate=:frequentgenerate WHERE id=:id");
 				$stmt->bindparam(":id",$id);
 				$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
 				$stmt->execute();
+
+				$is_stmt = $this->db->prepare("SELECT * FROM filexml WHERE inputurl=:inputurl");
+				$is_stmt->bindparam(":inputurl",$url);
+				$is_stmt->execute();
+				if($is_stmt->rowCount() > 0) {
+					$stmt = $this->db->prepare("UPDATE filexml SET frequentgenerate=:frequentgenerate WHERE inputurl=:inputurl");
+					$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
+					$stmt->bindparam(":inputurl",$url);
+					$stmt->execute();
+				}
 			}
 			return true;
 		}
