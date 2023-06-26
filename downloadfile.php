@@ -16,6 +16,15 @@ $getRunning = $crud->getDownloading($order);
 $runningList = $getRunning['runningList'];
 $downloadingId = $getRunning['downloadingId'];
 
+$cronStatus = $crud->getFilexmlCronStatus($order);
+if($cronStatus != "Finished") {
+  echo "Cron is Running";
+  exit();
+}
+echo "Cron status is changed and it is running";
+
+$cronStart = $crud->filexmlCronStatus($order, "Running");
+
 if(empty($_SESSION['bigCron'])) {
   if(count($runningList) > 0) {
     
@@ -291,6 +300,7 @@ if(empty($_SESSION['bigCron'])) {
       }
     }
     echo "success";
+    $cronStart = $crud->filexmlCronStatus($order, "Finished");
   }
 }
 
