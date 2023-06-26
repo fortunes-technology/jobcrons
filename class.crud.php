@@ -478,9 +478,10 @@ class crud
 			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id mod 10 = ($order - 1) AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
 		}
 		$stmt->bindparam(":status", $status);
+		$stmt->bindparam(":remain", $order-1);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$runningList[] = $row;
