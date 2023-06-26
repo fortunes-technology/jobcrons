@@ -203,6 +203,24 @@ class crud
 		}
 	}
 
+	public function frequentFilexmlCronStatus($order, $status) {
+		$now = new DateTime();
+		$updateDate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE cron_filexml_frequent SET status=:status, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":id",$order);
+			$stmt->bindparam(":updated_at",$updateDate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
 	//get cronstatus
 	public function getCronStatus($order) {
 		$count = false;
@@ -231,6 +249,18 @@ class crud
 	public function getFilexmlCronStatus($order) {
 		$status = false;
 		$stmt = $this->db->prepare("SELECT status FROM cron_filexml WHERE id=:id");
+		$stmt->bindparam(":id",$order);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$status = $row['status'];
+		}
+		return $status;
+	}
+
+	//get frequent filexml cronstatus
+	public function getFrequentFilexmlCronStatus($order) {
+		$status = false;
+		$stmt = $this->db->prepare("SELECT status FROM cron_filexml_frequent WHERE id=:id");
 		$stmt->bindparam(":id",$order);
 		$stmt->execute();
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -478,10 +508,34 @@ class crud
 			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND status=:status AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$order = $order - 1;
+			$stmt->bindparam(":remain", $order);
 		}
 		$stmt->bindparam(":status", $status);
-		$stmt->bindparam(":remain", $order-1);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$runningList[] = $row;
+			$downloadingId[] = $row['id'];
+		}
+		$result = ['runningList' => $runningList, 'downloadingId' => $downloadingId];
+		return $result;
+	}
+
+	// Get download file information
+	public function getFrequentDownloading($order) {
+		$runningList = [];
+		$downloadingId = [];
+		$status = "Downloading";
+		if($order > 100) {
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
+		}
+		else {
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND status=:status AND id mod 5 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$order = $order - 1;
+			$stmt->bindparam(":remain", $order);
+		}
+		$stmt->bindparam(":status", $status);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$runningList[] = $row;
