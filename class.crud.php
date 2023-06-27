@@ -481,7 +481,7 @@ class crud
 			try
 			{
 				$name = $this->generateRandomString(8);
-				$status = "Downloading";
+				$status = "Pending";
 				$stmt = $this->db->prepare(
 					"INSERT INTO filexml(inputurl, name, status)
 							VALUES(:inputurl, :name, :status)");
@@ -505,10 +505,10 @@ class crud
 		$downloadingId = [];
 		$status = "Downloading";
 		if($order > 100) {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND status=:status AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
@@ -528,10 +528,10 @@ class crud
 		$downloadingId = [];
 		$status = "Downloading";
 		if($order > 100) {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND status=:status AND id mod 5 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND id mod 5 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
@@ -1191,8 +1191,7 @@ class crud
 			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
 				$FrequentGenerate = $row['frequentgenerate'];
 				$url = $row['url'];
-				$feedid = $row['id'];
-				$FrequentGenerate = !$FrequentGenerate;
+				$FrequentGenerate = $FrequentGenerate ? 0 : 1;
 				$stmt = $this->db->prepare("UPDATE feedinfo SET frequentgenerate=:frequentgenerate WHERE id=:id");
 				$stmt->bindparam(":id",$id);
 				$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
