@@ -503,7 +503,6 @@ class crud
 	public function getDownloading($order) {
 		$runningList = [];
 		$downloadingId = [];
-		$status = "Downloading";
 		if($order > 100) {
 			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
@@ -512,7 +511,6 @@ class crud
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
-		$stmt->bindparam(":status", $status);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$runningList[] = $row;
@@ -526,7 +524,6 @@ class crud
 	public function getFrequentDownloading($order) {
 		$runningList = [];
 		$downloadingId = [];
-		$status = "Downloading";
 		if($order > 100) {
 			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
 		}
@@ -535,7 +532,6 @@ class crud
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
-		$stmt->bindparam(":status", $status);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$runningList[] = $row;
