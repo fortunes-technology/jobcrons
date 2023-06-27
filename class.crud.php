@@ -504,10 +504,10 @@ class crud
 		$runningList = [];
 		$downloadingId = [];
 		if($order > 100) {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id = '54' AND id = '59' AND id = '126' AND id = '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND id mod 10 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND id mod 10 = :remain AND (id != '54' OR id != '59' OR id != '126' OR id != '258')");
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
@@ -525,10 +525,10 @@ class crud
 		$runningList = [];
 		$downloadingId = [];
 		if($order > 100) {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id != '54' AND id != '59' AND id != '126' AND id != '258'");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id = '54' AND id = '59' AND id = '126' AND id = '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND id mod 5 = :remain AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND id mod 5 = :remain AND (id != '54' OR id != '59' OR id != '126' OR id != '258')");
 			$order = $order - 1;
 			$stmt->bindparam(":remain", $order);
 		}
