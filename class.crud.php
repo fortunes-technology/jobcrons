@@ -575,11 +575,14 @@ class crud
 
 	// download to ready status change
 	public function setDownToReady($id) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			$status = "Ready";
-			$stmt = $this->db->prepare("UPDATE filexml SET status=:status
+			$stmt = $this->db->prepare("UPDATE filexml SET status=:status, updatedate=:updatedate
 																	WHERE id=:id");
 			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":updatedate",$updatedate);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			return true;
@@ -593,11 +596,14 @@ class crud
 
 	// download to ready status change
 	public function setDownToError($id) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			$status = "Error";
-			$stmt = $this->db->prepare("UPDATE filexml SET status=:status
+			$stmt = $this->db->prepare("UPDATE filexml SET status=:status, updatedate=:updatedate
 																	WHERE id=:id");
 			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":updatedate",$updatedate);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			return true;
