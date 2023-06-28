@@ -300,8 +300,6 @@ if(empty($_SESSION['bigCron'])) {
       }
     }
     echo "success";
-    $cronStart = $crud->filexmlCronStatus($order, "Finished");
   }
+  $cronStart = $crud->filexmlCronStatus($order, "Finished");
 }
-
-?>
