@@ -74,7 +74,7 @@ class crud
 	public function getFrequentAll($order) {
 		$order = $order - 1;
 		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate = '1' AND id MOD 15 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate = '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
 		$stmt->bindparam(":remain",$order);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
