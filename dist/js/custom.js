@@ -180,6 +180,11 @@ $("#saveDetail").click(function(){
     {
         jobLocationType = $('#jobLocationType').val();
     }
+    let jobTagManually = "invalid";
+    if ($('#willJobTagManually').is(":checked"))
+    {
+        jobTagManually = $('#jobTagManually').val();
+    }
     let feedName = $('#feedName').val();
     let xmlurl = $('#xmlurlHidden').val();
     let basetag = $("#baseTagValue").val();
@@ -190,7 +195,7 @@ $("#saveDetail").click(function(){
     $( "tbody#parsing input[type=radio][name^=tagRadio]:checked" ).each(function( index ) {
         updatetag += `${this.value},`;
     });
-    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "" || willAddCompany == "" ) {
+    if(feedName == "" || xmlurl == "" || willAddCountry == "" || willAddIndustry == "" || willAddCompany == "" || jobTagManually == "" ) {
         alert("Fill form values");
     }
     else {
@@ -208,6 +213,7 @@ $("#saveDetail").click(function(){
                     "willAddIndustry": willAddIndustry, 
                     "willAddCompany" : willAddCompany,
                     "jobLocationType": jobLocationType, 
+                    "jobTagManually" : jobTagManually,
                     "isChild": isChild,
                     "utmValue": utmValue,
                     },
@@ -260,6 +266,11 @@ $("#willCompanyCheck").click(function(){
 //add jobLocation tag
 $("#willLocationCheck").click(function(){
     $("#jobLocationType").toggle(200);
+})
+
+//add job tag manually
+$("#willJobTagManually").click(function(){
+    $("#jobTagManually").toggle(200);
 })
 
 //download file xml and extract it
@@ -353,11 +364,11 @@ $(document).ready(function() {
 
 $("#parseXML").click(function(){
 
-    let xmlurl = $("#xmlurl").val()
+    let xmlurl = $("#xmlurl").val();
+    let customJobTag = $("#jobTagManually").val();
     if(xmlurl == '')  {
         alert("Please enter the xmlURL");
     }
-
     else {
         $(".container-fluid").LoadingOverlay("show", {
             background  : "rgba(165, 190, 100, 0.5)"
@@ -366,7 +377,7 @@ $("#parseXML").click(function(){
             url:"parsexml.php",
             type: "post",
             dataType: 'json',
-            data: {parse: "valid", url: xmlurl},
+            data: {parse: "valid", url: xmlurl, customJobTag: customJobTag},
             success:function(result){
                 $('#parsing').html("");
 

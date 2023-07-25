@@ -12,18 +12,18 @@ else {
   $order = 1;
 }
 
-$getRunning = $crud->getDownloading($order);
+$getRunning = $crud->getFrequentDownloading($order);
 $runningList = $getRunning['runningList'];
 $downloadingId = $getRunning['downloadingId'];
 
-$cronStatus = $crud->getFilexmlCronStatus($order);
+$cronStatus = $crud->getFrequentFilexmlCronStatus($order);
 if($cronStatus != "Finished") {
   echo "Cron is Running";
   exit();
 }
 echo "Cron status is changed and it is running";
 
-$cronStart = $crud->filexmlCronStatus($order, "Running");
+$cronStart = $crud->frequentFilexmlCronStatus($order, "Running");
 
 if(empty($_SESSION['bigCron'])) {
   if(count($runningList) > 0) {
@@ -301,5 +301,5 @@ if(empty($_SESSION['bigCron'])) {
     }
     echo "success";
   }
-  $cronStart = $crud->filexmlCronStatus($order, "Finished");
+  $cronStart = $crud->frequentFilexmlCronStatus($order, "Finished");
 }
