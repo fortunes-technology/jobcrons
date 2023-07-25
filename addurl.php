@@ -131,6 +131,13 @@
                                             <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
                                                 <input type="text" style="display: none;" class="form-control form-control-lg" id="jobLocationType" name="jobLocationType" value="TELECOMMUTE" readonly>
                                             </div>
+                                            <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                <label style="width: 350px; margin-left: 0px;" class="form-check-label" for="willJobTagManually">Adding job tag manually</label>
+                                                <input style="height: 30px;" type="checkbox" class="form-control form-control-lg"  id="willJobTagManually" name="willJobTagManually"> 
+                                            </div>
+                                            <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                <input type="text" style="display: none;" class="form-control form-control-lg" id="jobTagManually" name="jobTagManually" placeholder="Add Job Tag Manually">
+                                            </div>
                                             <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2">
                                                 <a href="#" data-target="#createUtmModal" data-toggle="modal" style="width: 100%;padding: 0.7rem" class="btn btn-primary form-check-label text-left utm-modal-btn">UTM Values</a>
                                                 <input type="hidden" name="utm-final-value-create" id="utm_final_value_create">

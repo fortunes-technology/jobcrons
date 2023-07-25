@@ -9,7 +9,7 @@ class crud
 		$this->db = $DB_con;
 	}
 	
-	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $industry, $company, $joblocationtype, $isChild, $utmValue)
+	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $industry, $company, $joblocationtype, $jobtag, $isChild, $utmValue)
 	{
 		$now = new DateTime();
 		$createdate = $now->format('Y-m-d H:i:s');
@@ -17,8 +17,8 @@ class crud
 		try
 		{
 			$stmt = $this->db->prepare(
-				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,industry,company,joblocationtype,status,utm) 
-						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :industry, :company, :joblocationtype, :status, :utm)");
+				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,industry,company,joblocationtype,jobtag,status,utm) 
+						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :industry, :company, :joblocationtype, :jobtag, :status, :utm)");
 			$stmt->bindparam(":cronid",$isChild);
 			$stmt->bindparam(":name",$name);
 			$stmt->bindparam(":url",$url);
@@ -31,6 +31,7 @@ class crud
 			$stmt->bindparam(":industry",$industry);
 			$stmt->bindparam(":company",$company);
 			$stmt->bindparam(":joblocationtype",$joblocationtype);
+			$stmt->bindparam(":jobtag",$jobtag);
 			$stmt->bindparam(":status",$status);
 			$stmt->bindparam(":utm",$utmValue);
 			$stmt->execute();

@@ -202,6 +202,7 @@ if(count($feedAll) > 0) {
     $industry = $value['industry'];
     $company = $value['company'];
     $joblocationtype = $value['joblocationtype'];
+    $jobtag = $value['jobtag'];
     if($value['cdatatag'] != "") {
       $cdatatag = $value['cdatatag'];
       $cdatatagpiece = explode(",", $value['cdatatag']);
@@ -271,7 +272,7 @@ if(count($feedAll) > 0) {
 
         if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
   
-        if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
+        if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs") || ($jobtag != null && $nodeName == $jobtag)) {
   
           libxml_use_internal_errors(true);
           $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader->readOuterXML());
