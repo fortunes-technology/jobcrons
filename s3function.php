@@ -320,7 +320,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeCdata(update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                            $xmlWriter->writeCdata(update_param_from_url($xmlString->__toString(), $value['utm']));
                           }
                           else {
                             $xmlWriter->writeCdata($xmlString->__toString()."?".$value['utm']);
@@ -355,7 +355,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeElement($updatetagReal, update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                            $xmlWriter->writeElement($updatetagReal, update_param_from_url($xmlString->__toString(), $value['utm']));
                           }
                           else {
                             $xmlWriter->writeElement($updatetagReal, $xmlString->__toString()."?".$value['utm']);
@@ -431,7 +431,7 @@ if(count($feedAll) > 0) {
                     elseif($updatetagReal == "url")  {
                       if(!empty($value['utm'])) {
                         if (strpos($xmlString->__toString(), '?') !== false) {
-                          $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                          $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm']);
                         }
                         else {
                           $insertedDate = $xmlString->__toString()."?".$value['utm'];
@@ -481,7 +481,7 @@ if(count($feedAll) > 0) {
                       elseif($updatetagReal == "url")  {
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                            $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm']);
                           }
                           else {
                             $insertedDate = $xmlString->__toString()."?".$value['utm'];
