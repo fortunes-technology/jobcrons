@@ -41,9 +41,10 @@ echo "Cron status is changed and it is running";
 
 $cronStart = $crud->cronStatus($order, "Running");
 
-// Remove specific value from url
-function strip_param_from_url( $url, $params ) {
+// Update or add specific value from url
+function update_param_from_url( $url, $params ) {
   $paramArray = [];
+  parse_str($params, $parsed_params);
   $params = explode("&", $params);
   foreach ($params as $key => $value) {
     $paramArray[] = explode("=", $value)[0];
@@ -53,7 +54,7 @@ function strip_param_from_url( $url, $params ) {
     $parsed_url = parse_url($url);              // Parse it 
     $query = $parsed_url['query'];              // Get the query string
     parse_str( $query, $parameters );           // Convert Parameters into array
-    unset( $parameters[$value] );               // Delete the one you want
+    $parameters[$value] = $parsed_params[$value];
     $new_query = http_build_query($parameters); // Rebuilt query string
     $url = $base_url.'?'.$new_query;
   }  
@@ -202,6 +203,7 @@ if(count($feedAll) > 0) {
     $industry = $value['industry'];
     $company = $value['company'];
     $joblocationtype = $value['joblocationtype'];
+    $customJobTag = $value['jobtag'];
     if($value['cdatatag'] != "") {
       $cdatatag = $value['cdatatag'];
       $cdatatagpiece = explode(",", $value['cdatatag']);
@@ -271,7 +273,7 @@ if(count($feedAll) > 0) {
 
         if($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
   
-        if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
+        if (($customJobTag != null && $nodeName == $customJobTag) || $nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
   
           libxml_use_internal_errors(true);
           $readerForNodeForTag = str_replace("<![CDATA[", "<![CDATA[cdata", $reader->readOuterXML());
@@ -318,7 +320,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeCdata(strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                            $xmlWriter->writeCdata(update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
                           }
                           else {
                             $xmlWriter->writeCdata($xmlString->__toString()."?".$value['utm']);
@@ -353,7 +355,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeElement($updatetagReal, strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
+                            $xmlWriter->writeElement($updatetagReal, update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
                           }
                           else {
                             $xmlWriter->writeElement($updatetagReal, $xmlString->__toString()."?".$value['utm']);
@@ -429,7 +431,7 @@ if(count($feedAll) > 0) {
                     elseif($updatetagReal == "url")  {
                       if(!empty($value['utm'])) {
                         if (strpos($xmlString->__toString(), '?') !== false) {
-                          $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                          $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
                         }
                         else {
                           $insertedDate = $xmlString->__toString()."?".$value['utm'];
@@ -479,7 +481,7 @@ if(count($feedAll) > 0) {
                       elseif($updatetagReal == "url")  {
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
+                            $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
                           }
                           else {
                             $insertedDate = $xmlString->__toString()."?".$value['utm'];

@@ -111,7 +111,7 @@ if (isset($_POST['parse']) && isset($_POST['url'])) {
 		$i = 0;
 		while ($reader->read()) {
 			if ($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
-			if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad___adadadadadad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs") || ($customJobTag != null && $nodeName == $customJobTag)) {
+			if (($customJobTag != null && $nodeName == $customJobTag) || $nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
 				$baseTag = [];
 				$baseValue = [];
 				$cdataTag = [];
