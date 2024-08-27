@@ -9,7 +9,7 @@ class crud
 		$this->db = $DB_con;
 	}
 	
-	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $industry, $company, $joblocationtype, $isChild, $utmValue)
+	public function create($name,$url,$basetag,$updatetag, $cdatatag, $defaultcountry, $industry, $company, $joblocationtype, $jobtag, $isChild, $utmValue)
 	{
 		$now = new DateTime();
 		$createdate = $now->format('Y-m-d H:i:s');
@@ -17,8 +17,8 @@ class crud
 		try
 		{
 			$stmt = $this->db->prepare(
-				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,industry,company,joblocationtype,status,utm) 
-						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :industry, :company, :joblocationtype, :status, :utm)");
+				"INSERT INTO feedinfo(cronid, name,url,basetag,updatetag,cdatatag,createdate,updatedate,defaultcountry,industry,company,joblocationtype,jobtag,status,utm) 
+						VALUES(:cronid, :name, :url, :basetag, :updatetag, :cdatatag, :createdate, :updatedate, :defaultcountry, :industry, :company, :joblocationtype, :jobtag, :status, :utm)");
 			$stmt->bindparam(":cronid",$isChild);
 			$stmt->bindparam(":name",$name);
 			$stmt->bindparam(":url",$url);
@@ -31,6 +31,7 @@ class crud
 			$stmt->bindparam(":industry",$industry);
 			$stmt->bindparam(":company",$company);
 			$stmt->bindparam(":joblocationtype",$joblocationtype);
+			$stmt->bindparam(":jobtag",$jobtag);
 			$stmt->bindparam(":status",$status);
 			$stmt->bindparam(":utm",$utmValue);
 			$stmt->execute();
@@ -62,7 +63,19 @@ class crud
 	public function getAll($order) {
 		$order = $order - 1;
 		$feedAll = [];
-		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate != '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
+		$stmt->bindparam(":remain",$order);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$feedAll[] = $row;
+		}
+		return $feedAll;
+	}
+
+	public function getFrequentAll($order) {
+		$order = $order - 1;
+		$feedAll = [];
+		$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE frequentgenerate = '1' AND id MOD 20 = :remain AND id != '681' AND id !='381' AND id !='55' AND id != '377' AND id != '750' AND id != '873' AND id !='948' AND id !='955'");
 		$stmt->bindparam(":remain",$order);
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -154,6 +167,61 @@ class crud
 		}
 	}
 
+	public function frequentCronStatus($order, $status) {
+		$status = $status;
+		$now = new DateTime();
+		$updateDate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE cron_frequent SET status=:status, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":id",$order);
+			$stmt->bindparam(":updated_at",$updateDate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	public function filexmlCronStatus($order, $status) {
+		$now = new DateTime();
+		$updateDate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE cron_filexml SET status=:status, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":id",$order);
+			$stmt->bindparam(":updated_at",$updateDate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	public function frequentFilexmlCronStatus($order, $status) {
+		$now = new DateTime();
+		$updateDate = $now->format('Y-m-d H:i:s');
+		try{
+			$stmt = $this->db->prepare("UPDATE cron_filexml_frequent SET status=:status, updated_at=:updated_at WHERE id=:id");
+			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":id",$order);
+			$stmt->bindparam(":updated_at",$updateDate);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
 	//get cronstatus
 	public function getCronStatus($order) {
 		$count = false;
@@ -164,6 +232,42 @@ class crud
 			$count = $row['status'];
 		}
 		return $count;
+	}
+
+	//get frequentcronstatus
+	public function getFrequentCronStatus($order) {
+		$count = false;
+		$stmt = $this->db->prepare("SELECT status FROM cron_frequent WHERE id=:id");
+		$stmt->bindparam(":id",$order);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$count = $row['status'];
+		}
+		return $count;
+	}
+
+	//get filexml cronstatus
+	public function getFilexmlCronStatus($order) {
+		$status = false;
+		$stmt = $this->db->prepare("SELECT status FROM cron_filexml WHERE id=:id");
+		$stmt->bindparam(":id",$order);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$status = $row['status'];
+		}
+		return $status;
+	}
+
+	//get frequent filexml cronstatus
+	public function getFrequentFilexmlCronStatus($order) {
+		$status = false;
+		$stmt = $this->db->prepare("SELECT status FROM cron_filexml_frequent WHERE id=:id");
+		$stmt->bindparam(":id",$order);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$status = $row['status'];
+		}
+		return $status;
 	}
 
 	public function checkCronSatus() {
@@ -209,9 +313,27 @@ class crud
 	
 	public function delete($id)
 	{
+		$url = false;
+		$stmt = $this->db->prepare("SELECT url FROM feedinfo WHERE id=:id");
+		$stmt->bindparam(":id",$id);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+			$url = $row['url'];
+		}
+
 		$stmt = $this->db->prepare("DELETE FROM feedinfo WHERE id=:id");
 		$stmt->bindparam(":id",$id);
 		$stmt->execute();
+
+		$is_stmt = $this->db->prepare("SELECT * FROM filexml WHERE inputurl=:inputurl");
+		$is_stmt->bindparam(":inputurl",$url);
+		$is_stmt->execute();
+		if($is_stmt->rowCount() > 0) {
+			$stmt = $this->db->prepare("DELETE FROM filexml WHERE inputurl=:inputurl");
+			$stmt->bindparam(":inputurl",$url);
+			$stmt->execute();
+		}
+
 		return true;
 	}
 
@@ -360,7 +482,7 @@ class crud
 			try
 			{
 				$name = $this->generateRandomString(8);
-				$status = "Downloading";
+				$status = "Pending";
 				$stmt = $this->db->prepare(
 					"INSERT INTO filexml(inputurl, name, status)
 							VALUES(:inputurl, :name, :status)");
@@ -382,14 +504,35 @@ class crud
 	public function getDownloading($order) {
 		$runningList = [];
 		$downloadingId = [];
-		$status = "Downloading";
-		if($order > 1) {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND (id = '54' OR id = '59' OR id = '126' OR id = '258')");
+		if($order > 100) {
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id = '54' OR id = '59' OR id = '126' OR id = '258'");
 		}
 		else {
-			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE status=:status AND id != '54' AND id != '59' AND id != '126' AND id != '258'");
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate != '1' AND id mod 10 = :remain AND (id != '54' OR id != '59' OR id != '126' OR id != '258')");
+			$order = $order - 1;
+			$stmt->bindparam(":remain", $order);
 		}
-		$stmt->bindparam(":status", $status);
+		$stmt->execute();
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$runningList[] = $row;
+			$downloadingId[] = $row['id'];
+		}
+		$result = ['runningList' => $runningList, 'downloadingId' => $downloadingId];
+		return $result;
+	}
+
+	// Get download file information
+	public function getFrequentDownloading($order) {
+		$runningList = [];
+		$downloadingId = [];
+		if($order > 100) {
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE id = '54' AND id = '59' AND id = '126' AND id = '258'");
+		}
+		else {
+			$stmt = $this->db->prepare("SELECT * FROM filexml WHERE frequentgenerate = '1' AND id mod 5 = :remain AND (id != '54' OR id != '59' OR id != '126' OR id != '258')");
+			$order = $order - 1;
+			$stmt->bindparam(":remain", $order);
+		}
 		$stmt->execute();
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$runningList[] = $row;
@@ -429,11 +572,14 @@ class crud
 
 	// download to ready status change
 	public function setDownToReady($id) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			$status = "Ready";
-			$stmt = $this->db->prepare("UPDATE filexml SET status=:status
+			$stmt = $this->db->prepare("UPDATE filexml SET status=:status, updated_at=:updated_at
 																	WHERE id=:id");
 			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":updated_at",$updatedate);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			return true;
@@ -447,11 +593,14 @@ class crud
 
 	// download to ready status change
 	public function setDownToError($id) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
 		try{
 			$status = "Error";
-			$stmt = $this->db->prepare("UPDATE filexml SET status=:status
+			$stmt = $this->db->prepare("UPDATE filexml SET status=:status, updated_at=:updated_at
 																	WHERE id=:id");
 			$stmt->bindparam(":status",$status);
+			$stmt->bindparam(":updated_at",$updatedate);
 			$stmt->bindparam(":id",$id);
 			$stmt->execute();
 			return true;
@@ -541,6 +690,46 @@ class crud
 			$stmt->bindparam(":updatedate",$updatedate);
 			$stmt->bindparam(":id",$id);
 			$stmt->bindparam(":totalcount",$count);
+			$stmt->execute();
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	// Change count in feedinfo table
+	public function changeCount($id, $action, $i=false) {
+		$now = new DateTime();
+		$updatedate = $now->format('Y-m-d H:i:s');
+		try{
+			if($action == "Add"){
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = count + :i WHERE id=:id");
+				$stmt->bindparam(":i", $i);
+				$stmt->bindparam(":id", $id);
+				$stmt->execute();
+				return true;
+			}
+			else if($action == "Reset"){
+				$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0 WHERE id=:id");
+				$stmt->bindparam(":id", $id);
+				$stmt->execute();
+				return true;
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	// Change all count as 0 in feedinfo table
+	public function resetAllCount() {
+		try{
+			$stmt = $this->db->prepare("UPDATE feedinfo SET count = 0");
 			$stmt->execute();
 			return true;
 		}
@@ -774,6 +963,12 @@ class crud
 			{
 				$outputUrl = $main_url.str_replace(" ", "_", strtolower($row['name'])).".xml";
 				$filePath = str_replace(" ", "_", strtolower($row['name'])).".xml";
+				if($row['frequentgenerate'] == 1) {
+					$FrequentGenerateSwitch = "<input type='checkbox' class='freq-check' checked>";
+				}
+				else {
+					$FrequentGenerateSwitch = "<input type='checkbox' class='freq-check'>";
+				}
 				if($row['aigenerate'] == 1) {
 					$AIGenerateSwitch = "<input type='checkbox' class='ai-check' checked>";
 				}
@@ -785,6 +980,13 @@ class crud
 						<td><?php echo($row['name']); ?> <?php if(!empty($row['isnew'])) echo '<i class="fas fa-bell zoom-in-zoom-out"></i><p style="display:none">notify</p>';?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo($row['url']); ?></td>
 						<td style="width: 300px; word-break: break-word;"><?php echo $outputUrl; ?></td>
+						<td id='FREQ-switch-<?php echo($row['id']); ?>' data-sort="<?php echo($row['frequentgenerate']); ?>">
+							<input class='input-feddinfo-id' type='hidden' value="<?php echo($row['id']); ?>">
+							<label class='switch'>
+								<?php echo($FrequentGenerateSwitch); ?>
+								<span class='slider round freq-switch'> </span>
+							</label>
+						</td>
 						<td id='AI-switch-<?php echo($row['id']); ?>' data-sort="<?php echo($row['aigenerate']); ?>">
 							<input class='input-feddinfo-id' type='hidden' value="<?php echo($row['id']); ?>">
 							<label class='switch'>
@@ -792,6 +994,7 @@ class crud
 								<span class='slider round ai-switch'> </span>
 							</label>
 						</td>
+						<td class="feedinfo-count"><?php echo($row['count']); ?></td>
 						<td><?php echo($row['createdate']); ?></td>
 						<td><?php echo($row['updatedate']); ?></td>
 						<?php
@@ -972,6 +1175,40 @@ class crud
 				$stmt->bindparam(":id",$id);
 				$stmt->bindparam(":aigenerate",$AIGenerate);
 				$stmt->execute();
+			}
+			return true;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();	
+			return false;
+		}
+	}
+
+	public function feedInfoFreqSwitch($id) {
+		try{
+			$url = false;
+			$stmt = $this->db->prepare("SELECT * FROM feedinfo WHERE id=:id");
+			$stmt->bindparam(":id",$id);
+			$stmt->execute();
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
+				$FrequentGenerate = $row['frequentgenerate'];
+				$url = $row['url'];
+				$FrequentGenerate = $FrequentGenerate ? 0 : 1;
+				$stmt = $this->db->prepare("UPDATE feedinfo SET frequentgenerate=:frequentgenerate WHERE id=:id");
+				$stmt->bindparam(":id",$id);
+				$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
+				$stmt->execute();
+
+				$is_stmt = $this->db->prepare("SELECT * FROM filexml WHERE inputurl=:inputurl");
+				$is_stmt->bindparam(":inputurl",$url);
+				$is_stmt->execute();
+				if($is_stmt->rowCount() > 0) {
+					$stmt = $this->db->prepare("UPDATE filexml SET frequentgenerate=:frequentgenerate WHERE inputurl=:inputurl");
+					$stmt->bindparam(":frequentgenerate",$FrequentGenerate);
+					$stmt->bindparam(":inputurl",$url);
+					$stmt->execute();
+				}
 			}
 			return true;
 		}

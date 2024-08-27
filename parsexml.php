@@ -22,6 +22,11 @@ $s3->registerStreamWrapper();
 
 // Parse XML file
 if (isset($_POST['parse']) && isset($_POST['url'])) {
+	if(isset($_POST['customJobTag']) && ($_POST['customJobTag'] != '')) {
+		$customJobTag = $_POST['customJobTag'];
+	} else {
+		$customJobTag = null;
+	}
 	$specialCaseFlag = 0;
 	$url_real = $_POST['url'];
 	if ($_POST['url'] == "https://gateway.harri.com/dispatcher/api/v2/brands/914618/jobs/feed") {
@@ -106,7 +111,7 @@ if (isset($_POST['parse']) && isset($_POST['url'])) {
 		$i = 0;
 		while ($reader->read()) {
 			if ($reader->nodeType == XMLReader::ELEMENT) $nodeName = $reader->name;
-			if ($nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
+			if (($customJobTag != null && $nodeName == $customJobTag) || $nodeName == "job" || $nodeName == "row" || $nodeName == "JOB" || $nodeName == "ad" || $nodeName == "item" || $nodeName == "vacancy" || $nodeName == "Job" || $nodeName == "post" || $nodeName == "Product" || $nodeName == "advertisement" || ($specialCaseFlag == 1 && $nodeName == "Jobs")) {
 				$baseTag = [];
 				$baseValue = [];
 				$cdataTag = [];
@@ -229,11 +234,13 @@ if (isset($_POST['saveFeed'])) {
 	$willAddIndustry = $_POST['willAddIndustry'];
 	$willAddCompany = $_POST['willAddCompany'];
 	$jobLocationType = $_POST['jobLocationType'];
+	$jobTagManually = $_POST['jobTagManually'];
 	$defaultCountry = ($willAddCountry == "invalid") ? null : $willAddCountry;
 	$industry = ($willAddIndustry == "invalid") ? null : $willAddIndustry;
 	$company = ($willAddCompany == "invalid") ? null : $willAddCompany;
 	$joblocationtype = ($jobLocationType == "invalid") ? null : $jobLocationType;
-	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $industry, $company, $joblocationtype, $isChild, $utmValue);
+	$jobtag = ($jobTagManually == "invalid") ? null : $jobTagManually;
+	$crudResult = $crud->create($name, $xmlurl, $basetag, $updatetag, $cdatatag, $defaultCountry, $industry, $company, $joblocationtype, $jobtag, $isChild, $utmValue);
 	if ($crudResult == true) {
 		$res = json_encode(['data' => "true"]);
 	} else {
@@ -374,6 +381,15 @@ if (isset($_POST['createUser'])) {
 if (isset($_POST["activeAIGenerate"])) {
 	$feedinfoID = $_POST['feedinfo'];
 	$crudResult = $crud->feedInfoAISwitch($feedinfoID);
+	if ($crudResult == true) {
+		return true;
+	}
+}
+
+// active Frequent generation
+if (isset($_POST["activeFrequentGenerate"])) {
+	$feedinfoID = $_POST['feedinfo'];
+	$crudResult = $crud->feedInfoFreqSwitch($feedinfoID);
 	if ($crudResult == true) {
 		return true;
 	}

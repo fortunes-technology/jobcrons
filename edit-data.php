@@ -12,6 +12,7 @@
     array_pop($updatetag);
     $willEditCountry = $edit_infor['defaultcountry'];
     $jobLocationType = $edit_infor['joblocationtype'];
+    $customJobTag = $edit_infor['jobtag'];
     $willEditIndustry = $edit_infor['industry'];
     $willEditCompany = $edit_infor['company'];
     $newtag = explode(",", $edit_infor['newtag']);
@@ -246,6 +247,21 @@
                                             <?php
                                                 }
                                             ?>
+
+                                            <?php
+                                                if(!empty($customJobTag)) {
+                                            ?>
+                                                <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2 check-label">
+                                                    <label style="width: 350px; margin-left: 25px;" class="form-check-label" for="willCustomJobTagCheck">Adding job tag manually</label>
+                                                    <input style="height: 30px;" type="checkbox" class="form-control form-control-lg" checked  id="willCustomJobTagCheck" name="willCustomJobTagCheck"> 
+                                                </div>
+                                                <div class="col-lg-4 px-sm-1 col-sm-12 mt-2 mb-2">
+                                                    <input type="text" class="form-control form-control-lg" id="customJobTag" name="customJobTag" value="<?php echo $customJobTag?>" readonly>
+                                                </div>
+                                            <?php
+                                                }
+                                            ?>
+
                                             <div class="col-lg-6 px-sm-1 col-sm-12 mt-2 mb-2">
                                                 <a href="#" data-target="#createUtmModal" data-toggle="modal" style="margin-left: 25px;" class="btn btn-primary form-check-label text-left utm-modal-btn">UTM Values</a>
                                                 <input type="hidden" name="utm-final-value-create" id="utm_final_value_create">

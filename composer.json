@@ -1,5 +1,6 @@
 {
     "require": {
-        "aws/aws-sdk-php": "^3.173"
+        "aws/aws-sdk-php": "^3.173",
+        "bdk/debug": "3.0"
     }
 }

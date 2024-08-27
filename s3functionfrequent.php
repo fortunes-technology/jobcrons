@@ -29,22 +29,21 @@ if($order > 100) {
   $feedAll = $crud->getLarge($order);
 }
 else {
-  $feedAll = $crud->getAll($order);
+  $feedAll = $crud->getFrequentAll($order);
 }
 
-$cronStatus = $crud->getCronStatus($order);
+$cronStatus = $crud->getFrequentCronStatus($order);
 if($cronStatus != "Finished") {
   echo "Cron is Running";
   exit();
 }
 echo "Cron status is changed and it is running";
 
-$cronStart = $crud->cronStatus($order, "Running");
+$cronStart = $crud->frequentCronStatus($order, "Running");
 
-// Update or add specific value from url
-function update_param_from_url( $url, $params ) {
+// Remove specific value from url
+function strip_param_from_url( $url, $params ) {
   $paramArray = [];
-  parse_str($params, $parsed_params);
   $params = explode("&", $params);
   foreach ($params as $key => $value) {
     $paramArray[] = explode("=", $value)[0];
@@ -54,7 +53,7 @@ function update_param_from_url( $url, $params ) {
     $parsed_url = parse_url($url);              // Parse it 
     $query = $parsed_url['query'];              // Get the query string
     parse_str( $query, $parameters );           // Convert Parameters into array
-    $parameters[$value] = $parsed_params[$value];
+    unset( $parameters[$value] );               // Delete the one you want
     $new_query = http_build_query($parameters); // Rebuilt query string
     $url = $base_url.'?'.$new_query;
   }  
@@ -320,7 +319,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeCdata(update_param_from_url($xmlString->__toString(), $value['utm']));
+                            $xmlWriter->writeCdata(strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
                           }
                           else {
                             $xmlWriter->writeCdata($xmlString->__toString()."?".$value['utm']);
@@ -355,7 +354,7 @@ if(count($feedAll) > 0) {
                         // UTM adding here
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $xmlWriter->writeElement($updatetagReal, update_param_from_url($xmlString->__toString(), $value['utm']));
+                            $xmlWriter->writeElement($updatetagReal, strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm']);
                           }
                           else {
                             $xmlWriter->writeElement($updatetagReal, $xmlString->__toString()."?".$value['utm']);
@@ -431,7 +430,7 @@ if(count($feedAll) > 0) {
                     elseif($updatetagReal == "url")  {
                       if(!empty($value['utm'])) {
                         if (strpos($xmlString->__toString(), '?') !== false) {
-                          $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm']);
+                          $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
                         }
                         else {
                           $insertedDate = $xmlString->__toString()."?".$value['utm'];
@@ -481,7 +480,7 @@ if(count($feedAll) > 0) {
                       elseif($updatetagReal == "url")  {
                         if(!empty($value['utm'])) {
                           if (strpos($xmlString->__toString(), '?') !== false) {
-                            $insertedDate = update_param_from_url($xmlString->__toString(), $value['utm']);
+                            $insertedDate = strip_param_from_url($xmlString->__toString(), $value['utm'])."&".$value['utm'];
                           }
                           else {
                             $insertedDate = $xmlString->__toString()."?".$value['utm'];
@@ -650,8 +649,8 @@ if(count($feedAll) > 0) {
       }
       
       if($tagChanged) {
-        $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew); 
-        $changeCount =  $crud->changeCount($value['id'], "Add", 1);   
+        $changeStatus = $crud->changeStatusFinalChangeTag($value['id'], "Ready", $key, $preRepeat, $basetag, $updatetag, $cdatatag, $baseArrayNew);
+        $changeCount =  $crud->changeCount($value['id'], "Add", 1);         
       }
       else {
         if($key == 0) {
@@ -675,5 +674,5 @@ if(count($feedAll) > 0) {
   }
   echo "success";
   // unset($_SESSION['bigCron']);
-$cronStart = $crud->cronStatus($order, "Finished");
+$cronStart = $crud->frequentCronStatus($order, "Finished");
 }
